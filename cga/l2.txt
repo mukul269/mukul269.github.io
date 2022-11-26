@@ -1,9 +1,0 @@
-Input devices are used to interact with computer
-There are three types of input devices:
-1. Text input device: keyboard. OCR.
-2. Pointing input device: mouse-optical, mechanical, lightpen, joystick, touch screen, touchpad, dataglove.
-3. Image and video input devices: scanner, camera, webcam.
-
-Differentiate between active and passive devices.
-
-Cathode ray tube image. 
