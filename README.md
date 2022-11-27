@@ -9,7 +9,7 @@ this is a website created for the students of TRCAC BSc IT
 	embeddedsystems
 	softwareengineering
 
-# cga.html, cj.html, se.html are pages that will need to be updated daily as the lectures commence.
+# cga.html, cj.html, se.html, es.html(not added), cost.html(not added) are pages that will need to be updated daily as the lectures commence.
 
 current objectives and issues
 - need to find a way to allow anybody who visits the website to be able to upload 	lecture notes
