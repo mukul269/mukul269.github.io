@@ -225,12 +225,12 @@
 
 
     
-    <body><br><br><br>
+    <body onload="landscapewarning()"><br><br><br>
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">study hard<br>play harder !</a>
                 <hr>
-                <a href="#">extra notes</a>
+                <a href="extranotes.html">extra notes</a>
                 <a href="credits.html">Credits</a>
                 <a href="https://api.whatsapp.com/send?phone=918850930554">Contact</a>
         </div>
@@ -238,6 +238,10 @@
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
           
             <script>
+                function landscapewarning()
+                {
+                    alert("you look better when not squinting, if using phone, switch to landscape");
+                }
                 function openNav()
                 {
                     document.getElementById("mySidenav").style.width = "250px";
