@@ -10,21 +10,23 @@
 
                 background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
 
-                font-family: Helvetica;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
                 -webkit-font-smoothing: antialiased;
             }
 
             a:link
             {
                 color: black;
+                font-size: 14px;
                 text-decoration: none;
             }
 
-            a:hover
+            .table-wrapper a:hover
             {
-                font-size: 13px;
+                color: #9c38ff;
+                font-weight: bolder;
                 transition: 0.1s;
-                text-shadow: 2px 2px 30px #410cff  ;
+                text-shadow: 2px 2px 30px #b20cff;
             }
 
             a:visited
@@ -46,7 +48,7 @@
                 letter-spacing: 1px;
                 color: white;
                 padding: 30px 0;
-                margin: 80px;
+                margin: 8px;
                 text-shadow: 0px 2px 8px #454564;
             }
             h4
@@ -63,6 +65,9 @@
 
             .table-wrapper
             {
+                background: rgba( 255, 255, 255, 0.25 );
+                -webkit-backdrop-filter: blur( 4px );
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
                 margin: 10px 70px 70px;
                 box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.5 );
                 border-radius: 20px;
@@ -115,7 +120,8 @@
 
             /* Responsive */
 
-            @media (max-width: 720px) {
+            @media (max-width: 720px) 
+            {
                 .fl-table {
                     display: block;
                     width: 100%;
@@ -171,13 +177,81 @@
                     text-align: center;
                 }
             }
+            .sidenav 
+            {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .sidenav a 
+            {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover 
+            {
+                color: #f1f1f1;
+            }
+
+            .sidenav .closebtn 
+            {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            @media screen and (max-height: 450px) 
+            {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            }
         </style>
     </head>
 
 
     
     <body><br><br><br>
-        <h1>scroll down to access all subjects &nbsp;&nbsp; <iframe src="https://giphy.com/embed/XXU2vaPVrnhV7ZAGpY" width="50px" height="50px" style="position:relative" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></h1>
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">study hard<br>play harder !</a>
+                <hr>
+                <a href="#">extra notes</a>
+                <a href="credits.html">Credits</a>
+                <a href="https://api.whatsapp.com/send?phone=918850930554">Contact</a>
+        </div>
+          
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+          
+            <script>
+                function openNav()
+                {
+                    document.getElementById("mySidenav").style.width = "250px";
+                }
+          
+                function closeNav() 
+                {
+                    document.getElementById("mySidenav").style.width = "0";
+                }
+            </script>
+          
+
+          <h1>BSc I.T. semester 4</h1>
+          <h1>scroll down for all subjects &nbsp;&nbsp; <iframe src="https://giphy.com/embed/XXU2vaPVrnhV7ZAGpY" width="50px" height="50px" style="position:relative" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></h1>
 
         <!--corejava-->
         <div class="table-wrapper">
