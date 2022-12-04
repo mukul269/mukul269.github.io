@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Mukul's site</title>
         <style>
             body 
@@ -47,7 +48,7 @@
             h1
             {
                 text-align: center;
-                font-size: 18px;
+                font-size: 10vw
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 color: white;
@@ -190,7 +191,10 @@
                 z-index: 1;
                 top: 0;
                 left: 0;
-                background-color: #111;
+                /*background-color: #111;*/
+                background: rgb(0, 0, 0, 0.70);
+                backdrop-filter: blur(20px);
+                /*-webkit-backdrop-filter: blur( 4px );*/
                 overflow-x: hidden;
                 transition: 0.5s;
                 padding-top: 60px;
@@ -199,10 +203,11 @@
 
             .sidenav a 
             {
-                padding: 8px 8px 8px 32px;
+                padding: 8px 8px 8px 8px;
+                text-align: center;
                 text-decoration: none;
                 font-size: 25px;
-                color: #818181;
+                color: #bdbdbd;
                 display: block;
                 transition: 0.3s;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -211,7 +216,8 @@
 
             .sidenav a:hover 
             {
-                color: #f1f1f1;
+                transition: 0.2s;
+                color: #ffffff;
                 text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
             }
 
@@ -219,7 +225,7 @@
             {
                 position: absolute;
                 top: 0;
-                right: 25px;
+                right: 0px;
                 font-size: 36px;
                 margin-left: 50px;
             }
@@ -237,9 +243,9 @@
     
     <body onload="landscapewarning()" id="mainbody"><br><br><br>
         <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">study hard<br>play harder !</a><br><br>
-                <hr width="80%" size="1px"><br><br>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
+                <a href="javascript:void(0)"  onclick="closeNav()">study hard<br>play harder !</a><br><br>
+                <hr width="90%" size="1px"><br><br>
                 <a href="extranotes.html">extra notes</a><br><br>
                 <a href="credits.html">Credits</a><br><br>
                 <a href="https://api.whatsapp.com/send?phone=918850930554">Contact</a>
@@ -250,11 +256,11 @@
             <script>
                 function landscapewarning()
                 {
-                    alert("you look better when not squinting, if using phone, switch to landscape");
+                    alert("If using phone , switch to landscape");
                 }
                 function openNav()
                 {
-                    document.getElementById("mySidenav").style.width = "500px";
+                    document.getElementById("mySidenav").style.width = "35%";
                     //document.getElementById("table-wrapper").style.filter = "blur(8px)";
                       
                 }
