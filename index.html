@@ -3,248 +3,12 @@
     <head>
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <title>Mukul's site</title>
-        <style>
-            body 
-            {
-                /*background: rgb(48,224,252);
-                background: linear-gradient(90deg, rgba(48,224,252,0.852000175070028) 25%, rgba(0,56,255,0.759563200280112) 100%);*/
-
-                background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
-
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                -webkit-font-smoothing: antialiased;
-            }
-
-            img{
-                filter: drop-shadow(0 2px 2px white);
-            }
-
-            a:link
-            {
-                color: black;
-                font-size: 14px;
-                text-decoration: none;
-            }
-
-            .table-wrapper a:hover
-            {
-                color: #6a24b0;
-                transition: 0.1s;
-                text-shadow: 2px 2px 30px #b20cff;
-                background: rgba( 255, 255, 255, 0.25 );
-                backdrop-filter: blur( 4px );
-                
-            }
-
-            a:visited
-            {
-                color: black;
-                text-decoration: none;
-            }
-
-            *{
-                box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-            }
-            h1
-            {
-                text-align: center;
-                font-size: 5vw;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                color: white;
-                padding: 30px 0;
-                margin: 8px;
-                text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-            }
-
-            h4
-            {
-                text-align: center;
-                padding-top: 20px;
-            }
-            footer 
-            {
-                text-align: center;
-            }
-
-            /* Table Styles */
-
-            .table-wrapper
-            {
-                background: rgba( 255, 255, 255, 0.25 );
-                backdrop-filter: blur( 4px );
-                -webkit-backdrop-filter: blur( 4px );
-                border: 1px solid rgba( 255, 255, 255, 0.18 );
-                margin: 10px 70px 70px;
-                box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.5 );
-                border-radius: 20px;
-            }
-
-            .fl-table 
-            {
-                border-radius: 10px;
-                font-size: 12px;
-                font-weight: normal;
-                border: none;
-                border-collapse: collapse;
-                width: 100%;
-                max-width: 100%;
-                white-space: pre-line;
-                background-color: white;
-            }
-
-            .fl-table td, .fl-table th 
-            {
-                text-align: center;
-                padding: 8px;
-                word-wrap: break-word;
-            }
-
-            .fl-table td 
-            {
-                border-right: 0px solid #f8f8f8;
-                font-size: 12px;
-                word-wrap: break-word;
-            }
-
-            .fl-table thead th 
-            {
-                color: #ffffff;
-                background: #876489;
-            }
-
-
-            .fl-table thead th:nth-child(odd) 
-            {
-                color: #ffffff;
-                background: #454564;
-            }
-
-            .fl-table tr:nth-child(even) 
-            {
-                background: #F8F8F8;
-            }
-
-            /* Responsive */
-
-            @media (max-width: 720px) 
-            {
-                .fl-table {
-                    display: block;
-                    width: 100%;
-                }
-                
-                .fl-table thead, .fl-table tbody, .fl-table thead th {
-                    display: block;
-                }
-                .fl-table thead th:last-child{
-                    border-bottom: none;
-                }
-                .fl-table thead {
-                    float: left;
-                }
-                .fl-table tbody {
-                    width: auto;
-                    position: relative;
-                    overflow-x: auto;
-                }
-                .fl-table td, .fl-table th {
-                    padding: 20px .625em .625em .625em;
-                    height: 60px;
-                    vertical-align: middle;
-                    box-sizing: border-box;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    width: 120px;
-                    font-size: 13px;
-                    text-overflow: ellipsis;
-                }
-                .fl-table thead th {
-                    text-align: left;
-                    border-bottom: 1px solid #f7f7f9;
-                }
-                .fl-table tbody tr {
-                    display: table-cell;
-                }
-                .fl-table tbody tr:nth-child(odd) {
-                    background: none;
-                }
-                .fl-table tr:nth-child(even) {
-                    background: transparent;
-                }
-                .fl-table tr td:nth-child(odd) {
-                    background: #F8F8F8;
-                    border-right: 1px solid #E6E4E4;
-                }
-                .fl-table tr td:nth-child(even) {
-                    border-right: 1px solid #E6E4E4;
-                }
-                .fl-table tbody td {
-                    display: block;
-                    text-align: center;
-                }
-            }
-            .sidenav 
-            {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                /*background-color: #111;*/
-                background: rgb(0, 0, 0, 0.70);
-                backdrop-filter: blur(20px);
-                /*-webkit-backdrop-filter: blur( 4px );*/
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-                
-            }
-
-            .sidenav a 
-            {
-                padding: 8px 8px 8px 8px;
-                text-align: center;
-                text-decoration: none;
-                font-size: 25px;
-                color: #bdbdbd;
-                display: block;
-                transition: 0.3s;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                -webkit-font-smoothing: antialiased;
-            }
-
-            .sidenav a:hover 
-            {
-                transition: 0.2s;
-                color: #ffffff;
-                text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-            }
-
-            .sidenav .closebtn 
-            {
-                position: absolute;
-                top: 0;
-                right: 50px;
-                font-size: 36px;
-                margin-left: 50px;
-            }
-
-            @media screen and (max-height: 450px) 
-            {
-                .sidenav {padding-top: 15px;}
-                .sidenav a {font-size: 18px;}
-            }
-
-        </style>
+        <link rel="stylesheet" href="styling.css">
     </head>
 
 
     
-    <body onload="landscapewarning()" id="mainbody"><br><br><br>
+    <body onload="landscapewarning()" manifest="demo.appcache"><br><br><br>
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
                 <a href="javascript:void(0)"  onclick="closeNav()">study hard<br>play harder !</a><br><br>
@@ -568,7 +332,7 @@
                     <td><a href=".\softwareengineering\notes\1-Introduction (E-next.in).pdf#toolbaar=0" target="_blank">introduction</a></td>
                     <td><a href=".\softwareengineering\papers\SE APR-18 (E-next.in).pdf#toolbaar=0" target="_blank">april-18</a></td>
                     <td><a href=".\softwareengineering\Roger S. Pressman - Software Engineering - A Practitioner's Approach-McGraw-Hill (2006) (E-next.in).pdf#toolbaar=0" target="_blank">a practitioners approach (888)</a></td>
-                    <td><a href=".\se.html" target="_blank">lec notes unit 1</a></td>
+                    <td><a href=".\softwareengineering\classnotes\UNIT I - CHAPTER 1- INTRODUCTION TO SOFTWARE ENGINEERING.pdf#toolbar=0" target="_blank">u1 ch1</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -577,7 +341,7 @@
                     <td><a href=".\softwareengineering\notes\2-Software Requirements (E-next.in).pdf#toolbaar=0" target="_blank">software requirements</a></td>
                     <td><a href=".\softwareengineering\papers\SE APR-18 (Sol) (E-next.in).pdf#toolbaar=0" target="_blank">a18 -sol</a></td>
                     <td></td>
-                    <td></td>
+                    <td><a href=".\softwareengineering\classnotes\UNIT I - CHAPTER 2 - SOFTWARE REQUIREMENTS.pdf#toolbar=0" target="_blank">u1 ch2</a></td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -586,7 +350,7 @@
                     <td><a href=".\softwareengineering\notes\3-Software Processes (E-next.in).pdf#toolbaar=0" target="_blank">software processes</a></td>
                     <td><a href=".\softwareengineering\papers\SE IMP (E-next.in).pdf#toolbaar=0" target="_blank">imp qb</a></td>
                     <td></td>
-                    <td></td>
+                    <td><a href=".\softwareengineering\classnotes\UNIT I - CHAPTER 3 - SOFTWARE PROCESSES.pdf#toolbar=0" target="_blank">u1 ch3</a></td></td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -758,7 +522,7 @@
                 <tr>
                     <td>1.</td>
                     <td><a href=".\computerorientedstatisticaltechniques\notes\1-The Mean, Median, Mode, and Other Measures of Central Tendency (E-next.in).pdf#toolbaar=0" target="_blank"> measures of central tendency</a></td>
-                    <td><a href=".\computerorientedstatisticaltechniques\papers\COST APR-18 (E-next.in).pdf#toolbaar=0" target="_blank"</td>
+                    <td><a href=".\computerorientedstatisticaltechniques\papers\COST APR-18 (E-next.in).pdf#toolbaar=0" target="_blank">april 18</a></td>
                     <td><a href=".\computerorientedstatisticaltechniques\(Schaum’s Outlines) Murray R Spiegel, Larry J. Stephens - Statistics-McGraw-Hill (2018) (E-next.in).pdf#toolbaar=0" target="_blank">Murray,Stephens - Statistics</a></td>
                     <td><a href=".\cost.html" target="_blank">lec notes unit 1</a></td>
                     <td></td>
@@ -767,7 +531,7 @@
                 <tr>
                     <td>2.</td>
                     <td><a href=".\computerorientedstatisticaltechniques\notes\2-The Standard Deviation and Other Measures of Dispersion (E-next.in).pdf#toolbaar=0" target="_blank">Standard deviation</a></td>
-                    <td><a href=".\computerorientedstatisticaltechniques\papers\COST APR-18 (Sol) (E-next.in) (1).pdf#toolbaar=0" target="_blank">a18-sol></a></td>
+                    <td><a href=".\computerorientedstatisticaltechniques\papers\COST APR-18 (Sol) (E-next.in) (1).pdf#toolbaar=0" target="_blank">a18-sol</a></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -907,8 +671,8 @@
                     <td><a href=".\computergraphicsandanimation\notes\Unit-1 Overview of Computer Graphics (E-next.in).pdf#toolbaar=0" target="_blank">Overview</a></td>
                     <td><a href=".\computergraphicsandanimation\papers\CG QB (E-next.in).pdf#toolbaar=0" target="_blank">imp qb</a></td>
                     <td><a href=".\computergraphicsandanimation\Computer Graphics Lab Practicals (E-next.in).pdf#toolbaar=0" target="_blank">lab practicals</a></td>
-                    <td><a href=".\computergraphicsandanimation\CGA Unit-1.pdf#toolbaar=0" target="_blank">CGA unit 1</a></td>
-                    <td><a href=".\computergraphicsandanimation\Assignment-1 Unit 1.pdf#toolbaar=0" target="_blank">asst 1,<a href=".\computergraphicsandanimation\asst1-sol.pdf#toolbaar=0" target="_blank"> sol</a></td>
+                    <td><a href=".\computergraphicsandanimation\classnotes\CGA Unit-1.pdf#toolbaar=0" target="_blank">CGA unit 1</a></td>
+                    <td><a href=".\computergraphicsandanimation\assignments\Assignment-1 Unit 1.pdf#toolbaar=0" target="_blank">asst 1,<a href=".\computergraphicsandanimation\assignments\asst1-sol.pdf#toolbaar=0" target="_blank"> sol</a></td>
                     <td></td>
                 </tr>
                 <tr>
