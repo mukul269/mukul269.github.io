@@ -1,12 +1,32 @@
-body 
+/*body 
 {
-    /*background: rgb(48,224,252);
-    background: linear-gradient(90deg, rgba(48,224,252,0.852000175070028) 25%, rgba(0,56,255,0.759563200280112) 100%);*/
+    //background: rgb(48,224,252);
+   // background: linear-gradient(90deg, rgba(48,224,252,0.852000175070028) 25%, rgba(0,56,255,0.759563200280112) 100%);
 
     background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     -webkit-font-smoothing: antialiased;
+}*/
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 img
