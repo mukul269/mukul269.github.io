@@ -4,46 +4,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height">
         <title>mukul's site</title>
         <style>
-            
-/*----------------*/
-            body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-    align-items: center;
-}
-  
+            body 
+            {
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+                align-items: center;
+            }
+    
+            @keyframes gradient
+            {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+            h1
+            {
+                text-align: center;
+                font-size: 5vw;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: white;
+                padding: 30px 0;
+                margin: 8px;
+                text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 
-h1
-{
-    text-align: center;
-    font-size: 5vw;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: white;
-    padding: 30px 0;
-    margin: 8px;
-    text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-
-}
-
-
-/*-------------*/
-
-
-
+            }
+            /*-------------cards-----------*/
             .cards-list 
             {
                 z-index: 0;
@@ -80,23 +74,10 @@ h1
                 object-fit: cover;
             }
 
-            /*.card .card_title
-            {
-                text-align: center;
-                border-radius: 0px 0px 40px 40px;
-                font-family: sans-serif;
-                font-weight: bold;
-                font-size: 80px;
-                margin-top: -10px;
-                height: 40px;
-                color: white;
-            }*/
-
             .card:hover 
             {
                 transform: scale(0.9, 0.9);
-                box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-                    -5px -5px 30px 15px rgba(0,0,0,0.22);
+                box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), -5px -5px 30px 15px rgba(0,0,0,0.22);
             }
 
             @media all and (max-width: 500px) 
@@ -106,61 +87,52 @@ h1
                     flex-direction: column;
                 }
             }
-
+            /*-------------sidenav-----------*/
             .sidenav 
-{
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    /*background-color: #111;*/
-    background: rgb(0, 0, 0, 0.70);
-    backdrop-filter: blur(20px);
-    /*-webkit-backdrop-filter: blur( 4px );*/
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
+            {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                /*background-color: #111;*/
+                background: rgb(0, 0, 0, 0.70);
+                backdrop-filter: blur(20px);
+                /*-webkit-backdrop-filter: blur( 4px );*/
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
 
-.sidenav a 
-{
-    padding: 8px 8px 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 25px;
-    color: #bdbdbd;
-    display: block;
-    transition: 0.3s;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
+            .sidenav a 
+            {
+                padding: 8px 8px 8px 8px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 25px;
+                color: #bdbdbd;
+                display: block;
+                transition: 0.3s;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                -webkit-font-smoothing: antialiased;
+            }
 
-.sidenav a:hover 
-{
-    transition: 0.2s;
-    color: #ffffff;
-    text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-}
+            .sidenav a:hover 
+            {
+                transition: 0.2s;
+                color: #ffffff;
+                text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+            }
 
-.sidenav .closebtn 
-{
-    position: absolute;
-    top: 0;
-    right: 50px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/*@media screen and (max-height: 450px) 
-{
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}*/
-
-
-
+            .sidenav .closebtn 
+            {
+                position: absolute;
+                top: 0;
+                right: 50px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
         </style>
     </head>
     <body manifest="demo.appcache"><br><br><br>
@@ -176,80 +148,78 @@ h1
                 <a href="implinks.html">Imp links</a><br>
         </div>
           
-            <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
           
-            <script>
-                //function landscapewarning()
-                //{
-                //    alert("If using phone , switch to landscape");
-                //}
-                function openNav()
-                {
-                    document.getElementById("mySidenav").style.width = "100%";
-                    //document.getElementById("table-wrapper").style.filter = "blur(8px)";
-                      
-                }
+        <script>
+            //function landscapewarning()
+            //{
+            //    alert("If using phone , switch to landscape");
+            //}
+            function openNav()
+            {
+                document.getElementById("mySidenav").style.width = "100%";
+                //document.getElementById("table-wrapper").style.filter = "blur(8px)";                      
+            }
           
-                function closeNav() 
-                {
-                    document.getElementById("mySidenav").style.width = "0";
-                    //document.getElementById("table-wrapper").style.filter = "blur(0px)";
-                }
-            </script>
-    <h1>BSc I.T. semester 4</h1>
-<!----->
-<div class="d-flex flex-column justify-content-center w-100 h-100">
-
-    <div class="d-flex flex-column justify-content-center align-items-center">
-        
-</div>
-</div>
-<!---->
-
-    <div class="cards-list">
-  
-        <a href="cj.html"><div class="card 1">
-            <div class="card_image"> <img src=".\graphics\CJ.png" /></div>
-            <!--<div class="card_title">
-                <p>CJ</p>
-            </div>-->
-        </div></a><br>
-    
-        <a href="es.html"><div class="card 2">
-        <div class="card_image">
-            <img src=".\graphics\ES.png" />
+            function closeNav() 
+            {
+                document.getElementById("mySidenav").style.width = "0";
+                //document.getElementById("table-wrapper").style.filter = "blur(0px)";
+            }
+        </script>
+        <h1>BSc I.T. semester 4</h1>
+        <!----->
+        <div class="d-flex flex-column justify-content-center w-100 h-100">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+            </div>
         </div>
-        <!--<div class="card_title">
-            <p>ES</p>
-        </div>-->
-        </div></a><br>
-    
-        <a href="se.html"><div class="card 3">
-            <div class="card_image">
-                <img src=".\graphics\SE.png" />
-            </div>
-            <!--div class="card_title">
-                <p>SE</p>
-            </div>-->
-        </div></a><br>
-      
-        <a href="cost.html"><div class="card 4">
-            <div class="card_image">
-                <img src=".\graphics\COST.png" />
-            </div>
-            <!--<div class="card_title">
-                <p>COST</p>
-            </div>-->
-        </div></a><br>
+        <!---->
 
-        <a href="cga.html"><div class="card 4">
-            <div class="card_image">
-                <img src=".\graphics\CGA.png" />
-            </div>
-            <!--<div class="card_title">
-                <p>CGA</p>
-            </div>-->
-        </div></a><br>
-    </div>
-</body>
+        <div class="cards-list">
+            <a href="cj.html"><div class="card 1">
+                <div class="card_image">
+                    <img src=".\graphics\CJ.png" />
+                </div>
+                <!--<div class="card_title">
+                    <p>CJ</p>
+                </div>-->
+            </div></a><br>
+    
+            <a href="es.html"><div class="card 2">
+                <div class="card_image">
+                    <img src=".\graphics\ES.png" />
+                </div>
+                <!--<div class="card_title">
+                    <p>ES</p>
+                </div>-->
+            </div></a><br>
+    
+            <a href="se.html"><div class="card 3">
+                <div class="card_image">
+                    <img src=".\graphics\SE.png" />
+                </div>
+                <!--div class="card_title">
+                    <p>SE</p>
+                </div>-->
+            </div></a><br>
+      
+            <a href="cost.html"><div class="card 4">
+                <div class="card_image">
+                    <img src=".\graphics\COST.png" />
+                </div>
+                <!--<div class="card_title">
+                    <p>COST</p>
+                </div>-->
+            </div></a><br>
+
+            <a href="cga.html"><div class="card 4">
+                <div class="card_image">
+                    <img src=".\graphics\CGA.png" />
+                </div>
+                <!--<div class="card_title">
+                    <p>CGA</p>
+                </div>-->
+            </div></a><br>
+        </div>
+    </body>
 </html>
