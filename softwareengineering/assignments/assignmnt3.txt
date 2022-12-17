@@ -1,0 +1,4 @@
+1) State and explain the emergent systems properties with example
+2) Explain the legacy system with the help of diagram.
+3) Explain safety critical system with the help of diagram
+4) Explain about safety and security of system systems
