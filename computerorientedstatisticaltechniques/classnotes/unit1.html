@@ -8,16 +8,18 @@
     <style>
         body{
             color: rgb(103, 24, 24);
-            background-color: rgba(236, 162, 93, 0.815);
+            background-color: rgba(236, 172, 111, 0.815);
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 20px;
-            margin-left: 50px;
+            margin-left: 10px;
         }
         table, td,th{
             border-collapse:collapse;
-            border: 1px solid brown;
+            border: 1px solid rgb(124, 28, 28);
             padding: 5px;
+            vertical-align: top;
         }
+        
     </style>
 </head>
 <body>
@@ -57,12 +59,17 @@
     <br>wed - 24000
     <br>Find the investment on Thursday and Friday if difference between the investments of Thursday and Friday is 18,000.</p>
     <hr color="black">
+
+   
     <p><h3>Arithematic mean for grouped data : </h3>
-        <hr color="green">
-    1) <u>Discrete data</u>: <br>
+    (not to bewritten in table format, arthmtc mean has two types & to write them side by side, i used tabel)</p>
+        <table>
+            <tr>
+                <td>
+    <p>1) <u>Discrete data</u>: <br>
     <br> Let X take the values x<sub>1</sub>,x<sub>2</sub>......x<sub>n</sub> with the corresponding frequency f<sub>1</sub>,f<sub>2</sub>......f<sub>n</sub> then,
-    <br>to find the arithematic mean we use,
-    <br>&emsp;X&#772 = (&#8721fx)/n ; 
+    <br>to find the arithematic mean we use, <br>
+    <br>&emsp;X&#772 = (&#8721fx)/n ; <br>
     <br> where n is the <u>sum</u> of frequency.
     </p>
     <p><h3>15/12/22</h3>
@@ -152,9 +159,226 @@
         </table>
     <br>sol: -43
     </p>
-    <hr color="green">
-    <p>1) <u>Continuous data</u>:
+    </td>
+    <td>
+    <p>2) <u>Continuous data</u>: <br>
     <br>For continuous data the class interval and corresponding frequencies are given.
+    <br>step1 - find class mark - middle value of class interval <br>
+    <br>&emsp; class mark = (lowerlim + upperlim)/2 <br>
+    <br>step 2 - then we follow the same as discrete data. <br>
+    <br>Ex1. calculate the mean for the following data representing the marks of 100 students
+    <br><table>
+        <tr>
+            <th>marks <br>L - u </th>
+            <th>no.of studs</th>
+            <th>find x</th>
+            <th>find fx</th>
+        </tr>
+        <tr>
+            <td>0-10</td>
+            <td>8</td>
+            <td>5</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>10-20</td>
+            <td>22</td>
+            <td>15</td>
+            <td>330</td>
+        </tr>
+        <tr>
+            <td>20-30</td>
+            <td>40</td>
+            <td>25</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>30-40</td>
+            <td>24</td>
+            <td>35</td>
+            <td>840</td>
+        </tr>
+        <tr>
+            <td>40-50</td>
+            <td>6</td>
+            <td>45</td>
+            <td>270</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>100</td>
+            <td></td>
+            <td>2480</td>
+        </tr>
+    </table>
+    <br>X&#772 = 2480/100 = 24.80 <br>
+
+    <br>Ex2.calculate the average salary of workers using the following information
+    <br>
+    <table>
+        <tr>
+            <th>salary</th>
+            <th>workers</th>
+            <th>find x</th>
+            <th>fx</th>
+        </tr>
+        <tr>
+            <td>10k-20k</td>
+            <td>3</td>
+            <td>15k</td>
+            <td>45k</td>
+        </tr>
+        <tr>
+            <td>20k-30k</td>
+            <td>8</td>
+            <td>25k</td>
+            <td>200k</td>
+        </tr>
+        <tr>
+            <td>30k-35k</td>
+            <td>19</td>
+            <td>32.5k</td>
+            <td>617.5k</td>
+        </tr>
+        <tr>
+            <td>35k-40k</td>
+            <td>17</td>
+            <td>37.5k</td>
+            <td>637.5k</td>
+        </tr>
+        <tr>
+            <td>40k-50k</td>
+            <td>7</td>
+            <td>42.5k</td>
+            <td>297.5k</td>
+        </tr>
+        <tr>
+            <td>45k-50k</td>
+            <td>6</td>
+            <td>47.5k</td>
+            <td>285k</td>
+        </tr>
+    </table>sol :34.708 <br>
+
+    <br>Ex3.for the 50 families t=following info is given
+    <br><table>
+        <tr>
+            <th>cj</th>
+            <th>f</th>
+            <th>x</th>
+            <th>fx</th>
+        </tr>
+        <tr>
+            <td>0-4</td>
+            <td>7</td>
+            <td>12</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>4-8</td>
+            <td>12</td>
+            <td>6</td>
+            <td>72</td>
+        </tr>
+        <tr>
+            <td>8-12</td>
+            <td>x</td>
+            <td>10</td>
+            <td>10x</td>
+        </tr>
+        <tr>
+            <td>12-16</td>
+            <td>y</td>
+            <td>14</td>
+            <td>14y</td>
+        </tr>
+        <tr>
+            <td>16-20</td>
+            <td>6</td>
+            <td>18</td>
+            <td>108</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>25+x+y</td>
+            <td></td>
+            <td>194+10x+14y</td>
+        </tr>
+    </table>
+    <br>find x and y if avg is 9.68
+    <br> sol- x : 15; y : 10
+    </td>
+    </tr>
+    </table><br>
+    <hr color="black"><br>
+    </p>
+    <p>
+        <h3>weighted mean</h3>
+        <br>Let he variable X take the values x<sub>1</sub>,x<sub>2</sub>......x<sub>n</sub>
+        <br>with the corresponding weightage W takes the values w<sub>1</sub>,w<sub>2</sub>......w<sub>n</sub>
+        <br>then weighted mean is given by : <br>
+        <br>X&#772<sub>w</sub> = (&#8721xw)/&#8721w <br>
+        <br>
+        Ex1. two studnets appar for ane exam the weightage of the subjects math, pysics & chemistry is 5:3:2
+        <br>using thw following info decide who is the better with respect to average
+        <br><table>
+            <tr>
+                <th>subject</th>
+                <th>math</th>
+                <th>physics</th>
+                <th>chemistry</th>
+            </tr>
+            <tr>
+                <td>stud A</td>
+                <td>84</td>
+                <td>96</td>
+                <td>72</td>
+            </tr>
+            <tr>
+                <td>student B</td>
+                <td>78</td>
+                <td>98</td>
+                <td>76</td>
+            </tr>
+            <tr>
+                <td>weightage</td>
+                <td>5</td>
+                <td>3</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <br>sol : 
+        <br>for stud A
+        <table>
+            <tr>
+                <th>x</th>
+                <th>w</th>
+                <th>xw</th>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>5</td>
+                <td>420</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>3</td>
+                <td>288</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>2</td>
+                <td>144</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>&#8721w = 10</td>
+                <td>&#8721xw = 852</td>
+            </tr>
+        </table><br>
+        X&#772<sub>w</sub> = (&#8721xw)/&#8721w  = 852/10 = 85.2
+        <br>for stud B : 83.6
+        <br>85.2>83.6 therefore stud A is better
     </p>
 </body>
 </html>
