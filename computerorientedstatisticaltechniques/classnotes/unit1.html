@@ -378,7 +378,195 @@
         </table><br>
         X&#772<sub>w</sub> = (&#8721xw)/&#8721w  = 852/10 = 85.2
         <br>for stud B : 83.6
-        <br>85.2>83.6 therefore stud A is better
+        <br>85.2>83.6 therefore stud A is better <br>
+        <br>Ex2.
+        <table>
+            <tr>
+                <td>x</td>
+                <td>68</td>
+                <td>75</td>
+                <td>84</td>
+                <td>96</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>64</td>
+                <td>77</td>
+                <td>85</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>z</td>
+                <td>67</td>
+                <td>79</td>
+                <td>83</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>w</td>
+                <td>3</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <br>sol- find &#8721w = 10 <br>
+        find xw and &#8721xw <br>
+        apply formula <br>
+    </p>
+    <hr color="black">
+    <p>
+        <h3><u>Median</u></h3>
+        divides the data into two equal parts using single value. <br>
+        <u>median for ungrouped data</u>
+        <br>A---------median-----------B <br>
+        <br> step 1 - first arrange the data in <u>ascending</u> order then count the number of terms.
+        <br><ol style="list-style-type: lower-roman;">
+            <li>if n = odd <br> then median = ((n+1)/2) <sup>th</sup> term</li>
+            <li>if n = even <br> then median = {(n/2)<sup>th</sup>term +  (n/2)+1)<sup>th</sup>term}/2</li>
+        </ol>
+    </p>
+    <p><h3>16/12/22</h3></p>
+    <p><u>Median for grouped data :</u>
+    <br>step 1 - find the cumulative frequency of less than type, then select the mmiddle class i.e. the 1st exceeding the cumulative frequency to the value N/2.
+    <br>The corresponding class is called middle class.
+    <br>for <u>discrete data</u> middle class value is the median.
+    <br>for continuous data to calculate median we use the formulae
+    <br><br> median = l <sub>1</sub> + ((N/2 - cf)/f) * (l<sub>2</sub>-l<sub>1</sub>) <br>
+    <br> Where, l<sub>1</sub> = lower limit of middle class interval;
+    <br>l<sub>2</sub> = upper limit of middle class interval;
+    <br>f = frequency of middle class;
+    <br>cf = cumulative frequency of <b>pre-middle class</b> <br>
+    <br>Ex.1 calculate the median for the following data :
+    <table>
+        <tr>
+            <td>x</td>
+            <td>f</td>
+            <td>find cf</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>7</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>18</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>16</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>10</td>
+            <td>54</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>6</td>
+            <td>60</td>
+        </tr>
+    </table>
+    N/2 = 30; 1st exceeding value to 30 in cf is 44
+    <br> which compund to group 14. 
+    <br>&#8756 median = 14
+    <br><br>Ex2. calculate the median for the following frequency distribution.
+    <table>
+        <tr>
+            <td>CI</td>
+            <td>f</td>
+            <td>cf</td>
+        </tr>
+        <tr>
+            <td>0-20</td>
+            <td>125</td>
+            <td>125</td>
+        </tr>
+        <tr>
+            <td>20-40</td>
+            <td>175</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>40-60</td>
+            <td>250</td>
+            <td>550</td>
+        </tr>
+        <tr>
+            <td>60-80</td>
+            <td>100</td>
+            <td>650</td>
+        </tr>
+        <tr>
+            <td>80-100</td>
+            <td>50</td>
+            <td>700</td>
+        </tr>
+    </table>
+    sol- <br> N=700
+    <br>here, N/2 = 350; so the middle class is the nect exceeding cf value i.i. 40-60.
+    <br> cf = 300 -> cf of the pre-middle class. <br> applying formula we get median = 44. <br>
+    <br>Ex.3 markes of students
+    <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+<style>
+    table.GeneratedTable {
+      width: 100%;
+      background-color: #ffffff;
+      border-collapse: collapse;
+      border-width: 1px;
+      border-color: #000000;
+      border-style: solid;
+      color: #000000;
+    }
+    
+    table.GeneratedTable td, table.GeneratedTable th {
+      border-width: 1px;
+      border-color: #000000;
+      border-style: solid;
+      padding: 0px;
+    }
+    
+    table.GeneratedTable thead {
+      background-color: #ffffff;
+    }
+    </style>
+    
+    <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+    <table>
+        <tr>
+          <th>marks</th>
+          <th>no of students</th>
+        </tr>
+        <tr>
+          <td>0-10</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>10-20</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>20-30</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>30-40</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>40-50</td>
+          <td>7</td>
+        </tr>
+    </table>
+    
     </p>
 </body>
 </html>
