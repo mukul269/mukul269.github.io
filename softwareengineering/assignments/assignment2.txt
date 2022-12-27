@@ -1,5 +1,0 @@
-1. Compare waterfall model and incremental development model.
-2. Differentiate between RAD and spiral model.
-3. Explain how plan driven and agile development can be balanced for the development.
-4. Describe the SCRUM process
-5. Write a short note on Extreme programming
