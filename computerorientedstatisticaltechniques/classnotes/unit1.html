@@ -588,6 +588,129 @@ table, td,th{
         D<sub>k</sub> = L<sub>1</sub> + (((KN/10)-Cf)/f)*(L<sub>2</sub> - L<sub>1</sub>)
     </p><br>
     <p><h3>Percentiles :</h3></p>
-    <p>Divides the data into 100 equal parts using 99 values i.e. P<sub>1</sub> , P<sub>2</sub>. . . . P<sub>99</sub></p>
+    <p>Divides the data into 100 equal parts using 99 values i.e. P<sub>1</sub> , P<sub>2</sub>. . . . P<sub>99</sub>
+    <br><br> Pk, KN/100; &emsp; where K = 1,2,3 . . . 99.
+    <br><br>P<sub>k</sub> = L1 + (((KN/100)-cf)/f)*(L2-L1) <br><br>
+    </p>
+    <p>
+        Ex.1 Calculate all the 3 quartiles of D4 & D7 also, find P36 & P84 <br><br>
+        <table>
+            <tr>
+                <th>C.I.</th>
+                <th>f</th>
+                <th>cf</th>
+            </tr>
+            <tr>
+                <td>0-50</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>50-100</td>
+                <td>8</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>100-150</td>
+                <td>11</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>150-200</td>
+                <td>18</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>200-250</td>
+                <td>24</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td>250-300</td>
+                <td>16</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>300-350</td>
+                <td>12</td>
+                <td>92</td>
+            </tr>
+            <tr>
+                <td>350-400</td>
+                <td>8</td>
+                <td>100</td>
+            </tr>
+        </table>
+        <br>
+        here, N = 100; N/2=50. <br>
+        &#8658; &emsp; for Q1, KN/4 = 1*100/4 = 25
+        <br> Q1 class = 150-200
+        <br> L1 = 150; L2 = 200; f = 18; cf = 22
+        <br> Qk = L1 + (((KN/4)-cf)/f) * (L2 - L1)
+        <br> &#8658; <u>158.33</u>
+    </p>
+    <p>
+        &#8658; &emsp; for Q2, KN/4 = 2*100/4 = 50
+        <br> Q2 class = 200-250;
+        <br> L1 = 200; L2 = 250; f = 24; cf = 40
+        <br> Qk = L1 + (((KN/4)-cf)/f) * (L2 - L1)
+        <br> &#8658; <u>220.83</u>
+    </p>
+    <p>
+        &#8658; &emsp; for Q3, KN/4 = 3*100/4 = 75
+        <br>&#8658; &emsp;<u> Qk = 284.375</u>
+    </p>
+    <p>
+        &#8658; &emsp; for D4, KN/10 = 4*100/10 = 40
+        <br>Dk = L1 + (((KN/10)-cf)/f) * (L2 - L1)
+        <br>&#8658; &emsp; <u>Dk = 200</u>
+    </p>
+    <p><u>D7 = 271.875</u></p>
+    <p>P36; KN/100 = 3600/100 = 36
+        <br>&#8658; &emsp; <u>188.89</u>
+    </p>
+    <p><u>P84 = 316.67</u></p>
+    <p>Ex.2 
+        <br><table>
+            <tr>
+                <th>C.I.</th>
+                <th>f</th>
+            </tr>
+            <tr>
+                <td>0-8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>8-16</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>16-24</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>24-32</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>32-40</td>
+                <td>12</td>
+            </tr>
+        </table>
+    </p>
+    <hr color="black">
+    <p><h3>20/12/22</h3></p><br>
+    <h3><u>MODE</u></h3><br>
+    <p>The number which is repeated maximum number of times is called mode of the data. <br>
+    eg. 2,8,12,7,8,2,15,8; <br>mode is = 8.
+    <br>&#8594; what is the mode of identical ungrouped data ? &#8594; number itself
+    <br><br>
+    In a grouped data all the values are distinct then the mode is : &#8594; does not exist.
+    </p>
+    <p> <u>Mode for grouped data</u><br>
+    <ol>
+        <li>Discrete data</li>
+        <li>Continuous data</li>
+    </ol></p>
 </body>
 </html>
