@@ -701,15 +701,16 @@ table, td,th{
     <hr color="black">
     <p><h3>20/12/22</h3></p><br>
     <h3><u>MODE</u></h3><br>
+    <p> <u># &emsp;Mode for ungrouped data</u><br></p>
     <p>The number which is repeated maximum number of times is called mode of the data. <br>
     eg. 2,8,12,7,8,2,15,8; <br>mode is = 8.
     <br>&#8594; what is the mode of identical ungrouped data ? &#8594; number itself
     <br><br>
     In a grouped data all the values are distinct then the mode is : &#8594; does not exist.
     </p>
-    <p> <u>Mode for grouped data</u><br>
+    <p> <u># &emsp;Mode for grouped data</u><br></p>
     <ol>
-        <li>Discrete data <br>
+        <strong><li><u>Discrete data</u> </strong><br>
             &#8594; the group which contains the maximun frequency is the mode of the data <br> <br>
             e.g.- <br><table>
                 <tr>
@@ -743,8 +744,218 @@ table, td,th{
             </table>
             <br>
             &#8594; Mode -> 17.
-        </li>
-        <li>Continuous data</li>
+        </li><br><br>
+        <li><strong><u>Continuous data</u></strong>
+            <p>To calculate the mdoe for continuous data we follow the following steps :
+                <br><ol><li>select the class which contain maximum frequency. it is called the modal class</li>
+                <li>using the mathematical formula, <br><br>
+                Mode = L<sub>1</sub> + ((f<sub>1</sub> - f<sub>0</sub>)/(2f<sub>1</sub> - f<sub>0</sub> - f<sub>2</sub>)) * (L<sub>2</sub> - L<sub>1</sub>)</li></ol>
+                <br>where; L<sub>1</sub> = lower limit of modal class;
+                &emsp;L<sub>2</sub> = upper limit of modal class;
+                &emsp;f<sub>1</sub> = frequency of <u>modal class</u>
+                &emsp;f<sub>0</sub> = frequency of <u>pre modal class</u>
+                &emsp;f<sub>2</sub> = frequency of <u>post modal class</u>
+                <br><br>                
+            </p>
+            <p>e.g. - calculate the mode for the following data.
+                <br><table>
+                    <tr>
+                        <th>CI</th>
+                        <th>f</th>
+                    </tr>
+                    <tr>
+                        <td>100 - 150</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>150 - 200</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>200 - 250</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>250 - 300</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>300 - 350</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>350 - 400</td>
+                        <td>16</td>
+                    </tr>
+                </table>
+                <br>max frequency = 27. therefore 250 - 300 is the modal class.
+                <br>L<sub>1</sub> = 250. <br>
+                L<sub>2</sub> = 300. <br>
+                f<sub>1</sub> = 40. <br>
+                f<sub>0</sub> = 27 <br>
+                f<sub>2</sub> = 23 <br>
+                <br> &emsp; solve using the formula given above. ans &#8594;<u> 271.60</u> 271.60
+            </p>
+        
+    </p><br><br>
+    <p>Ex.2 (*discontinuous data type question*)
+        <br><table>
+            <tr>
+                <th>Marks</th>
+                <th>no. of students</th>
+            </tr>
+            <tr>
+                <td>10-19</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>20-29</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>30-39</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>40-49</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>50-59</td>
+                <td>12</td>
+            </tr>
+        </table>
+        &emsp;sol-
+        <br>&emsp;as you noticed, the data isnt continuous. so you need to make it continuous first, by taking the difference between the last and first value of 2 classes and dividing that by number of units;
+        <br>here; difference between 2 classes = 1 
+        <br>[class 1 = 10-19; class 2 = 20-29; diff = 20 minus 19 = 1]
+        <br>since number of units = 2, divide the difference by 2. 
+        <br>  i.e. 1/2 = 0.5; add the last class unit by 0.5 and subtract the first class unit by 0.5;
+        <br> so the new continuous class interval is :--
+        <br><table>
+            <tr>
+                <th>cci</th>
+                <th>f</th>
+            </tr>
+            <tr>
+                <td>9.5-19.5</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>19.5-29.5</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>29.5-39.5</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>39.5-49.5</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>49.5-59.5</td>
+                <td>12</td>
+            </tr>
+        </table> sol- <br>
+        here; modal class = 29.5 - 39.5.
+        on solving mode = 34.69.
+    </p><br>
+    <p>
+    <br>Ex.3 Question with data having dissimilar class differences
+        <br><table>
+            <tr>
+                <th>CI</th>
+                <th>f</th>
+            </tr>
+            <tr>
+                <td>0-20</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>20-40</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>40-80</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>80-100</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>100-120</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>120-140</td>
+                <td>4</td>
+            </tr>
+        </table>sol-
+        <br> mode = 88.
+    <br>
+    </p><br><br</br>
+    <p>Ex.4 find the missing frequency if the mode of the data is 28.
+        <br><table>
+            <tr>
+                <th>CI</th>
+                <th>f</th>
+            </tr>
+            <tr>
+                <td>0-10</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>10-20</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>20-30</td>
+                <td>x</td>
+            </tr>
+            <tr>
+                <td>30-40</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>40-50</td>
+                <td>10</td>
+            </tr>
+        </table>
+        sol- <br> since mode is 28, it is between 20-30, therefore modal class has to be 20-30.
+        <br>bow using formula; we find x = 15.
+    </p>
+    </li>
+    </ol>
+    <hr color="black">
+    <hr color="black">
+    <p><h3>24/12/22</h3></p>
+    <p><h3><u>Measure of dispresion😛</u></h3></p>
+    <p>- To measure the variation in a data we use measure of dispersion.
+        <br>- there are two types of measures of dispersion.
+        <br><ol><li>Absolute measure of dispersion</li>
+        <li>Relative measure of dispersion</li></ol>
+    </p>
+    <p><ol>
+        <li>Absolute measure - to find Absolute value of the variation of the data we use absolute measure of dispresion. <br>
+        - there are four methods to calculate absolute meaure of dispersion : <br>
+    <ol style="list-style-type: lower-roman;">
+        <li>range</li>
+        <li>Quartile deviation</li>
+        <li>Mean deviation</li>
+        <li>Standard deviation</li>
+    </ol></li><br>
+    <li>Relative measure of dipersion - similarly to calculate the relative measure of dispersion there are four methods :
+        <ol style="list-style-type: lower-roman;">
+        <li>Coefficient of range</li>
+        <li>Coefficient of deviation</li>
+        <li>Coefficient of mean deviation</li>
+        <li>Coefficient of variation</li></ol>
+    </li>
     </ol></p>
+    <p><table><tr><td>range and coefficient of range  <br>
+    Range = max-min <br>
+    coefficient of range = (max-min)/(max+min)</td></tr></table></p>
 </body>
 </html>
