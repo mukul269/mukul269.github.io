@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatypes & more</title>
+    <style>
+        body{
+            color: rgb(103, 24, 24);
+            background-color: rgba(236, 172, 111, 0.815);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 20px;
+        }
+        table, td,th{
+            border-collapse:collapse;
+            border: 1px solid rgb(124, 28, 28);
+            padding: 5px;
+        }
+        img{
+            margin-right: 10px;
+        }
+        .bits td{ min-width: 30px;
+        }
+    </style>
+</head>
+<body><ol>
+    <li>
+    <h3><u>byte</u></h3><br>
+    Size : 1 byte (8 bits)
+	Range :   - 128 to 127
+    <table class="bits">
+        <tr>
+            <td>(MSB) <br>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>(LSB)</td>
+        </tr>
+    </table><br>
+    <b>MSB</b> - Most Significant Bit (Highest Order Bit) <br>
+	<b>LSB</b> - Least Significant Bit (Lowest Order Bit) <br>
+    <ol>
+        <li>) X = Reversed  <br>
+            Signed bit - 0 is positive and 1 is negative
+    </li>
+        <li>)Remaining 7 bits represents the value</li>
+    </ol><br><br><b>Maximum value = 127</b><br>
+    <table class="bits">
+        <tr>
+            <td>(MSB)<br>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>(LSB) <br>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2<sup>6</sup></td>
+            <td>2<sup>5</sup></td>
+            <td>2<sup>4</sup></td>
+            <td>2<sup>3</sup></td>
+            <td>2<sup>2</sup></td>
+            <td>2<sup>1</sup></td>
+            <td>2<sup>0</sup></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>64 +</td>
+            <td>32 +</td>
+            <td>16 +</td>
+            <td>8 +</td>
+            <td>4 +</td>
+            <td>2 +</td>
+            <td>1 +</td>
+        </tr>
+    </table>=127 <br><br><br><br>
+    <b>Minimum value = -128</b></b><br>
+    <table class="bits">
+        <tr>
+            <td>(MSB)<br>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>(LSB) <br>0</td>
+        </tr>
+        </table><br>
+        =(1000 0000)<sub>2</sub> = -(128)<sub>10</sub>
+        <br><br><br>
+        </li>
+        <li><h3><u>Short</u></h3>
+        <br>Size : 2 bytes (16 bits) <br>
+        Range :  -2<sup>15</sup> to  2<sup>15</sup>-1 <br>
+                             - 32768 to 32767 
+        </li><br><br>
+        <li><h3><u>int</u></h3>
+        <br>Size : 4 bytes (32 bits) <br>
+        Range :  -2<sup>31</sup> to  2<sup>31</sup>-1 <br>
+        - 2147483648 to 2147483647 <br></li>
+
+        <li><h3><u>long</u></h3>
+        <br>Size : 8 bytes (64 bits) <br>
+        Range :  -2<sup>63</sup> to  2<sup>63</sup>-1 <br></li>
+        </ol><br>
+        <hr color="black"><br>
+        <p><h3><u>Keywords</u></h3></p>
+</body>
+</html>
