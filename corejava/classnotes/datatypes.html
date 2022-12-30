@@ -81,7 +81,7 @@
             <td>1 +</td>
         </tr>
     </table>=127 <br><br><br><br>
-    <b>Minimum value = -128</b></b><br>
+    <b>Minimum value = -128</b><br>
     <table class="bits">
         <tr>
             <td>(MSB)<br>1</td>
@@ -98,20 +98,307 @@
         <br><br><br>
         </li>
         <li><h3><u>Short</u></h3>
-        <br>Size : 2 bytes (16 bits) <br>
+        Size : 2 bytes (16 bits) <br>
         Range :  -2<sup>15</sup> to  2<sup>15</sup>-1 <br>
                              - 32768 to 32767 
-        </li><br><br>
+        </li><br>
         <li><h3><u>int</u></h3>
-        <br>Size : 4 bytes (32 bits) <br>
+        Size : 4 bytes (32 bits) <br>
         Range :  -2<sup>31</sup> to  2<sup>31</sup>-1 <br>
         - 2147483648 to 2147483647 <br></li>
 
         <li><h3><u>long</u></h3>
-        <br>Size : 8 bytes (64 bits) <br>
+        Size : 8 bytes (64 bits) <br>
         Range :  -2<sup>63</sup> to  2<sup>63</sup>-1 <br></li>
         </ol><br>
         <hr color="black"><br>
-        <p><h3><u>Keywords</u></h3></p>
+        <p><h3><u>Keywords</u></h3>
+        <br>- In any language, some words are reserved for some meaning or functionality. <br>
+        - If reserved words are associated with some functionality, it is called as keywords. <br>
+        - If reserved words is representing only values, it is called as reserved literals. <br><br>
+        <img src="../../graphics/keywords.jpg" alt="keywords" width="350px" style="margin-left: 20px;"><br><br>
+        <table>
+            <tr><th colspan="6">used keywords (48)</th></tr>
+            <tr>
+                <td>1</td>
+                <td>Keywords for data types (8)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>byte</li>
+                    <li>int</li>
+                    <li>float</li>
+                    <li>boolean</li>
+                    <li>short</li>
+                    <li>long</li>
+                    <li>double</li>
+                    <li>char</li>
+                </ol></td>
+                </tr>
+
+                <tr>
+                <td>2</td>
+                <td>Keywords for flow control (11)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>if</li>
+                    <li>switch</li>
+                    <li>default</li>
+                    <li>do</li>
+                    <li>break</li>
+                    <li>return</li>
+                    <li>else</li>
+                    <li>case</li>
+                    <li>while</li>
+                    <li>for</li>
+                    <li>continue</li>
+                </ol></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Keywords modifiers (11)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>Public</li>
+                    <li>Private</li>
+                    <li>Protected</li>
+                    <li>Static</li>
+                    <li>Abstract</li>
+                    <li>Final</li>
+                    <li>Native</li>
+                    <li>Synchronised(Four objects)</li>
+                    <li>Strictfp (restricts floating point calculations - 1.2v)</li>
+                    <li>Transient (Marks are member variable not to be serialised)</li>
+                    <li>Volatile (the value of the variable will never be cached thread locally)</li>
+                </ol></td>
+                </tr>
+
+                <tr>
+                <td>4</td>
+                <td>Keywords for Exception handling(6)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>try</li>
+                    <li>finally</li>
+                    <li>throws</li>
+                    <li>catch</li>
+                    <li>throw</li>
+                    <li>assert (defines statement)</li>
+                </ol></td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>class related keywords (6)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>Class</li>
+                    <li>Extends</li>
+                    <li>Package</li>
+                    <li>Interface</li>
+                    <li>Implements</li>
+                    <li>Import</li>
+                </ol></td>
+                </tr>
+
+                <tr>
+                <td>6</td>
+                <td>Object related keywords (4)</td>
+                <td><ol style="list-style-type: lower-roman;">
+                    <li>new</li>
+                    <li>Super</li>
+                    <li>This</li>
+                    <li>Instanceof</li>
+                </ol></td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>Return type keyword (1)</td>
+                <td>Void</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>group of named constants (1)</td>
+                <td>enum</td>
+            </tr>
+
+            <tr><th colspan="3">unused keywords (2)</th></tr>
+            <tr>
+                <td>1</td>
+                <td>goto</td>
+                <td>Using this creates several problems in old languages. Hence, banned in Java.</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>const</td>
+                <td>We can use final keyboard instead of const.</td>
+            </tr>
+
+            <tr><td colspan="3"><b>note</b>-If we use unused keywords then compile time error is thrown by jvm</td></tr>
+
+            <tr><th colspan="3">Reserved literals (3)</th></tr>
+            <tr>
+                <td>true</td>
+                <td>false</td>
+                <td>null - default value for object reference</td>
+            </tr>
+        </table>
+        </p>
+        <hr color="black">
+        <br>
+        <h3><u>Data types</u></h3>
+        <img src="../../graphics/javadatatypes.jpg" alt="javadatataypes" width="350px"><br><br>
+        <b><u>integral data type</u></b>
+        <ol>
+            <li><u>byte</u><br></li>
+            <li><u>short</u></li>
+            <li><u>int</u></li>
+            <li><u>long</u></li>
+        </ol> <br><br>
+        <b><u>floating point data type</u></b>
+        <ol>
+            <li><u>float</u><br>
+                Single Precision (5 to 6 decimal place accuracy) <br>
+                Example : 10.0/3 = 3.333333....... <br>
+                Accuracy : Less <br>
+                Size : 4 bytes (32 bits) <br>
+                Range : -3.4e38 to 3.4e38 <br>
+            </li><br>
+            <li><u>double</u><br>
+                Double Precision (14 to 15 decimal place accuracy) <br>
+                Example : 10.0/3 = 3.333333333333333....... <br>
+                Accuracy : More <br>
+                Size : 8 bytes (64 bits)<br>
+                Range : -1.7e38 to 1.7e38<br>
+            </li>
+        </ol><br><br>
+        <b><u>boolean data type</u></b>
+        Size -  N.A. (Not Applicable) <br>
+	    Range - N.A. (Not Applicable) <br><br>
+        <b><u>char data type</u></b>
+        Size - 2 bytes (16 bits) - Java <br>
+	    Range - 0 to 65535 <br><br>
+        <b><u>Note : </u>Size of char in C/C++ is 1 byte) - Interview Question</b><br><br>
+        <table>
+            <tr>
+                <td><br> Q. Why the size of char is different in Java and C/C++?
+                    <br> Ans. <ol>
+                        <li>C/C++ - ASCII code based language  (Less than or equals 256 characters)</li>
+                        <li>Java - Unicode based language  (Greater than 256 characters)</li>
+                    </ol>
+                	</td>
+            </tr>
+        </table>
+        <br><br>
+        <hr color="black"><br>
+        <h3><u>Looping statements</u></h3><br>
+        <ol>
+            <li><u>do loop / do-while loop</u><br>
+                initialization; <br>
+                do<br>
+                {<br>
+                    &emsp;Body of the loop<br>
+                }<br>
+                while (< TestCodition >);<br>
+            </li><br>
+            <li><u>while loop</u><br>
+                initialization; <br>
+                while (< TestCodition >)<br>
+                {<br>
+                    &emsp;Body of the loop<br>
+                }<br>
+            </li><br>
+            <li><u>for loop</u><br>
+                for (< Initialization >;< TestCodition >;< Operation >) <br>
+                    { <br>
+                        &emsp;Body of the loop<br>
+                    }<br>
+                </li>
+        </ol><br>
+        <hr color="black"><br><br>
+        <h3><u>Branching/ Decision Making Statements/ Controls Statements</u></h3>
+        <ol>
+            <li><u>Conditional or Ternary Operator</u><br>
+                < Condition> ? < Exp1> : < Exp2>
+            </li><br>
+            <li><u>If statements</u><br>
+            <br>
+            <ol style="list-style-type: lower-alpha;">
+                <li><u>Simple if statement</u><br>
+                    if(< Test>)<br>
+                        &emsp;Statement;<br>
+                    OR<br>
+                    if(< Test>)<br>
+                    {<br>
+                        &emsp;Statements;<br>
+                    }<br><br>
+                </li>
+                <li><u>) if .... else statement</u><br>
+                    if(< Test>) <br>
+                        {<br>
+                            &emsp;Statements;  // TRUE Block<br>
+                        }<br>
+                        else<br>
+                        {<br>
+                            &emsp;Statements; // FALSE Block<br>
+                        }<br>
+                    </li><br>
+                <li><u>Nesting of if .... else statements</u><br>
+                    if(< Test>) <br>
+                        {<br>
+                            &emsp;if(< Test>)<br>
+                            &emsp;{<br>
+                                &emsp;&emsp;Statements;<br>
+                                &emsp;}<br>
+                                &emsp;else<br>
+                                &emsp;{<br>
+                                    &emsp;&emsp;Statements;<br>
+                                    &emsp;}<br>
+                        }<br>
+                        else<br>
+                        {<br>
+                            &emsp;Statements;<br>
+                        }<br>
+                    </li><br>
+                <li><u>else if Ladder</u><br>
+                    if(< Test1>) <br>
+                        {<br>
+                            &emsp;Statement(s)_1;<br>
+                        } <br>
+                        else if (< Test2>)<br>
+                        {<br>
+                            &emsp;Statement(s)_2;<br>
+                        } <br>
+                        else if (< Test3>)<br>
+                        {<br>
+                            &emsp;Statement(s)_3;<br>
+                        } <br>
+                        else if (< TestN>)<br>
+                        {<br>
+                            &emsp;Statement(s)_N;<br>
+                        }<br>
+                        else<br>
+                        {<br>
+                            &emsp;Default Statement(s);<br>
+                        }<br>
+                    </li>
+            </ol></li><br>
+            <li><u>Switch statements</u><br>
+                switch(< Expression>) <br>
+                    {<br>
+                        &emsp;case < Value1>:<br>
+                        &emsp;&emsp;Statement1;<br>
+                        &emsp;break;<br>
+                        &emsp;case < Value2>:<br>
+                        &emsp;&emsp;Statement2;<br>
+                        &emsp;break;<br>
+                        &emsp;case < ValueN>:<br>
+                        &emsp;&emsp;StatementN;<br>
+                        &emsp;break;<br>
+                        &emsp;default:<br>
+                        &emsp;&emsp;Statement;<br>
+                        &emsp;break;<br>
+                    }<br>
+                </li>
+        </ol>
+
 </body>
 </html>
