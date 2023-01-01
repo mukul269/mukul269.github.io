@@ -23,11 +23,271 @@
     <h3>Assignment 1</h3>
     <p>
         <ol>
-            <li>What is an embedded system?</li>
-            <li>Explain different applications of embedded systems.</li>
-            <li>Explain the various purposes of embedded systems.</li>
-            <li>Explain the different Classifications of embedded systems.</li>
-            <li>Differentiate between microprocessors and microcontrollers.</li>
+            <li><h3>What is an embedded system?</h3>
+                An embedded system is an electronic/electro-mechanical system designed to perform a specific <br>
+                function and is a combination of both hardware and firmware (software).<br>
+                <br> Every embedded system is unique, and the hardware as well as the firmware is highly specialised to<br>
+                the application domain. Embedded systems are becoming an inevitable part of any product or<br>
+                equipment in all fields including household appliances, telecommunications, medical equipment,<br>
+                industrial control, consumer products, etc.<br></li><br><br>
+            
+                <li><h3>Explain different applications of embedded systems.</h3>
+                MAJOR APPLICATION AREAS OF EMBEDDED SYSTEMS <br>
+                <ol>
+                    <li>Consumer electronics: Camcorders, cameras, etc.</li>
+                    <li>Household appliances: Television, DVD players, washing machine, fridge, microwave oven, etc.</li>
+                    <li>Home automation and security systems: Air conditioners, sprinklers, intruder detection alarms,
+                        closed circuit television cameras, fire alarms, etc.</li>
+                    <li>Automotive industry: Anti-lock breaking systems (ABS), engine control, ignition systems,
+                        automatic navigation systems, etc.</li>
+                    <li>Telecom: Cellular telephones, telephone switches, handset multimedia applications, etc.</li>
+                    <li>Computer peripherals: Printers, scanners, fax machines, etc.</li>
+                    <li>Computer networking systems: Network routers, switches, hubs, firewalls, etc.</li>
+                    <li>Healthcare: Different kinds of scanners, EEG, ECG machines etc.</li>
+                    <li>Measurement & Instrumentation: Digital multi meters, digital CROs, logic analyzers PLC
+                        systems, etc.</li>
+                    <li>Banking & Retail: Automatic teller machines (ATM) and currency counters, point of sales (POS)</li>
+                    <li>Card Readers: Barcode, smart card readers, hand held devices, etc.</li>
+                </ol>
+            </li><br><br>
+
+            <li><h3>Explain the various purposes of embedded systems.</h3>
+            <ol>
+                <li>Data Collection/Storage/Representation
+                    <ul>
+                        <li>Embedded systems designed for the purpose of data collection performs acquisition of data from the
+                            external world. </li>
+                        <li>Data collection is usually done for storage, analysis, manipulation and transmission. The term “data”
+                            refers all kinds of information, viz. text, voice, image, video, electrical signals and any other
+                            measurable quantities. Data can be either analog (continuous) or digital (discrete).</li>
+                        <li>Embedded systems with analog data capturing techniques collect data directly in the form of analog
+                            signals whereas embedded systems with digital data collection mechanism converts the analog signal
+                            to corresponding digital signal using analog to digital (A/D) converters and then collects the binary
+                            equivalent of the analog data. If the data is digital, it can be directly captured without any additional
+                            interface by digital embedded systems.
+                            </li>
+                        <li>The collected data may be stored directly in the system or maybe transmitted to some other systems
+                            or it may be processed by the system or it may be deleted instantly after giving a meaningful
+                            representation. These actions are purely dependent on the purpose for which the embedded system is
+                            designed. </li>
+                        <li>Embedded systems designed for pure measurement applications without storage, used in control and
+                            instrumentation domain, collects data and gives a meaningful representation of the collected data by
+                            means of graphical representation or quantity value and deletes the collected data when new data
+                            arrives at the data collection terminal. Analog and digital CROs without storage memory are typical
+                            examples of this. Any measuring equipment used in the medical domain for monitoring without
+                            storage functionality also comes under this category.</li>
+                        <li>Some embedded systems store the collected data for processing and analysis. Such systems
+                            incorporate a built-in/plug-in storage memory for storing the captured data. Some of them give the
+                            user a meaningful representation of the collected data by visual (graphical/quantitative) or audible
+                            means using display units [Liquid Crystal Display (LCD), Light Emitting Diode (LED), etc.]
+                            buzzers, alarms, etc. Examples are: measuring instruments with storage memory and monitoring
+                            instruments with storage memory used in medical applications. Certain embedded systems store the
+                            data and will not give a representation of the same to the user, whereas the data is used for internal
+                            processing.
+                            </li>
+                        <li>A digital camera is a typical example of an embedded system with data collection/storage/
+                            representation of data. Images are captured and the captured image may be stored within the memory
+                            of the camera. The captured image can also be presented to the user through a graphic LCD unit.</li>
+                    </ul>
+                </li><br>
+                <li>Data communication 
+                    <ul>
+                        <li>Embedded data communication systems are deployed in applications ranging from complex
+                            satellite communication systems to simple home networking systems. </li>
+                        <li>The data collected by an embedded terminal may require transferring of the same to some other
+                            system located remotely. The transmission is achieved either by a wire-line medium or by a
+                            wireless medium. </li>
+                        <li>Wire-line medium was the most common choice in all olden days embedded systems. </li>
+                        <li>As technology is changing, wireless medium is becoming the de-facto standard for data
+                            communication in embedded systems. A wireless medium offers cheaper connectivity solutions
+                            and make the communication link free from the hassle of wire bundles. </li>
+                        <li>Data can either be transmitted by analog means or by digital means. Modem industry trends are
+                            settling towards digital communication.
+                            </li>
+                        <li>The data collecting embedded terminal itself can incorporate data communication units like
+                            wireless modules (Bluetooth, ZigBee, Wi-Fi, EDGE, GPRS, etc.) or wire-line modules (RS232C, USB, TCP/IP, PS2, etc.). </li>
+                        <li>Certain embedded systems act as a dedicated transmission unit between the sending and
+                            receiving terminal's, offering sophisticated functionalities like data packetizing, encrypting and
+                            decrypting. Network hubs, routers, switches, etc. are typical examples of dedicated data
+                            transmission embedded systems. They act as mediators in data communication and provide
+                            various features like data security, monitoring etc</li>
+                    </ul>
+                </li><br>
+                <li>Data (signal) processing
+                    <ul>
+                        <li>The data (voice, image, video, electrical signals and other measurable quantities) collected by
+                            embedded systems may be used for various kinds of data processing.</li>
+                        <li>Embedded systems with signal processing functionalities are employed in applications
+                            demanding signal processing like speech coding, synthesis, audio video codec, transmission
+                            applications, etc.</li>
+                        <li>A digital hearing aid is a typical example of an embedded system employing data processing.
+                            Digital hearing aid improves the hearing capacity of hearing impaired persons.</li>
+                    </ul>
+                </li><br>
+                <li>Monitoring
+                    <ul>
+                        <li>Embedded systems falling under this category are specifically designed for monitoring purpose. </li>
+                        <li>Almost all embedded products coming under the medical domain are with monitoring functions
+                            only. </li>
+                        <li>They are used for determining the state of some variables using input sensors. They cannot
+                            impose control over variables. </li>
+                        <li>A very good example is the Electro Cardiogram (ECG) machine for monitoring the heartbeat of a
+                            patient. The machine is intended to do the monitoring of the heartbeat. It cannot impose control
+                            over the heartbeat. The sensors used in ECG are the different electrodes connected to the
+                            patient’s body.</li>
+                        <li>Some other examples of embedded systems with monitoring function are measuring instruments
+                            like digital CRO, digital multimeters, logic analyzers, etc. used in Control & Instrumentation
+                            applications. They are used for knowing (monitoring) the status of some variables like current,
+                            voltage, etc. They cannot control the variables in turn.
+                            </li>
+                    </ul>
+                </li><br>
+                <li>Control
+                    <ul>
+                        <li>Embedded systems with control functionalities impose control over some variables according to
+                            the changes in input variables. </li>
+                        <li>A system with control functionality contains both sensors and actuators.</li>
+                        <li>Sensors are connected to the input port for capturing he changes in environmental variable or
+                            measuring variable.</li>
+                        <li>The actuators connected to the output port are controlled according to the changes in input
+                            variable to put an impact on the controlling variable to bring the controlled variable to the
+                            specified range.</li>
+                        <li>Air conditioner system used in our home to control the room temperature to a specified limit is a
+                            typical example for embedded system for control purpose. An airconditioner contains a room
+                            temperature sensing element (sensor) which may be a thermistor and a handheld unit for setting
+                            up (feeding) the desired temperature. The handheld unit may be connected to the central
+                            embedded unit residing inside the airconditioner through a wireless link or through a wired link.
+                            The air compressor unit acts as the actuator. The compressor is controlled according to the
+                            current room temperature and the desired temperature set by the end user. Here the input variable
+                            is the current room temperature and the controlled variable is also the room temperature. The
+                            controlling variable is cool air flow by the compressor unit. If the controlled variable and input
+                            variable are not at the same value, the controlling variable tries to equalise them through taking
+                            actions on the cool air flow.
+                            </li>
+                    </ul>
+                </li><br>
+                <li>Application specific user interface.
+                    <ul>
+                        <li>These are embedded systems with application-specific user interfaces like buttons, switches,
+                            keypad, lights, bells, display units, etc. </li>
+                        <li>Mobile phone is an example for this. In mobile phone the user interface is provided through the
+                            keypad, graphic LCD module, system speaker, vibration alert, etc.</li>
+                    </ul>
+                </li>
+            </ol>
+            </li><br><br><br>
+            <li><h3>Explain the different Classifications of embedded systems.</h3>
+                It is possible to have a multitude of classifications for embedded systems, based on different criteria. Some
+                of the criteria used in the classification of embedded systems are:
+            <ol>
+                <li>Based on generation</li>
+                <li>Complexity and performance requirements</li>
+                <li>Based on deterministic behaviour</li>
+                <li>Based on triggering</li>
+            </ol><br>
+            The classification based on deterministic system behaviour is applicable for ‘Real Time’ systems. The
+            application/task execution behaviour for an embedded system can be either deterministic or nondeterministic. Based on the execution behaviour, Real Time embedded systems are classified into Hard and
+            Soft. Embedded Systems which are ‘Reactive’ in nature (Like process control systems in industrial control
+            applications) can be classified based on the trigger. Reactive systems can be either event triggered or time
+            triggered. <br><br>
+            <ol>
+                <li><u>Classification Based on Generation</u>
+                <br>This classification is based on the order in which the embedded processing systems evolved from the
+                first version to where they are today. As per this criterion, embedded systems can be classified into: <br>
+            <ol>
+                <li><b>First Generation</b> The early embedded systems were built around 8bit microprocessors like
+                    8085 and Z80, and 4 bit microcontrollers. Simple in hardware circuits with firmware
+                    developed in Assembly code. Digital telephone keypads, stepper motor control units etc. are
+                    examples of this.</li>
+                <li><b>Second Generation</b> These are embedded systems built around 16bit microprocessors and 8
+                    or 16 bit microcontrollers, following the first generation embedded systems. The instruction
+                    set for the second generation processors/controllers were much more complex and powerful
+                    than the first generation processors/controllers. Some of the second generation embedded
+                    systems contained embedded operating systems for their operation. Data Acquisition
+                    Systems, SCADA systems, etc. are examples of second generation embedded systems.</li>
+                <li><b>Third Generation</b> With advances in processor technology, embedded system developers
+                    started making use of powerful 32bit processors and 16bit microcontrollers for their design.
+                    A new concept of application and domain specific processors/controllers like Digital Signal
+                    Processors (DSP) and Application Specific Integrated Circuits (ASICs) came into the picture.
+                    The instruction set of processors became more complex and powerful and the concept of
+                    instruction pipelining also evolved. The processor market was flooded with different types of
+                    processors from different vendors. Processors like Intel Pentium, Motorola 68K, etc. gained
+                    attention in high performance embedded requirements. Dedicated embedded real time and
+                    general purpose operating systems entered into the embedded market. Embedded systems
+                    spread its ground to areas like robotics, media, industrial process control, networking, etc</li>
+                <li><b>Fourth Generation</b> The advent of System on Chips (SoC), reconfigurable processors and
+                    multicore processors are bringing high performance, tight integration and miniaturisation into
+                    the embedded device market. The SoC technique implements a total system on a chip by
+                    integrating different functionalities with a processor core on an integrated circuit. The fourth
+                    generation embedded systems are making use of high performance real time embedded
+                    operating systems for their functioning. Smart phone devices, mobile internet devices
+                    (MIDs), etc. are examples of fourth generation embedded systems.
+                    </li>
+            </ol></li><br>
+                <li><u>Classification Based on Complexity and Performance</u><br>
+                    This classification is based on the complexity and system performance requirements. According to
+                    this classification, embedded systems can be grouped into:
+                    <br>
+                <ol>
+                    <li><b>Small-Scale Embedded Systems</b> Embedded systems which are simple in application needs
+                        and where the performance requirements are not time critical fall under this category. An
+                        electronic toy is a typical example of a small-scale embedded system. Small-scale embedded
+                        systems are usually built around low performance and low cost 8 or 16 bit
+                        microprocessors/microcontrollers. A small-scale embedded system may or may not contain
+                        an operating system for its functioning.</li>
+                    <li><b>Medium-Scale Embedded Systems</b> Embedded systems which are slightly complex in
+                        hardware and firmware (software) requirements fall under this category. Medium-scale
+                        embedded systems are usually built around medium performance, low cost 16 or 32 bit
+                        microprocessors/microcontrollers or digital signal processors. They usually contain an
+                        embedded operating system (either general, purpose or real time operating system) for
+                        functioning.</li>
+                    <li><b>Large-Scale Embedded Systems/Complex Systems Embedded systems</b> which involve
+                        highly complex hardware and firmware requirements fall under this category. They are
+                        employed in mission critical applications demanding high performance. Such systems are
+                        commonly built around high performance 32 or 64 bit RISC processors/controllers or
+                        Reconfigurable System on Chip (RSoC) or multi-core processors and programmable logic
+                        devices. They may contain multiple processors/controllers and co-units/hardware accelerators
+                        for offloading the processing requirements from the main processor of the system.
+                        Decoding/encoding of media, cryptographic function implementation, etc. are examples for
+                        processing requirements which can be implemented using a co-processor/hard- ware
+                        accelerator. Complex embedded systems usually contain a-high performance Real Time
+                        Operating System (RTOS) for task scheduling, prioritization and management.</li>
+                </ol>
+                </li>
+            </ol>
+        </li><br><br><br>
+            <li><h3>Differentiate between microprocessors and microcontrollers.</h3><br>
+                    <table>
+                        <tr>
+                            <th>Microprocessor</th>
+                            <th>microcontroller</th>
+                        </tr>
+                        <tr>
+                            <td>A silicon chip representing A central processing unit which is capable of performing arithmetic as well as logical operations according to predefined set of instructions.</td>
+                            <td>A microcontroller is a highly integrated chip that contains a CPU, scratchpad RAM, special and general purpose register arrays, on CHIP ROM/flash memory for programme storage, timer and interrupt control units and dedicated IO ports.</td>
+                        </tr>
+                        <tr>
+                            <td>It is a dependant unit.It requires combination of other chips like timer, programme and data memory chips, interrupt controllers, etc for functioning.</td>
+                            <td>It is a self content unit and it doesn't require external interrupt controller, timer, UART (universal asynchronous receiver and transmitter), etc for its functioning.</td>
+                        </tr>
+                        <tr>
+                            <td>Most of the time general purpose in design and operation.</td>
+                            <td>Mostly application oriented or domain specific.</td>
+                        </tr>
+                        <tr>
+                            <td>Doesn't contain built in IO port. The IO port functionality needs to be implemented with the help of external programmable peripheral interface chips like 8255.</td>
+                            <td>Most of the processes contains multiple built in IO ports which can be operated as a single 8/16/32 bit port or as individual port pins.</td>
+                        </tr>
+                        <tr>
+                            <td>Targeted for high end markets where performance is important.</td>
+                            <td>Targeted for embedded markets where performance is not so critical.</td>
+                        </tr>
+                        <tr>
+                            <td>Limited power saving options compared to microcontrollers.</td>
+                            <td>Includes a lot of power saving features.</td>
+                        </tr>
+                    </table><br>
+                </li>
         </ol>
     </p>
 </body>
