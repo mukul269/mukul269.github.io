@@ -22,6 +22,3 @@ class Pracs1b
     		}//i     
 	}//main()
 }//class Prac
-
-
-s1b
