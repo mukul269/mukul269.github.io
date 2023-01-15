@@ -22,7 +22,31 @@
 <body>
     <h3>Assignment 2</h3>
     <ol>
-        <li>Explain inheritance along with its types.</li>
+        <li>Explain inheritance along with its types.
+            <br><br>
+            it is a mechanism in which one object acquires all the properties & behaviours of a parent objet <br>
+            The main advantage is reusability and the disadvantag is that the parent and class are tightly coupled. <br>
+            any changes made in the parent class will be reflected in all the corresponding classes. <br>
+            inheritance is one of the cornerstones of object oriented programming because it allows the creation of hierarchy classifications. <br>
+            in the Java terminology, a class that is inherited that is called a superclass and the class that inherits is called a subclass. <br>
+            a subclass inherits all the members defined by superclass and adds its own unique elements. <br>
+            the general form of a class declaration that inherits a superclass, as shown here. <br>
+            class subclass name extends superclass name
+             <br>{
+                <br>// body of class.
+             <br> }
+             <br> types of inheritance are :- <br>
+             1) single inheritance- a class inherits the properties of a single superclass. <br>
+             a->b <br>
+             2) multi level inheritance- when a class extends a class that extends another class. <br>
+             a->b->c <br>
+             3) hierarchal inheritance- multiple child classes inherit the methods of the same parent class. <br>
+             *diagram <br>
+             4) multiple inheritance- subclass inherits more than one superclass. <br>
+             *diagram <br>
+             5) hybrid inheritance- combination of multiple and single inheritance. <br>
+             *diagram
+        </li><br><br><br>
         <li>Design an application for a bank customer giving the following services.
             <ol>
                 <li>Withdrawal.</li>
@@ -37,12 +61,96 @@
             output - one two three five <br>
         </li>
         <li>Write a Java application To explain the following concepts with suitable programmes individually.
-            <br><ol>
-                <li>Foreach loop.</li>
-                <li>Break.</li>
-                <li>Continue.</li>
-                <li>return</li>
-                <li>Classes and objects.</li>
+            <br><ol><br>
+                <li>Foreach loop. <br>
+                in Java for each is used to iterate through elements of arrays and collections, also known as Enhanced for loop. <br>
+                syntax - for(datatype item : array) <br>
+                { <br>
+                    //body <br>
+                } <br>
+                <br>
+                eg  - sum of all elements of an array using for each loop. <br>
+                class main <br>
+                {<br>
+                    public static void main(String[] args)<br>
+                    {<br>
+                        int[] numbers = {3,4,5,6,-5,0,12};<br>
+                        int sum = 0;<br>
+                        for (int number : numbers)<br>
+                        {<br>
+                            sum += number;<br>
+                        }<br>
+                        System.out.println("sum = "+sum);<br>
+                    }<br>
+                    output. -> sum = 25. <br><br><br>
+                </li>
+                <li>Break. <br><br>
+                    public class BreakExample {<br>
+                        public static void main(String[] args) {<br>
+                            for (int i = 1; i <= 10; i++) {<br>
+                                if (i == 5) {<br>
+                                    break;<br>
+                                }<br>
+                                System.out.println(i);<br>
+                            }<br>
+                            System.out.println("Loop stopped at 5.");<br>
+                        }<br>
+                    }<br><br><br>
+                </li>
+                <li>Continue.
+                    <br><br>
+                    public class ContinueExample {<br>
+                        public static void main(String[] args) {<br>
+                            for (int i = 1; i <= 10; i++) {<br>
+                                if (i == 5) {<br>
+                                    continue;<br>
+                                }<br>
+                                System.out.println(i);<br>
+                            }<br>
+                            System.out.println("Loop continued at 5.");<br>
+                        }<br>
+                    }<br><br><br>
+                </li>
+                <li>return
+                    <br><br>
+                    public class ReturnExample {<br>
+                        public static void main(String[] args) {<br>
+                            for (int i = 1; i <= 10; i++) {<br>
+                                if (i == 5) {<br>
+                                    return;<br>
+                                }<br>
+                                System.out.println(i);<br>
+                            }<br>
+                            System.out.println("Loop ended at 5.");<br>
+                        }<br>
+                    }<br><br><br>
+                </li>
+                <li>Classes and objects.
+                    <br><br>
+                    public class Student {<br>
+                        String name;<br>
+                        int age;<br>
+                        <br>
+                        public void displayInfo() {<br>
+                            System.out.println("Name: "+name);<br>
+                            System.out.println("Age: "+age);<br>
+                        }<br>
+                    }<br>
+                    <br>
+                    public class ClassesAndObjectsExample {<br>
+                        public static void main(String[] args) {<br>
+                            Student student1 = new Student();<br>
+                            student1.name = "John";<br>
+                            student1.age = 20;<br>
+                            student1.displayInfo();<br>
+                            <br>
+                            Student student2 = new Student();<br>
+                            student2.name = "Jane";<br>
+                            student2.age = 22;<br>
+                            student2.displayInfo();<br>
+                        }<br>
+                    }<br><br><br>
+                </li>
             </ol>
         </li>
     </ol>
