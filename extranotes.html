@@ -12,6 +12,24 @@
         <h1>you can help by forking and adding the required pdfs and links</h1>
         <br>(pc : Krishna gupta) books available in clg library for sem 4. <br>
         <img src=".\graphics\books1.png"  height="700" width="device-width"></img><br>
-        <img src="graphics\books2.png"  height="700" width="device-width"></img>
+        <img src="graphics\books2.png"  height="700" width="device-width"></img><br>
+        <br>
+        <p><br> while viewing pdf's in a browser copy paste the below code in console to view the pdf in dark mode. <br><br>
+            var cover = document.createElement("div"); <br> 
+let css = ` <br>
+    position: fixed; <br>
+    pointer-events: none; <br>
+    top: 0; <br>
+    left: 0; <br>
+    width: 100vw; <br>
+    height: 100vh; <br>
+    background-color: white; <br>
+    mix-blend-mode: difference; <br>
+    z-index: 1; <br>
+` <br>
+cover.setAttribute("style", css); <br>
+document.body.appendChild(cover);<br>
+<br>
+        </p>
     </body>
 </html>
