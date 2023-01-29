@@ -1,18 +1,27 @@
 # mukul269.github.io
 
-this is a website created for the students of TRCAC BSc IT by Mukul dash
+this is a website created for the students of B.Sc. I.T.
 
-# the folders containing pdf documents are :
-	computergraphicsand animation
+following folders contain all the documents for class notes, practicals, assignments etc :
+	computergraphicsandanimation
 	computerorientedstatisticaltechniques
 	corejava
 	embeddedsystems
 	softwareengineering
+	aptitude
+	
+and these documents are linked in the respective subject pages viz :
+	cj.html
+	es.html
+	se.html
+	cga.html
+	cost.html
+	apti.html
+	
+#features to be added :
+1. a splash screen
+2. a login page.
+3. Feature to allow users to upload files i.e. a plus sign appears on the next blank cell in the same column; on clicking that users are taken to a file upload page where they can upload the doc.
 
-#other changes need to be made have been specified in the extra notes tab
-
-current objectives and issues
-- need to find a way to allow anybody who visits the website to be able to upload 	lecture notes
-- adding a comment box
-- anything typed into the comment box should show up as plain text in another 	tab(sort of like a clipborad). this can help us type in any important piece of 	information that we need to remember.
-- adding a splash screen
+#Any contribution will be helpful🙏🏻
+#thank you
