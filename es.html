@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="styling.css">
     </head>
 
-    <body manifest="demo.appcache"><br><br><br>
+    <body manifest="demo.appcache"  onload="showMessage()" onresize="showMessage()"><br><br><br>
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
                 <a href="javascript:void(0)"  onclick="closeNav()">study hard<br>play harder !</a><br><br>
@@ -31,9 +31,28 @@
                 document.getElementById("mySidenav").style.width = "0";
                 //document.getElementById("table-wrapper").style.filter = "blur(0px)";
             }
+//------------------------------landscape message script---------------------------------------
+            function showMessage() 
+            {
+                if (window.innerHeight > window.innerWidth) 
+                {
+                    document.getElementById("message").style.display = "block";
+                }  
+                else 
+                {
+                    document.getElementById("message").style.display = "none";
+                }
+            }
+//-----------------------------------//message script----------------------------------
+
         </script>  
 
-        <h1>better in landscape &nbsp;&nbsp; <img src=".\graphics\rotate.gif" width="50px" height="50px" style="position:relative" frameBorder="0" class="giphy-embed" allowFullScreen></img></h1>
+<!-----------------------------------landscape message-------------------------------->
+        <div id="message">
+            <h1>Switch to landscape &nbsp;&nbsp; <img src=".\graphics\rotate.gif" width="50px" height="50px" style="position:relative" frameBorder="0" class="giphy-embed" allowFullScreen></img></h1>
+        </div>
+<!------------------------------//message--------------------------------->
+
         <h3>notes-notes from MU, E-next website; papers-pastyear papers,QB and sol; books-reference books; class notes-notes by faculties</h3>
         
         <!--embedded systems-->
