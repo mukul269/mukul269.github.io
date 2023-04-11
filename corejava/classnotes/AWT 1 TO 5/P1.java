@@ -221,50 +221,46 @@ class P6
 
 
 
-//Checkbox and Radio button (CheckboxGroup)
+//Choice and List
 import java.awt.*;  
-class P6
+class P7
 {  
-     	public static void main(String args[])  
-	{  
-       	Frame f= new Frame("Checkbox and Radio button (CheckboxGroup)");  
+	public static void main(String args[])  
+	{           
+        	Frame f= new Frame();  
 
-        	Checkbox chk1, chk2, chk3;
-		chk1 = new Checkbox("Core Java");  
-        	chk1.setBounds(100,100, 100,50); 
- 
-        	chk2 = new Checkbox("DBMS");  
-        	chk2.setBounds(100,140, 50,50);  
+		Label l1=new Label("Select Item");  
+   		l1.setBounds(40,100, 100,30);
+		f.add(l1);
 
-		chk3 = new Checkbox("TOC");  
-        	chk3.setBounds(100,180, 50,50);  
+        	Choice c=new Choice();  
+        	c.setBounds(150,100, 100,75);  
+        	c.add("Vada Pav");  
+        	c.add("Pani Puri");  
+        	c.add("Sev Puri");  
+        	c.add("Dabeli");  
+        	c.add("Samosa");  
+        
+		f.add(c);  
 
-        	f.add(chk1);  
-        	f.add(chk2);  
-		f.add(chk3);  
+		Label l2=new Label("Select Item");  
+   		l2.setBounds(40,200, 100,30);
+		f.add(l2);
 
-		//CheckboxGroup class converts checkbox into radio button
-		CheckboxGroup cbg = new CheckboxGroup();  
-        	Checkbox rbtn1, rbtn2, rbtn3;
-	
-		rbtn1 = new Checkbox("Core Java", cbg, true);    
-        	rbtn1.setBounds(200,100, 100,50);    
+		List lst=new List(5);  
+        	lst.setBounds(150,200, 100,75);  
+        	lst.add("Vada Pav");  
+        	lst.add("Pani Puri");  
+        	lst.add("Sev Puri");  
+        	lst.add("Dabeli");  
+        	lst.add("Samosa");  
+        	f.add(lst);  
 
-        	rbtn2 = new Checkbox("DBMS", cbg, false);    
-        	rbtn2.setBounds(200,140, 50,50);  
-  
-		rbtn3 = new Checkbox("TOC", cbg, false);    
-        	rbtn3.setBounds(200,180, 50,50);  
-
-        	f.add(rbtn1);    
-        	f.add(rbtn2);   
-		f.add(rbtn3);   
-
-        	f.setSize(600,400);  
+        	f.setSize(400,400);  
         	f.setLayout(null);  
         	f.setVisible(true);  
-     	}  
-}  
+	}  
+}   
 
 
 
@@ -273,50 +269,44 @@ class P6
 
 
 
-//Checkbox and Radio button (CheckboxGroup)
+//Menu and MenuItem
 import java.awt.*;  
-class P6
+class P8 
 {  
-     	public static void main(String args[])  
+ 	public static void main(String args[])  
 	{  
-       	Frame f= new Frame("Checkbox and Radio button (CheckboxGroup)");  
-
-        	Checkbox chk1, chk2, chk3;
-		chk1 = new Checkbox("Core Java");  
-        	chk1.setBounds(100,100, 100,50); 
+         	Frame f= new Frame("Menu and MenuItem");  
+         	MenuBar mb=new MenuBar(); 
  
-        	chk2 = new Checkbox("DBMS");  
-        	chk2.setBounds(100,140, 50,50);  
+     		Menu menu=new Menu("File");         		
+		
+     		MenuItem i1=new MenuItem("New");  
+     		MenuItem i2=new MenuItem("Open");  
+     		MenuItem i3=new MenuItem("Save");
 
-		chk3 = new Checkbox("TOC");  
-        	chk3.setBounds(100,180, 50,50);  
+		menu.add(i1);  
+         	menu.add(i2);  
+     		menu.add(i3);  
 
-        	f.add(chk1);  
-        	f.add(chk2);  
-		f.add(chk3);  
+		//Adding Menu inside MenuBar
+		mb.add(menu);  
 
-		//CheckboxGroup class converts checkbox into radio button
-		CheckboxGroup cbg = new CheckboxGroup();  
-        	Checkbox rbtn1, rbtn2, rbtn3;
-	
-		rbtn1 = new Checkbox("Core Java", cbg, true);    
-        	rbtn1.setBounds(200,100, 100,50);    
+		Menu submenu=new Menu("Save As");  
+         	MenuItem i4=new MenuItem("PDF");  
+         	MenuItem i5=new MenuItem("Word");  
+         		  
+         	submenu.add(i4);  
+         	submenu.add(i5);  
 
-        	rbtn2 = new Checkbox("DBMS", cbg, false);    
-        	rbtn2.setBounds(200,140, 50,50);  
-  
-		rbtn3 = new Checkbox("TOC", cbg, false);    
-        	rbtn3.setBounds(200,180, 50,50);  
-
-        	f.add(rbtn1);    
-        	f.add(rbtn2);   
-		f.add(rbtn3);   
-
-        	f.setSize(600,400);  
-        	f.setLayout(null);  
-        	f.setVisible(true);  
-     	}  
-}  
+		//Adding SubMenu inside Menu
+         	menu.add(submenu);  
+         		
+         	f.setMenuBar(mb);  
+         	f.setSize(400,400);  
+         	f.setLayout(null);  
+         	f.setVisible(true);   
+	}  
+}   
 
 
 
