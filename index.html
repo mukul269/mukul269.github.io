@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    body {
+      background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
+      /*background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);*/
+      background-size: 400% 400%;
+      animation: backgroundAnimation 7s ease infinite;
+      overflow: auto;
+      margin-top: 200px;
+
+    }
+
+
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center cards horizontally */
+      align-items: center; /* Center cards vertically */
+      height: 100vh; /* Set container height to full viewport height */
+
+    }
+
+    .card {
+      width:  300px;
+      height:200px;
+      background-color: #1f1f1f;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative];
+      overflow: hidden;
+
+    }
+
+    /* I.T. related content inside the cards */
+    .card .content {
+      padding: 20px;
+      color: #FFFFFF;
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* Card animations on hover and selection */
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (max-width: 600px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center; /* Center cards horizontally in mobile view */
+        height: auto; /* Reset container height for vertical stacking */
+      }
+    }
+
+    /* Define the background animation */
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+  <div class="card-container">
+    <div class="card">
+      <div class="content">
+        <h2>SPM</h2>
+        <p>Software Project Management</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+      <h2>IOT</h2>
+      <p>Internet Of Things</p>
+    </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+      <h2>EJ</h2>
+      <p>Enterprise Java</p>
+    </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+      <h2>AWP</h2>
+      <p>Advanced Web Programming</p>
+    </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+      <h2>AI</h2>
+      <p>Artificial Intelligence</p>
+    </div>
+    </div>
+
+    <div class="card">
+    <div class="content">
+      <h2>PD</h2>
+      <p>Project Disseration</p>
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+    // Optional JavaScript code
+  </script>
+</body>
+</html>
