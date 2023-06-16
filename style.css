@@ -1,0 +1,120 @@
+    body {
+      background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
+      /*background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);*/
+      background-size: 400% 400%;
+      animation: backgroundAnimation 7s ease infinite;
+      overflow: auto;
+      margin-top: 100px;
+
+    }
+
+
+    
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center cards horizontally */
+      align-items: center; /* Center cards vertically */
+      height: 100vh; /* Set container height to full viewport height */
+
+    }
+
+    .card {
+      width:  300px;
+      height:200px;
+      background-color: #1f1f1f;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative];
+      overflow: hidden;
+
+    }
+
+    /* I.T. related content inside the cards */
+    .card .content {
+      padding: 20px;
+      color: #FFFFFF;
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* Card animations on hover and selection */
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (max-width: 600px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center; /* Center cards horizontally in mobile view */
+        height: auto; /* Reset container height for vertical stacking */
+      }
+    }
+
+    /* Define the background animation */
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+
+/*side-nav*/
+
+.sidenav 
+            {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                /*background-color: #111;*/
+                background: rgb(0, 0, 0, 0.70);
+                backdrop-filter: blur(20px);
+                /*-webkit-backdrop-filter: blur( 4px );*/
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .sidenav a 
+            {
+                padding: 8px 8px 8px 8px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 25px;
+                color: #bdbdbd;
+                display: block;
+                transition: 0.3s;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .sidenav a:hover 
+            {
+                transition: 0.2s;
+                color: #ffffff;
+                text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+            }
+
+            .sidenav .closebtn 
+            {
+                position: absolute;
+                top: 0;
+                right: 50px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+
