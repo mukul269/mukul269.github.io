@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>welcome to TY.IT</title>
+</head>
+<style>
+    /* Set a dynamic background */
+    body {
+      background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
+      background-size: 400% 400%;
+      animation: backgroundAnimation 10s ease infinite;
+    }
+    
+    /* Center the text vertically and horizontally */
+    html, body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Style the text */
+    .updating-soon {
+      font-size: 48px;
+      text-align: center;
+      font-family: 'Courier New', monospace;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Add media query for mobile responsiveness */
+    @media (max-width: 768px) {
+      .updating-soon {
+        font-size: 32px;
+      }
+    }
+    
+    /* Define the background animation */
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="updating-soon">Updating Soon</div>
+</body>
+</html>
+
+
+
+
