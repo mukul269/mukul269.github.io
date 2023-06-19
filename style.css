@@ -72,6 +72,7 @@ body {
 /*cards-----------------------------------------------------------------*/
     
 .card-container {
+  margin-top : 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center cards horizontally */
@@ -84,7 +85,7 @@ body {
 }
 
 .card {
-  width:  300px;
+  width:250px;
   height:200px;
   background-color: #1f1f1f;
   margin: 10px;
