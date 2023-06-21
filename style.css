@@ -24,6 +24,15 @@ body {
   margin-bottom: 300px;
 }
 
+
+/* Define the background animation */
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 .header p{
   display: flex;
   flex-direction: column;
@@ -133,13 +142,6 @@ body {
   }
 }
 
-/* Define the background animation */
-@keyframes backgroundAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 
 
 /*side-nav*/
@@ -156,7 +158,7 @@ body {
   backdrop-filter: blur(20px);
   /*-webkit-backdrop-filter: blur( 4px );*/
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.2s;
   padding-top: 60px;
 }
 
@@ -167,15 +169,14 @@ body {
   font-size: 25px;
   color: #bdbdbd;
   display: block;
-  transition: 0.3s;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 .sidenav a:hover{
-  transition: 0.2s;
+  transition: 0.2s ease-in-out;
   color: #ffffff;
-  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+  text-shadow: 0px 0px 6px rgba(255,255,255,2);
 }
 
 .sidenav .closebtn 
