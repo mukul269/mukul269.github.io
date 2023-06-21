@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>links</title>
+    <script src="myscript.js" type="text/javascript"></script>
+    <style type="text/css">
+      .sidenav{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        /*background-color: #111;*/
+        background: rgb(0, 0, 0, 0.70);
+        backdrop-filter: blur(20px);
+        /*-webkit-backdrop-filter: blur( 4px );*/
+        overflow-x: hidden;
+        transition: 0.2s;
+        padding-top: 60px;
+      }
+
+      .sidenav a{
+        padding: 8px 8px 8px 8px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        color: #bdbdbd;
+        display: block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .sidenav a:hover{
+        transition: 0.2s ease-in-out;
+        color: #ffffff;
+        text-shadow: 0px 0px 6px rgba(255,255,255,2);
+      }
+
+      .sidenav .closebtn 
+      {
+        position: absolute;
+        top: 0;
+        right: 50px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      .fademain{
+        animation: fadeIn 0.5s;
+      }
+
+      body {
+        background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
+        /*background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);*/
+        background-size: 400% 400%;
+        animation: backgroundAnimation 6s ease infinite;
+        overflow: auto;
+        margin-top: 100px;
+        margin-bottom: 300px;
+      }
+
+
+      /* Define the background animation */
+      @keyframes backgroundAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .header p, .gmeet p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 50px;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        padding: 30px;
+        margin: 8px;
+        text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+        text-decoration: none;
+      }
+
+      .span{
+        position: relative;
+        margin-top: 2px;
+      }
+
+      .header a{
+        text-decoration: none;
+      }
+
+
+      .header img{
+        width: 30px;
+        margin-left: 3px;
+        margin-top: 5px;
+        position: relative;
+      }
+
+      .header img:hover{
+        transform: scale(1.05);
+        transition: 0.2s ease;
+        text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+        background-color: white;
+        border-radius: 2rem;
+
+      }
+      .header sub, .gmeet sub{
+        font-size: 10px;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        padding: 0px;
+        text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+      }
+
+
+      .content{
+        font-size: 20px;
+      }
+
+      .header hr, .gmeet hr{
+        border: 2px solid white;
+        border-radius: 10px;
+      }
+
+
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center cards horizontally */
+        text-align: center;
+        align-items: center; /* Center cards vertically */
+        height: 100%; /* Set container height to full viewport height */
+      }
+
+      .card-container a{
+        text-decoration: none;
+      }
+
+      .card {
+        width:400px;
+        height:auto;
+        margin-bottom: 20px;
+        background-color: #1f1f1f;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card .content {
+        color: #FFFFFF;
+        font-family: 'Courier New', monospace;
+      }
+
+
+    </style>
+  </head>
+  <body manifest="demo.appcache"> <!---->
+    <div class="fademain"><!--encloses all elements to apply fade in effect-->
+      <div class="header"><!--for title and nav bar toggle switch-->
+        
+        <!--side bar -->
+        <div id="mySidenav" class="sidenav">
+          <!--open and close toggle switch..............................-->
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
+          <a href="javascript:void(0)"  onclick="closeNav()">click to<br>collapse</a><br><br>
+          <hr width="90%" size="1px"><br><br>
+          
+          <!--side bar links............................................-->
+          <a href="links.html">Links</a><br><br>
+          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank">Syllabus</a><br><br>
+          <a href="#">Papers</a><br><br>
+          <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
+          <a href="#">Credit</a><br>
+
+          
+        </div><!--sidebar close-->
+
+        <!--title-->
+        <p>google classroom links<br>
+          <sub>note : youll need to log in or be logged in</sub>
+        </p>
+        <hr width="90%" size="4px"> <a href="index.html"><img src=".\graphics\home.png"></a><br>
+
+        <!--side bar toggle-->
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
+      </div>
+
+
+      <div class="card-container">  <!--encloses all the cards-->
+
+
+        <a href="https://classroom.google.com/c/NjE0MTQzNjA0MTQ2">
+          <div class="card">
+            <div class="content">
+              <h2>IOT</h2>
+              <p>Internet Of Things classroom</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://classroom.google.com/c/NjE0MDAwMDIzNjc5">
+          <div class="card">
+            <div class="content">
+              <h2>EJ</h2>
+              <p>Enterprise Java classroom</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://classroom.google.com/c/NjEzOTgxNTMzNDM3">
+          <div class="card">
+            <div class="content">
+              <h2>AWP</h2>
+              <p>Advanced Web Programming classroom</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://classroom.google.com/c/NjE0MjYyNTk2MjU4">
+          <div class="card">
+            <div class="content">
+              <h2>AI</h2>
+              <p>Artificial Intelligence classroom</p>
+            </div>
+          </div>
+        </a>
+
+
+      </div><!--closing card-container-->
+
+
+
+      <br><br><br>
+      <div class="gmeet">
+        
+          <p>google meet links<br>
+            <sub>note : youll need to log in or be logged in</sub>
+          </p>
+        <hr width="90%" size="4px"><br>
+      </div>
+
+      <div class="card-container">  <!--encloses all the cards-->
+
+        <a href="https://meet.google.com/ggw-wfbr-kmi">
+          <div class="card">
+            <div class="content">
+              <h2>AWP</h2>
+              <p>Advanced Web Programming gmeet</p>
+            </div>
+          </div>
+        </a>
+
+      </div><!--closing card-container-->
+
+      <script>
+        // Optional JavaScript code
+      </script>
+
+    </div>
+  </body>
+</html>
