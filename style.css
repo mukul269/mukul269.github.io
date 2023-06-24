@@ -144,7 +144,7 @@ body {
 
 
 
-/*side-nav*/
+/*side-nav---------------------------------------------------------------*/
 
 .sidenav{
   height: 100%;
@@ -188,4 +188,69 @@ body {
   margin-left: 50px;
 }
 
+
+/*table--------------------------------------------------------------------*/
+
+.table-wrapper
+{
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.5 );
+    border-radius: 2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.fl-table 
+{
+    border-radius: 2rem;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: pre-line;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th 
+{
+    text-align: center;
+    padding: 8px;
+    word-wrap: break-word;
+}
+
+.fl-table td 
+{
+    border-right: 0px solid #f8f8f8;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.fl-table thead th 
+{
+    color: #ffffff;
+    background: #000000;
+}
+
+
+.fl-table tr{
+  background: #4B1230;
+  color: white;
+  text-decoration: none;
+}
+
+.table-wrapper fl-table tbody tr td{
+  text-decoration: none;
+}
+
+.fl-table tr:nth-child(even) 
+{
+    background: #F8F8F8;
+}
+
+                                                                                /* Responsive */
 
