@@ -230,26 +230,33 @@ body {
     word-wrap: break-word;
 }
 
-.fl-table thead th 
+.fl-table thead th
 {
     color: #ffffff;
     background: #000000;
+
 }
 
+.fl-table thead tr{
+      border-radius: 2rem;
+}
 
 .fl-table tr{
-  background: #4B1230;
+  background: #333333;
   color: white;
   text-decoration: none;
 }
 
-.table-wrapper fl-table tbody tr td{
-  text-decoration: none;
+#notelink
+{
+    text-decoration: none;
+    color: white;
 }
+
 
 .fl-table tr:nth-child(even) 
 {
-    background: #F8F8F8;
+    background: #222222;
 }
 
                                                                                 /* Responsive */
