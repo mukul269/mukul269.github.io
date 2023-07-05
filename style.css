@@ -15,6 +15,7 @@
 }
 
 body {
+  user-select: none;
   background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
   /*background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);*/
   background-size: 400% 400%;
