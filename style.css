@@ -52,6 +52,7 @@ body {
 .span{
   position: relative;
   margin-top: 2px;
+  color: white;
 }
 
 .header a{
