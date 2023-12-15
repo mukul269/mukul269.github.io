@@ -1,1 +1,718 @@
-hello, this is a test
+Single led blink
+—----------------------------------------
+1. LED
+2. Resistor
+3. Connecting wires
+4. Breadboard
+
+
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setmode(GPIO.BCM)
+
+ledPin = 22
+
+GPIO.setup(ledPin,GPIO.OUT)
+GPIO.output(ledPin, False)
+
+Try:
+while True:
+GPIO.output(ledPin, True)
+print("LED ON")
+sleep(1)
+GPIO.output(ledPin, False]
+print("LED OFF")
+sleep(1)
+finally:
+#reset the GPIO Pins
+GPIO.output(ledPin, False)
+GPIO.cleanup()
+#end of code
+********************************************************************************
+8 led pattern
+—-----------------------------------
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BOARD)
+led1 = 29
+led2 = 31
+led3 = 33
+led4 = 35
+led5 = 36
+led6 = 37
+led7 = 38
+led8 = 40
+
+# setup the ledPin(i.e. GPIO22) as output
+GPIO.setup(led1, GPIO.OUT)
+GPIO.setup(led2, GPIO.OUT)
+GPIO.setup(led3, GPIO.OUT)
+GPIO.setup(led4, GPIO.OUT)
+GPIO.setup(led5, GPIO.OUT)
+GPIO.setup(led6, GPIO.OUT)
+GPIO.setup(led7, GPIO.OUT)
+GPIO.setup(led8, GPIO.OUT)
+GPIO.output(led1, False)
+GPIO.output(led2, False)
+GPIO.output(led3, False)
+GPIO.output(led4, False)
+GPIO.output(led5, False)
+GPIO.output(led6, False)
+GPIO.output(led7, False)
+GPIO.output(led8, False)
+
+def ledpattern(ledVal1, ledVal2, ledVal3, ledVal4, ledVal5, ledVal6, ledVal7, ledVal8):
+    GPIO.output(led1, ledVal1)
+    GPIO.output(led2, ledVal2)
+    GPIO.output(led3, ledVal3)
+    GPIO.output(led4, ledVal4)
+    GPIO.output(led5, ledVal5)
+    GPIO.output(led6, ledVal6)
+    GPIO.output(led7, ledVal7)
+    GPIO.output(led8, ledVal8)
+
+def patternOne():
+    for i in range(0, 3):
+        ledpattern(1, 0, 1, 0, 1, 0, 1, 0)
+        time.sleep(1)
+        ledpattern(0, 1, 0, 1, 0, 1, 0, 1)
+        time.sleep(1)
+
+def patternTwo():
+    for i in range(0, 5):
+        ledpattern(1, 0, 0, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 1, 0, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 1, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 1, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 1, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 0, 1, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 0, 0, 1, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 0, 0, 0, 1)
+        time.sleep(0.1)
+
+def patternThree():
+    for i in range(0, 5):
+        ledpattern(0, 0, 0, 0, 0, 0, 0, 1)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 0, 0, 1, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 0, 1, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 0, 1, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 0, 1, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 0, 1, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(0, 1, 0, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+        ledpattern(1, 0, 0, 0, 0, 0, 0, 0)
+        time.sleep(0.1)
+
+def patternFour():
+    for i in range(0, 5):
+        ledpattern(0, 1, 1, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 0, 1, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 0, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 0, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 0, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 1, 0, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 1, 1, 0, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 1, 1, 1, 0)
+        time.sleep(0.1)
+
+def patternFive():
+    for i in range(0, 5):
+        ledpattern(1, 1, 1, 1, 1, 1, 1, 0)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 1, 1, 0, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 1, 0, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 1, 0, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 1, 0, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 1, 0, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(1, 0, 1, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+        ledpattern(0, 1, 1, 1, 1, 1, 1, 1)
+        time.sleep(0.1)
+
+try:
+    while True:
+        patternOne()
+        patternTwo()
+        patternThree()
+        patternFour()
+        patternFive()
+
+finally:
+    # reset the GPIO Pins
+    GPIO.cleanup()
+
+*****************************************************************************
+Oscilloscope
+—-------------------------------
+1. Raspberry pi 2 (or any other model)
+2. 8 or 16GB SD Card
+3. LAN/Ethernet Cable
+4. Power Supply or USB cable
+5. ADS1115 ADC
+6. 10k or 1k resistor
+7. Jumper wires
+8. Breadboard
+9. Monitor or any other way of seeing the pi's Desktop(VNC inclusive)
+
+
+ADS1115 and Raspberry Pi Connections:
+1. VDD-3.3v
+2. GND-GND
+3. SDA-SDA
+4. SCL-SCL
+
+Step 1: Enable Raspberry Pi I2C interface
+sudo raspi-config
+When the configuration panels open, select interface options, select 12C and click enable.
+
+Step 2: Update the Raspberry pi
+sudo apt-get update
+sudo apt-get upgrade
+
+Step 3: Install the Adafruit ADS1115 library for ADC
+Adafruit python module for the ADS115 chip. Ensure you are in the Raspberry Pi home directory by running;
+cd~
+
+then install the build-essentials by running;
+sudo apt-get install build-essential python-dev python-smbus git
+Next, clone the Adafruit git folder for the library by running;
+git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
+
+Change into the cloned file's directory and run the setup file;
+cd Adafruit_Python_ADS1x1z
+sudo python setup.py install
+
+Step 4: Test the library and 12C communication.
+While still in the Adafruit_Python_ADS1x15 folder, change directory to the examples directory by
+Running: cd examples
+
+Next,
+python simpletest.py
+
+Youll see a diagram
+
+Step 5: Install Matplotlib
+in python,runn:
+sudo apt-get install python-matplotlib
+
+Step6: Install the Drawnow python module
+sudo apt-get install python-pip
+
+install the drawnow package by running:
+sudo pip install drawnow
+
+Create a python file and paste the code:
+import time
+import matplotlib.pyplot as plt
+from drawnow import *
+import Adafruit_ADS1x15
+
+# Create an ADS1115 ADC (16-bit) instance.
+adc = Adafruit_ADS1x15.ADS1115()
+
+GAIN = 1
+val = []
+cnt = 0
+plt.ion()
+
+# Start continuous ADC conversions on channel 0 using the previous gain value.
+adc.start_adc(0, gain=GAIN)
+print('Reading ADS1x15 channel 0')
+
+# create the figure function
+def makeFig():
+    plt.ylim(-5000, 5000)
+    plt.title('Oscilloscope')
+    plt.grid(True)
+    plt.ylabel('ADC outputs')
+    plt.plot(val, 'ro-', label='Channel 0')
+    plt.legend(loc='lower right')
+
+while True:
+    # Read the last ADC conversion value and print it out.
+    value = adc.get_last_result()
+    print('Channel 0: {0}'.format(value))
+    
+    # Sleep for half a second.
+    time.sleep(0.5)
+    val.append(int(value))
+    drawnow(makeFig)
+    plt.pause(0.000001)
+    cnt = cnt + 1
+
+    if cnt > 50:
+        val.pop(0)
+
+********************************************************************************************
+RFID
+—--------------------
+Components Required
+• Raspberry Pi 3 Model B
+• EM-18 RFID Reader Module
+• RS232 – to – USB Adapter (as my RFID Reader has only RS232 Output)
+• Few RFID Cards or RFID Tag
+• Power Supply for RFID Reader (my RFID Reader has a 5V Regulator)
+• 5V Supply for Raspberry Pi and RS232-USB Adapter
+• Connecting Wires
+• 680Ω Resistor (1/4 Watt)
+• 1.5KΩ Resistor (1/4 Watt)
+Code:
+For writing data into card:
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
+
+reader = SimpleMFRC522()
+
+try:
+    text = input('New data:')
+    print("Now place your tag to write")
+    reader.write(text)
+    print("Written")
+finally:
+    GPIO.cleanup()
+
+
+For reading data from card:
+
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
+
+reader = SimpleMFRC522()
+
+try:
+    id, text = reader.read()
+    print(id)
+    print(text)
+finally:
+    GPIO.cleanup()
+
+*******************************************************************************************
+Camera
+—-----------------------------
+Components Required:
+1. Raspberry Pi
+2. Pi camera
+3. 16x2 LCD
+4. DC Motor
+5. IC L293D
+6. Buzzer
+7. LED
+8. Bread Board
+9. Resistor (1k,10k)
+10. Capacitor (100nF)
+11. Push Button
+12. Connecting wires
+13. 10k Pot
+
+import RPi.GPIO as gpio
+import picamera
+import time
+
+m11 = 17
+m12 = 27
+led = 5
+buz = 26
+button = 19
+RS = 18
+EN = 23
+D4 = 24
+D5 = 16
+D6 = 20
+D7 = 21
+
+HIGH = 1
+LOW = 0
+
+gpio.setwarnings(False)
+gpio.setmode(gpio.BCM)
+
+gpio.setup(RS, gpio.OUT)
+gpio.setup(EN, gpio.OUT)
+gpio.setup(D4, gpio.OUT)
+gpio.setup(D5, gpio.OUT)
+gpio.setup(D6, gpio.OUT)
+gpio.setup(D7, gpio.OUT)
+gpio.setup(led, gpio.OUT)
+gpio.setup(buz, gpio.OUT)
+gpio.setup(m11, gpio.OUT)
+gpio.setup(m12, gpio.OUT)
+gpio.setup(button, gpio.IN)
+
+gpio.output(led, 0)
+gpio.output(buz, 0)
+gpio.output(m11, 0)
+gpio.output(m12, 0)
+
+data = ""
+
+def capture_image():
+    lcdcmd(0x01)
+    lcdprint("Please Wait..")
+    data = time.strftime("%d_%b_%Y_%H:%M:%S")
+    camera.start_preview()
+    time.sleep(5)
+    print(data)
+    camera.capture(f'/home/pi/Desktop/Visitors/{data}.jpg')
+    camera.stop_preview()
+    lcdcmd(0x01)
+    lcdprint("Image Captured")
+    lcdcmd(0xc0)
+    lcdprint(" Successfully ")
+    time.sleep(2)
+
+def gate():
+    lcdcmd(0x01)
+    lcdprint(" Welcome ")
+    gpio.output(m11, 1)
+    gpio.output(m12, 0)
+    time.sleep(1.5)
+    gpio.output(m11, 0)
+    gpio.output(m12, 0)
+    time.sleep(3)
+    gpio.output(m11, 0)
+    gpio.output(m12, 1)
+    time.sleep(1.5)
+    gpio.output(m11, 0)
+    gpio.output(m12, 0)
+    lcdcmd(0x01)
+    lcdprint(" Thank You ")
+    time.sleep(2)
+
+def begin():
+    lcdcmd(0x33)
+    lcdcmd(0x32)
+    lcdcmd(0x06)
+    lcdcmd(0x0C)
+    lcdcmd(0x28)
+    lcdcmd(0x01)
+    time.sleep(0.0005)
+
+def lcdcmd(ch):
+    gpio.output(RS, 0)
+    gpio.output(D4, 0)
+    gpio.output(D5, 0)
+    gpio.output(D6, 0)
+    gpio.output(D7, 0)
+    if ch & 0x10 == 0x10:
+        gpio.output(D4, 1)
+    if ch & 0x20 == 0x20:
+        gpio.output(D5, 1)
+    if ch & 0x40 == 0x40:
+        gpio.output(D6, 1)
+    if ch & 0x80 == 0x80:
+        gpio.output(D7, 1)
+    gpio.output(EN, 1)
+    time.sleep(0.005)
+    gpio.output(EN, 0)
+    # Low bits
+    gpio.output(D4, 0)
+    gpio.output(D5, 0)
+    gpio.output(D6, 0)
+    gpio.output(D7, 0)
+    if ch & 0x01 == 0x01:
+        gpio.output(D4, 1)
+    if ch & 0x02 == 0x02:
+        gpio.output(D5, 1)
+    if ch & 0x04 == 0x04:
+        gpio.output(D6, 1)
+    if ch & 0x08 == 0x08:
+        gpio.output(D7, 1)
+    gpio.output(EN, 1)
+    time.sleep(0.005)
+    gpio.output(EN, 0)
+
+def lcdwrite(ch):
+    gpio.output(RS, 1)
+    gpio.output(D4, 0)
+    gpio.output(D5, 0)
+    gpio.output(D6, 0)
+    gpio.output(D7, 0)
+    if ch & 0x10 == 0x10:
+        gpio.output(D4, 1)
+    if ch & 0x20 == 0x20:
+        gpio.output(D5, 1)
+    if ch & 0x40 == 0x40:
+        gpio.output(D6, 1)
+    if ch & 0x80 == 0x80:
+        gpio.output(D7, 1)
+    gpio.output(EN, 1)
+    time.sleep(0.005)
+    gpio.output(EN, 0)
+    # Low bits
+    gpio.output(D4, 0)
+    gpio.output(D5, 0)
+    gpio.output(D6, 0)
+    gpio.output(D7, 0)
+    if ch & 0x01 == 0x01:
+        gpio.output(D4, 1)
+    if ch & 0x02 == 0x02:
+        gpio.output(D5, 1)
+    if ch & 0x04 == 0x04:
+        gpio.output(D6, 1)
+    if ch & 0x08 == 0x08:
+        gpio.output(D7, 1)
+    gpio.output(EN, 1)
+    time.sleep(0.005)
+    gpio.output(EN, 0)
+
+def lcdprint(Str):
+    l = 0
+    l = len(Str)
+    for i in range(l):
+        lcdwrite(ord(Str[i]))
+
+begin()
+lcdcmd(0x01)
+lcdprint("Visitor Monitoring")
+lcdcmd(0xc0)
+lcdprint(" Using RPI ")
+time.sleep(3)
+lcdcmd(0x01)
+lcdprint("Circuit Digest")
+lcdcmd(0xc0)
+lcdprint("Saddam Khan")
+time.sleep(3)
+lcdcmd(0x01)
+camera = picamera.PiCamera()
+camera.rotation = 180
+camera.awb_mode = 'auto'
+camera.brightness = 55
+lcdcmd(0x01)
+lcdprint(" Please Press ")
+lcdcmd(0xc0)
+lcdprint(" Button ")
+time.sleep(2)
+
+while 1:
+    d = time.strftime("%d %b %Y")
+    t = time.strftime("%H:%M:%S")
+    lcdcmd(0x80)
+    lcdprint("Time: %s" % t)
+    lcdcmd(0xc0)
+    lcdprint("Date:%s" % d)
+    gpio.output(led, 1)
+
+    if gpio.input(button) == 0:
+        gpio.output(buz, 1)
+        gpio.output(led, 0)
+        time.sleep(0.5)
+        gpio.output(buz, 0)
+        capture_image()
+        gate()
+        time.sleep(0.5)
+
+*****************************************************************************************
+Telegram
+—-----------------------------
+https://web.telegram.org/
+
+Enter your number and click Next.
+
+Type BotFather
+Select BotFather chat
+Click Start
+
+Type /newbot
+
+Enter a unique bot name twice.
+
+Note HTTP API.
+
+Install telepot package
+
+sudo pip3 install telepot
+sudo pip install telepot
+
+import time
+import telepot
+import RPi.GPIO as GPIO
+from telepot.loop import MessageLoop
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(40, GPIO.OUT)
+
+def handle(msg):
+    chat_id = msg['chat']['id']
+    command = msg['text']
+
+    print('Got command: %s' % command)
+    bot.sendMessage(chat_id, "Command received")
+
+    if command == '/on':
+        print('on')
+        GPIO.output(40, GPIO.HIGH)
+    elif command == '/off':
+        print('off')
+        GPIO.output(40, GPIO.LOW)
+
+bot = telepot.Bot('HTTP-API')  # Replace HTTP-API with your bot's HTTP-API
+MessageLoop(bot, handle).run_as_thread()
+print('I am listening ... ')
+
+while 1:
+    time.sleep(10)
+# Program ends
+
+
+*****************************************************************************************
+Windows installation
+—-----------------------------
+1. Raspberry Pi 3.
+2. 5V 2A microUSB power supply.
+3. 8GB or larger Class 10 microSD card with full-size SD adapter.
+4. HDMI cable.
+5. Access to a PC.
+6. USB WiFi adapter (older models of Raspberry Pi) or Ethernet cable.
+
+Steps
+1. Go to the Windows 10 developer center.
+2. Click Get Windows 10 IoT Core Dashboard to download the necessary application.
+
+*****************************************************************************************
+clock/7 segment display
+—----------------------------------
+1. TM1637 4-digit seven segment Display board
+2. Connecting wires
+
+Wiring up your Circuit:
+1. Connect the Pin2 (5V) of Rpi to Vcc pin of Module
+2. Connect Pin 6 (GND) of Rpi to GND of Module
+3. Connect Pin38 (GPIO20) of Rpi to DIO of Module
+4. Lastly connect Pin 40 (GPIO21) of Rpi to CLK of Module
+
+1. Now to download libraries, open Web Browser on your Raspberry Pi and log on to the
+following link: https://github.com/timwaizenegger/raspberrypi-examples/tree/master/actor-led-7segment-4numbers. 
+Click on the actor-led-7segment-4numbers.zip folder and Now click on Download Button 
+3. Unzip the file and try to execute the different example codes present in that folder in Python 2 ldle.
+4. Now open Python 2 Idle, create a new file, write the code given below and save it in the
+same folder i.e. actor-led-7segment-4numbers since the code below is depended on
+tm1637.py file which is present in the same folder.
+
+# Program to display Time on 4-digit Seven segment display
+from time import sleep
+import tm1637
+
+try:
+    import thread
+except ImportError:
+    import _thread as thread
+
+# Initialize the clock (GND, VCC=3.3V, Example Pins are DIO-20 and CLK21)
+Display = tm1637.TM1637(CLK=21, DIO=20, brightness=1.0)
+
+try:
+    print("Starting clock in the background (press CTRL + C to stop):")
+    Display.StartClock(military_time=True)
+    Display.SetBrightness(1.0)
+    while True:
+        Display.ShowDoublepoint(True)
+        sleep(1)
+        Display.ShowDoublepoint(False)
+        sleep(1)
+
+    Display.StopClock()
+    thread.interrupt_main()
+
+except KeyboardInterrupt:
+    print("Properly closing the clock and open GPIO pins")
+    Display.cleanup()
+
+
+
+
+*****************************************************************************************
+gps
+—-----------------------------
+Required Components:
+1. Raspberry Pi 3
+2. Neo 6m v2 GPS Module
+3. 16 x 2 LCD
+4. Power source for the Raspberry Pi
+5. LAN cable to connect the pi to your PC in headless mode
+6. Breadboard and Jumper cables
+7. Resistor / potentiometer to the LCD
+8. Memory card 8 or 16Gb running Raspbian Jessie
+8 Installing Windows 10 IoT Core on Raspberry Pi
+
+import time
+import serial
+import string
+import pynmea2
+import RPi.GPIO as gpio
+import Adafruit_CharLCD as LCD
+
+gpio.setmode(gpio.BCM)
+
+# declaring LCD pins
+lcd_rs = 17
+lcd_en = 18
+lcd_d4 = 27
+lcd_d5 = 22
+lcd_d6 = 23
+lcd_d7 = 10
+lcd_backlight = 2
+lcd_columns = 16  # Lcd column
+lcd_rows = 2  # number of LCD rows
+
+lcd = LCD.Adafruit_CharLCD(
+    lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows, lcd_backlight
+)
+
+port = "/dev/ttyAMA0"  # the serial port to which the pi is connected.
+
+# create a serial object
+ser = serial.Serial(port, baudrate=9600, timeout=0.5)
+
+while 1:
+    try:
+        data = ser.readline()
+    except:
+        print("loading")
+
+    # wait for the serial port to churn out data
+    if data[0:6] == "$GPGGA":  # the long and lat data are always contained in the GPGGA string of the NMEA data
+        msg = pynmea2.parse(data)
+
+        # parse the latitude and print
+        latval = msg.lat
+        concatlat = "lat:" + str(latval)
+        print(concatlat)
+        lcd.set_cursor(0, 0)
+        lcd.message(concatlat)
+
+        # parse the longitude and print
+        longval = msg.lon
+        concatlong = "long:" + str(longval)
+        print(concatlong)
+        lcd.set_cursor(0, 1)
+        lcd.message(concatlong)
+
+    time.sleep(0.5)  # wait a little before picking the next data.
