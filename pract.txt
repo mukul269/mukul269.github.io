@@ -274,17 +274,44 @@ while True:
 RFID
 —--------------------
 Components Required
-• Raspberry Pi 3 Model B
-• EM-18 RFID Reader Module
-• RS232 – to – USB Adapter (as my RFID Reader has only RS232 Output)
-• Few RFID Cards or RFID Tag
-• Power Supply for RFID Reader (my RFID Reader has a 5V Regulator)
-• 5V Supply for Raspberry Pi and RS232-USB Adapter
-• Connecting Wires
-• 680Ω Resistor (1/4 Watt)
-• 1.5KΩ Resistor (1/4 Watt)
+Raspberry Pi
+. Micro SD Card
+. Power Supply
+RC522 RFID Reader
+· Breadboard
+Breadboard Wire
+· Raspberry Pi Case
+· Ethernet Cable or Wi-Fi
+
+
+· SDA connects to Pin 24 .-
+. SCK connects to Pin 23. -
+· MOSI connects to Pin 19 .~
+. MISO connects to Pin 21.
+· GND connects to Pin 6. -
+. RST connects to Pin 22.
+· 3.3v connects to Pin 1.
+
+
+
+Sudo raspi-config
+5 interfacing option->enter
+P4 spi->yes
+
+Sudo reboot
+(if spi module not activated then execute this else skip- sudo nano /boot/config.txt
+
+Uncomment - "dtparam=spi=on")
+
+sudo apt install python3-dev python3-pip
+
+sudo pip3 install spidev
+
+sudo pip3 install mfrc522
+
 Code:
 For writing data into card:
+
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 
@@ -316,217 +343,48 @@ finally:
 *******************************************************************************************
 Camera
 —-----------------------------
-Components Required:
-1. Raspberry Pi
-2. Pi camera
-3. 16x2 LCD
-4. DC Motor
-5. IC L293D
-6. Buzzer
-7. LED
-8. Bread Board
-9. Resistor (1k,10k)
-10. Capacitor (100nF)
-11. Push Button
-12. Connecting wires
-13. 10k Pot
+Hardware requirements
+Camera module
+Initial raspberry pi setup
 
-import RPi.GPIO as gpio
-import picamera
-import time
+The Raspberry Pi Camera Board Features:
+1. Fully Compatible with Both the Model A and Model B Raspberry Pi
+2. 5MP Omnivision 5647 Camera Module
+3. Still Picture Resolution: 2592 x 1944
+4. Video: Supports 1080p @ 30fps, 720p @ 60fps and 640x480p 60/90 Recording
+5. 15-pin MIPI Camera Serial Interface - Plugs Directly into the Raspberry Pi Board
+6. Size: 20 x 25 x 9mm
+7.weight 3g
+8. Fully Compatible with many Raspberry Pi cases
 
-m11 = 17
-m12 = 27
-led = 5
-buz = 26
-button = 19
-RS = 18
-EN = 23
-D4 = 24
-D5 = 16
-D6 = 20
-D7 = 21
+Connect the Camera Module:
+with the Pi switched off, you'll need to connect the Camera Module to the Raspberry Pi's
+camera port, then start up the Pi and ensure the software is enabled.
+2. Start up the Pi.
+3. Open the Raspberry Pi Configuration Tool from the main menu.
+4. Ensure the camera software is enabled. If it's not enabled, enable it and reboot your Pi to
+begin.
 
-HIGH = 1
-LOW = 0
+$ sudo raspistill -o /home/pi/Desktop/image.jpg
 
-gpio.setwarnings(False)
-gpio.setmode(gpio.BCM)
 
-gpio.setup(RS, gpio.OUT)
-gpio.setup(EN, gpio.OUT)
-gpio.setup(D4, gpio.OUT)
-gpio.setup(D5, gpio.OUT)
-gpio.setup(D6, gpio.OUT)
-gpio.setup(D7, gpio.OUT)
-gpio.setup(led, gpio.OUT)
-gpio.setup(buz, gpio.OUT)
-gpio.setup(m11, gpio.OUT)
-gpio.setup(m12, gpio.OUT)
-gpio.setup(button, gpio.IN)
+# import time and picamera library
+from time import sleep
+from picamera import PiCamera
 
-gpio.output(led, 0)
-gpio.output(buz, 0)
-gpio.output(m11, 0)
-gpio.output(m12, 0)
+camera = PiCamera()
+camera.resolution = (1280, 720)
+camera.start_preview()
 
-data = ""
+# Camera warm-up time
+sleep(2)
+camera.capture('/home/pi/Pictures/newlmage.jpg')  # capture and save image at specified location
+camera.stop_preview()
 
-def capture_image():
-    lcdcmd(0x01)
-    lcdprint("Please Wait..")
-    data = time.strftime("%d_%b_%Y_%H:%M:%S")
-    camera.start_preview()
-    time.sleep(5)
-    print(data)
-    camera.capture(f'/home/pi/Desktop/Visitors/{data}.jpg')
-    camera.stop_preview()
-    lcdcmd(0x01)
-    lcdprint("Image Captured")
-    lcdcmd(0xc0)
-    lcdprint(" Successfully ")
-    time.sleep(2)
+# end of code
 
-def gate():
-    lcdcmd(0x01)
-    lcdprint(" Welcome ")
-    gpio.output(m11, 1)
-    gpio.output(m12, 0)
-    time.sleep(1.5)
-    gpio.output(m11, 0)
-    gpio.output(m12, 0)
-    time.sleep(3)
-    gpio.output(m11, 0)
-    gpio.output(m12, 1)
-    time.sleep(1.5)
-    gpio.output(m11, 0)
-    gpio.output(m12, 0)
-    lcdcmd(0x01)
-    lcdprint(" Thank You ")
-    time.sleep(2)
 
-def begin():
-    lcdcmd(0x33)
-    lcdcmd(0x32)
-    lcdcmd(0x06)
-    lcdcmd(0x0C)
-    lcdcmd(0x28)
-    lcdcmd(0x01)
-    time.sleep(0.0005)
 
-def lcdcmd(ch):
-    gpio.output(RS, 0)
-    gpio.output(D4, 0)
-    gpio.output(D5, 0)
-    gpio.output(D6, 0)
-    gpio.output(D7, 0)
-    if ch & 0x10 == 0x10:
-        gpio.output(D4, 1)
-    if ch & 0x20 == 0x20:
-        gpio.output(D5, 1)
-    if ch & 0x40 == 0x40:
-        gpio.output(D6, 1)
-    if ch & 0x80 == 0x80:
-        gpio.output(D7, 1)
-    gpio.output(EN, 1)
-    time.sleep(0.005)
-    gpio.output(EN, 0)
-    # Low bits
-    gpio.output(D4, 0)
-    gpio.output(D5, 0)
-    gpio.output(D6, 0)
-    gpio.output(D7, 0)
-    if ch & 0x01 == 0x01:
-        gpio.output(D4, 1)
-    if ch & 0x02 == 0x02:
-        gpio.output(D5, 1)
-    if ch & 0x04 == 0x04:
-        gpio.output(D6, 1)
-    if ch & 0x08 == 0x08:
-        gpio.output(D7, 1)
-    gpio.output(EN, 1)
-    time.sleep(0.005)
-    gpio.output(EN, 0)
-
-def lcdwrite(ch):
-    gpio.output(RS, 1)
-    gpio.output(D4, 0)
-    gpio.output(D5, 0)
-    gpio.output(D6, 0)
-    gpio.output(D7, 0)
-    if ch & 0x10 == 0x10:
-        gpio.output(D4, 1)
-    if ch & 0x20 == 0x20:
-        gpio.output(D5, 1)
-    if ch & 0x40 == 0x40:
-        gpio.output(D6, 1)
-    if ch & 0x80 == 0x80:
-        gpio.output(D7, 1)
-    gpio.output(EN, 1)
-    time.sleep(0.005)
-    gpio.output(EN, 0)
-    # Low bits
-    gpio.output(D4, 0)
-    gpio.output(D5, 0)
-    gpio.output(D6, 0)
-    gpio.output(D7, 0)
-    if ch & 0x01 == 0x01:
-        gpio.output(D4, 1)
-    if ch & 0x02 == 0x02:
-        gpio.output(D5, 1)
-    if ch & 0x04 == 0x04:
-        gpio.output(D6, 1)
-    if ch & 0x08 == 0x08:
-        gpio.output(D7, 1)
-    gpio.output(EN, 1)
-    time.sleep(0.005)
-    gpio.output(EN, 0)
-
-def lcdprint(Str):
-    l = 0
-    l = len(Str)
-    for i in range(l):
-        lcdwrite(ord(Str[i]))
-
-begin()
-lcdcmd(0x01)
-lcdprint("Visitor Monitoring")
-lcdcmd(0xc0)
-lcdprint(" Using RPI ")
-time.sleep(3)
-lcdcmd(0x01)
-lcdprint("Circuit Digest")
-lcdcmd(0xc0)
-lcdprint("Saddam Khan")
-time.sleep(3)
-lcdcmd(0x01)
-camera = picamera.PiCamera()
-camera.rotation = 180
-camera.awb_mode = 'auto'
-camera.brightness = 55
-lcdcmd(0x01)
-lcdprint(" Please Press ")
-lcdcmd(0xc0)
-lcdprint(" Button ")
-time.sleep(2)
-
-while 1:
-    d = time.strftime("%d %b %Y")
-    t = time.strftime("%H:%M:%S")
-    lcdcmd(0x80)
-    lcdprint("Time: %s" % t)
-    lcdcmd(0xc0)
-    lcdprint("Date:%s" % d)
-    gpio.output(led, 1)
-
-    if gpio.input(button) == 0:
-        gpio.output(buz, 1)
-        gpio.output(led, 0)
-        time.sleep(0.5)
-        gpio.output(buz, 0)
-        capture_image()
-        gate()
-        time.sleep(0.5)
 
 *****************************************************************************************
 Telegram
@@ -716,3 +574,10 @@ while 1:
         lcd.message(concatlong)
 
     time.sleep(0.5)  # wait a little before picking the next data.
+
+
+
+
+
+
+
