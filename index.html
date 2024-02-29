@@ -16,7 +16,7 @@
 
     <script src="myscript.js"></script>
     <div class="box">
-      <form name="genyuvaloginform" action="#" method="post">
+      <form name="genyuvaloginform" action="#" method="post" onsubmit="event.preventDefault(); window.location.href = 'semesterselection.html'">
           <label for="username">Username</label></br>
           <input type="text" name="uname" id="uname" placeholder="Enter Username" class="input-box">
           </br></br>
@@ -28,7 +28,7 @@
                  <a href="#"> Forget password?</a>
               </span>
           </div>
-          <a href="landingpage.html"><button type="submit" class="btn">Sign In</button></a>
+          <button id="btn" class="btn" type="submit">Sign In</button>
       </form>
       <span class="option">or sign in with</span>
       <div class="social">
