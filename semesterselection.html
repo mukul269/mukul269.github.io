@@ -34,7 +34,7 @@
           
           <!--side bar links............................................-->
           <a href="links.html">Links</a><br><br>
-          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank">Syllabus</a><br><br>
+          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" rel="noopener" target="_blank">Syllabus</a><br><br>
           <a href="Updating.html">Interview <br>prep</a><br><br>
           <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
           <a href="#">Credit</a><br>
@@ -43,8 +43,9 @@
         </div><!--sidebar close-->
 
         <!--title-->
+        
         <hr width="90%" size="4px">
-        <p>Welcome[uname]<br>
+        <p id="welcomeid">Welcome[uname]<br>
         <hr width="90%" size="4px"><br>
 
         <!--side bar toggle-->
@@ -94,7 +95,7 @@
           </div>
         </a>
 
-        <a href="department5.html">
+        <a href="swayam.pdf">
           <div class="card">
             <div class="content">
               <h2>semester 6</h2>
@@ -105,7 +106,12 @@
       </div><!--closing card-container-->
 
       <script>
-        // Optional JavaScript code
+          const uname = localStorage.getItem("uname");
+          if (uname) {
+            document.getElementById("welcomeid").innerHTML = "Hello, " + uname + "!";
+          } else {
+            document.getElementById("genyuva");
+          }
       </script>
 
     </div>

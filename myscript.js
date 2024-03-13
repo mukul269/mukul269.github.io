@@ -14,7 +14,22 @@
                 document.getElementById("splash-screen").style.transform = "translateY(-150vh)";
             }, 2000); // Adjust timing as needed (in milliseconds)
             
+
+
+
+    function storeUsername() {
+      const username = document.getElementById("uname").value;
+      localStorage.setItem("uname", uname);
+      return true;
+    }
+
+
+
+
+
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyAfkB08Z_C80b46nlyrzf8BvgfOqyNsv1g",
     authDomain: "genyuva-6c7f3.firebaseapp.com",
@@ -44,3 +59,8 @@ const firebaseConfig = {
   const getElementVal = (id) =>{
     return document.getElementById(id).ariaValueMax;
   };
+
+
+
+  console.log("username :",uname);
+  console.log("password :",password);
