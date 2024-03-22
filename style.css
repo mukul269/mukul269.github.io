@@ -255,6 +255,24 @@ body {
     background: #222222;
 }
 
+#addButton {
+  margin-top: 10px;
+  display: flex;
+  align-self: center;
+  padding: 5px 10px;
+}
+
+.delete-button {
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
 /*BOOKS--------------------------------------------------------------------*/
 
 
