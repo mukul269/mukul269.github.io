@@ -1,8 +1,4 @@
 
-
-
-
-
 /*body amd title--------------------------------------------------*/
 
 @keyframes fadeIn {
@@ -18,30 +14,29 @@
 
 body {
   user-select: none;
-  background: linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2);
-  /*background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);*/
+  background: radial-gradient(ellipse at bottom, #2d8afb 0%, #101428 100%);/*rgb(155, 196, 241);*/
+  /* animation: backgroundAnimation 6s ease infinite; background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2)*/
   background-size: 400% 400%;
-  animation: backgroundAnimation 6s ease infinite;
   overflow: auto;
   margin-top: 100px;
-  margin-bottom: 300px;
+  margin-bottom: 500px;
 }
 
 
-/* Define the background animation */
+/* Define the background animation 
 @keyframes backgroundAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
+}*/
 
 
-.header p{
+.decor p{
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 90px;
-  font-family: 'Times New Roman', monospace;
+  font-family: "League Spartan", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
@@ -51,10 +46,16 @@ body {
   text-decoration: none;
 }
 
+.decor{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+
 .span{
   position: relative;
   margin-top: 2px;
-  color: white;
 }
 
 .header a{
@@ -96,6 +97,12 @@ body {
   justify-content: center; /* Center cards horizontally */
   align-items: center; /* Center cards vertically */
   height: 100%; /* Set container height to full viewport height */
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(38, 97, 159);
+    border-radius: 35px;
+    box-shadow: -8px -8px 8px #0000002f, 8px 8px 8px #8ddefe2f;
 }
 
 .card-container a{
@@ -103,25 +110,29 @@ body {
 }
 
 .card {
-  width:300px;
+  width:30cap;
   height:200px;
-  background-color: #1f1f1f;
-  margin: 10px;
+  background-color: #ffffff;
+  margin: 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);*/
+  box-shadow: -8px -8px 8px #1d1d1d, 8px 8px 5px #39464b2f;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
+
+
 /* I.T. related content inside the cards */
 .card .content {
   padding: 20px;
-  color: #FFFFFF;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #393939;
+  font-family: "League Spartan", sans-serif;
 }
-    
+
+   
 /* Card animations on hover and selection */
 .card:hover {
   transform: scale(1.05);

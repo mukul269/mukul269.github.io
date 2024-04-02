@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan">
     <script src="myscript.js" type="text/javascript"></script>
     <style type="text/css">
       .content{
@@ -21,6 +23,7 @@
       }
     </style>
   </head>
+  
   <body manifest="demo.appcache"> <!---->
     <div class="fademain"><!--encloses all elements to apply fade in effect-->
       <div class="header"><!--for title and nav bar toggle switch-->
@@ -42,18 +45,24 @@
           
         </div><!--sidebar close-->
 
-        <!--title-->
+
+
+        <!--decor-->
+        <div class="animate__animated animate__fadeInDown">
+        
+        <div class="decor">
         <hr width="90%" size="4px">
-        <p>Welcome[uname]<br>
+                <!--side bar toggle-->
+                <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
+             
+        <p class="displayusername">Welcome Genyuva</p><br>
         <hr width="90%" size="4px"><br>
-
-        <!--side bar toggle-->
-        <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
-      </div>
+        </div> </div></div>
 
 
+        <div class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
       <div class="card-container">  <!--encloses all the cards-->
-
+        
         <a href="semesterselection.html">
           <div class="card">
             <div class="content">
@@ -107,7 +116,8 @@
       <script>
         // Optional JavaScript code
       </script>
-
+      </div>
     </div>
   </body>
 </html>
+

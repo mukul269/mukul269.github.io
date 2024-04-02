@@ -30,7 +30,7 @@
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 
-/*const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAfkB08Z_C80b46nlyrzf8BvgfOqyNsv1g",
     authDomain: "genyuva-6c7f3.firebaseapp.com",
     databaseURL: "https://genyuva-6c7f3-default-rtdb.firebaseio.com",
@@ -63,6 +63,6 @@
 
 
   console.log("username :",uname);
-  console.log("password :",password);*/
+  console.log("password :",password);
 
 
