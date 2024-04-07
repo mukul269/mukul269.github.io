@@ -20,7 +20,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 1); /* Ease-in-out with bounce */
+     /* Ease-in-out with bounce */
+
 }
 
 #splash-screen img {
