@@ -17,25 +17,33 @@
 <div class="header"><img src="./thakur college.png" alt="college logo" width="80px"><p>THAKUR RAMNARAYAN COLLEGE OF ARTS AND COMMERCE</p></div>
     <div class="box">
 
-      <form name="genyuvaloginform">
+      <div id = main>
         
-          <label for="username">Username</label></br>
-          <input type="text" name="uname" id="uname" placeholder="Enter Username" class="input-box">
+          <label for="username">Email Id</label></br>
+          <input type="text" id="email" name ="username" placeholder="Enter email" class="input-box">
           </br></br>
-          <label for="username">Password</label></br>
-          <input type="password" name="uname" id="password" placeholder="Enter Password" class="input-box"></br>
-          <div class="forget">
-              <span class="fg">
-                 <a href="#"> Forget password?</a>
-              </span>
+          <label for="password">Password</label></br>
+          <input type="password" name="password" id="password" placeholder="Enter Password" class="input-box"></br>
+          
+          <button id="submit" class="btn" type="button">Sign In</button>
+          <span class="option">or</span>
+          <button id="sign-up" class="btn" type="button">Sign-up</button>
+
+        </div>
+
+        <div id = "create-acct">
+            <h1>Create an Account</h1>
+            <input id = "email-signup" type = "text" class="input-box" placeholder = "Email *"></input>
+            <input id = "confirm-email-signup" type = "email" class="input-box" placeholder = "Confirm Email *"></input>
+            <input id = "password-signup" type = "password" class="input-box"placeholder = "Password *"></input>
+            <input id = "confirm-password-signup" type = "password" class="input-box"placeholder = "Confirm Password *"></input>
+            <button id = "create-acct-btn" class="btn">Create Account</button>
+            <button id = "return-btn" class="btn">Return to Login</button>
           </div>
-          <button id="btn" class="btn" type="submit" onclick="signIn()">Sign In</button>
-          <!--<button id="btn" class="btn" type="submit" onclick="login()" action="#" method="post" onsubmit="event.preventDefault(); window.location.href = 'departments.html'">Sign In</button>-->
-      </form>
+        
 
-      <button id="btn" class="btn" type="submit" onclick="register()">register</button>
 
-      <span class="option" onclick="register()">or sign in with</span>
+      <span class="option">or sign in with</span>
       <div class="social">
           <div class="box-radius">
               <img src="./graphics/images/fb.png" alt="">
@@ -44,11 +52,10 @@
               <img src="./graphics/images/google.png" alt="">
           </div>
       </div>
+    </div>
   </div>
-  <script src="https://www.googleapis.com/identity/js?api=key:AIzaSyCrGWnqUsdsFoDK2c9mLfYoCroIUYNWW5I&fields=status"></script>
-  <script src="https://www.firebase.js/sdk/v10.10.0/firebase-app.js"></script>
-  <script src="https://www.firebase.js/sdk/v10.10.0/firebase-auth.js"></script>
-  <script src="myscript.js"></script> </head>
 
+
+  <script type = "module" src = "myscript.js"></script>
 </body>
 </html>

@@ -202,6 +202,9 @@ body{
     border-radius: 0;
     
   }
+
+
+
 .btn{
     width:100%;
     margin-top: 20px;
@@ -250,7 +253,11 @@ body{
 }
 .option{
     display: block;
-    margin-top: 35px;
+    margin-top: 15px;
     color: #6c6d6d;
     text-align: center;
 }
+
+#create-acct {
+    display: none;
+  }
