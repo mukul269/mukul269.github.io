@@ -23,15 +23,13 @@ function closeNav(){
    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
    
    const firebaseConfig = {
-     apiKey: "AIzaSyCrGWnqUsdsFoDK2c9mLfYoCroIUYNWW5I",
-     authDomain: "genyuva2.firebaseapp.com",
-     databaseURL: "https://genyuva2-default-rtdb.firebaseio.com",
-     projectId: "genyuva2",
-     storageBucket: "genyuva2.appspot.com",
-     messagingSenderId: "648537327614",
-     appId: "1:648537327614:web:57ed10671dd2129afba2af"
-   
-   
+    apiKey: "AIzaSyCrGWnqUsdsFoDK2c9mLfYoCroIUYNWW5I",
+    authDomain: "genyuva2.firebaseapp.com",
+    databaseURL: "https://genyuva2-default-rtdb.firebaseio.com",
+    projectId: "genyuva2",
+    storageBucket: "genyuva2.appspot.com",
+    messagingSenderId: "648537327614",
+    appId: "1:648537327614:web:57ed10671dd2129afba2af"
    };
    
    const app = initializeApp(firebaseConfig);
@@ -116,20 +114,6 @@ function closeNav(){
        });
    });
    
-
-//
-//firebase.auth().onAuthStateChanged(function(user) {
-  //if (user) {
-    //user exists and is logged in
-    //redirect Home
-  //} else {
-    // User is signed out.
-    // redirect to login
-  //}
-//});
-//
-
-
 
    signupButton.addEventListener("click", function() {
        main.style.display = "none";
