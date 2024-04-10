@@ -5,30 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>genyuva login</title>
-    <link rel="stylesheet" href="stylelogin.css">     
+    <link rel="stylesheet" href="stylelogin.css">
+    <style>
+        /* Define the animation */
+        @keyframes myAnimation {
+          from { transform: translateY(0); } /* Starting position (no transformation) */
+          to { transform: translateY(-150vh); } /* Ending position (translate down by 150vh) */
+        }
+        
+        /* Style the element (optional) */
+        .genyuvasplash {
+          /* Other styles for your element */
+          transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 1);
+          transform: translateY(0); /* Set initial transform to avoid flash */
+          animation: myAnimation 2s cubic-bezier(0.445, 0.05, 0.55, 1); /* Apply the animation */
+          transform: translateY(-150vh);
+        }
+      </style>
 </head>
+
+
 <body>
 
-<div id="splash-screen" style="transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 1);">
+<div id="splash-screen" class="genyuvasplash">
     <img src="logo.png" alt="Logo">
     <p>GUIDANCE   NOTES  <br> YOUTHFUL INSIGHTS  <br> VALUABLE RESOURCES </p>
 </div>
 
 <div class="header"><img src="./thakur college.png" alt="college logo" width="80px"><p>THAKUR RAMNARAYAN COLLEGE OF ARTS AND COMMERCE</p></div>
     <div class="box">
-
-      <div id = main>
-        
-          <label for="username">Email Id</label></br>
-          <input type="text" id="email" name ="username" placeholder="Enter email" class="input-box">
-          </br></br>
-          <label for="password">Password</label></br>
-          <input type="password" name="password" id="password" placeholder="Enter Password" class="input-box"></br>
-          
-          <button id="submit" class="btn" type="button">Sign In</button>
-          <span class="option">or</span>
-          <button id="sign-up" class="btn" type="button">Sign-up</button>
-
+        <div id = main>
+            <label for="username">Email Id</label></br>
+            <input type="text" id="email" name ="username" placeholder="Enter email" class="input-box">
+            </br></br>
+            <label for="password">Password</label></br>
+            <input type="password" name="password" id="password" placeholder="Enter Password" class="input-box"></br>
+            
+            <button id="submit" class="btn" type="button">Sign In</button>
+            <span class="option">or</span>
+            <button id="sign-up" class="btn" type="button">Sign-up</button>
         </div>
 
         <div id = "create-acct">
@@ -39,21 +54,20 @@
             <input id = "confirm-password-signup" type = "password" class="input-box"placeholder = "Confirm Password *"></input>
             <button id = "create-acct-btn" class="btn">Create Account</button>
             <button id = "return-btn" class="btn">Return to Login</button>
-          </div>
+        </div>
         
 
 
-      <span class="option">or sign in with</span>
-      <div class="social">
-          <div class="box-radius">
-              <img src="./graphics/images/fb.png" alt="">
-          </div>
-          <div class="box-radius">
-              <img src="./graphics/images/google.png" alt="">
-          </div>
-      </div>
+        <span class="option">or sign in with</span>
+        <div class="social">
+            <div class="box-radius">
+                <img src="./graphics/images/fb.png" alt="">
+            </div>
+            <div class="box-radius">
+                <img src="./graphics/images/google.png" alt="">
+            </div>
+        </div>
     </div>
-  </div>
 
 
   <script type = "module" src = "myscript.js"></script>

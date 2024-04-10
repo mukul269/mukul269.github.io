@@ -1,12 +1,5 @@
 
 
-window.onload = function() {            
-  setTimeout(function() { document.getElementById("splash-screen").style.transform = "translateY(-150vh)"; }, 2);         
-};
-
-
-
-
 function openNav(){              
   document.getElementById("mySidenav").style.width = "412px";
   //document.getElementById("table-wrapper").style.filter = "blur(8px)";                      
@@ -20,6 +13,7 @@ function closeNav(){
             
 
    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+   import { getDatabase, get, set, ref, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
    
    const firebaseConfig = {
@@ -34,6 +28,8 @@ function closeNav(){
    
    const app = initializeApp(firebaseConfig);
    const auth = getAuth(app);
+   const db = getDatabase();
+   const dbref = ref(db);
    
    const submitButton = document.getElementById("submit");
    const signupButton = document.getElementById("sign-up");
@@ -76,17 +72,19 @@ function closeNav(){
      
      if(isVerified) {
        createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-         .then((userCredential) => {
+         .then((credentials) => {
          // Signed in 
-         const user = userCredential.user;
-         // ...
+         //const user = credentials.user;
+         set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+          account : signupEmail.value
+         })
          window.alert("Success! Account created.");
        })
        .catch((error) => {
          const errorCode = error.code;
          const errorMessage = error.message;
          // ..
-         window.alert("Error occurred. Try again.");
+         window.alert("Success! you may log in now.");
        });
      }
    });
@@ -98,11 +96,19 @@ function closeNav(){
      console.log(password);
    
      signInWithEmailAndPassword(auth, email, password)
-       .then((userCredential) => {
+       .then((credentials) => {
          // Signed in
-         const user = userCredential.user;
-         console.log("Success! Welcome back!");
-         window.alert("Success! Welcome back!");
+         //const user = credentials.user;
+         console.log(" Welcome to Genyuva");
+         get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+          if(snapshot.exists){
+            sessionStorage.setItem("user-info", JSON.stringify({
+              account: snapshot.val().account
+            }))
+            sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
+            //.......window.location
+          }
+         })
          window.location.href = "departments.html"
        })
 
