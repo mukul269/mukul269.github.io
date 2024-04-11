@@ -16,9 +16,10 @@
         /* Style the element (optional) */
         .genyuvasplash {
           /* Other styles for your element */
-          transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 1);
+          opacity: 1;
+          transition: transform 5s cubic-bezier(0.445, 0.05, 0.55, 5);
           transform: translateY(0); /* Set initial transform to avoid flash */
-          animation: myAnimation 2s cubic-bezier(0.445, 0.05, 0.55, 1); /* Apply the animation */
+          animation: myAnimation 5s cubic-bezier(0.445, 0.05, 0.55, 5); /* Apply the animation */
           transform: translateY(-150vh);
         }
       </style>
@@ -27,11 +28,19 @@
 
 <body>
 
-<div id="splash-screen" class="genyuvasplash">
+<div id="splash-screen">
     <img src="logo.png" alt="Logo">
     <p>GUIDANCE   NOTES  <br> YOUTHFUL INSIGHTS  <br> VALUABLE RESOURCES </p>
+    <script>
+        setTimeout(function() {
+        document.getElementById("splash-screen").classList.add("genyuvasplash");
+        // style.transform = "translateY(-150vh)"
+        }, 2000); // Adjust timing as needed (in milliseconds)
+    </script>
 </div>
 
+
+<div class="fademain">
 <div class="header"><img src="./thakur college.png" alt="college logo" width="80px"><p>THAKUR RAMNARAYAN COLLEGE OF ARTS AND COMMERCE</p></div>
     <div class="box">
         <div id = main>
@@ -68,8 +77,9 @@
             </div>
         </div>
     </div>
+    </div>
 
 
-  <script type = "module" src = "myscript.js"></script>
+    <script type = "module" src = "myscript.js"></script>
 </body>
 </html>

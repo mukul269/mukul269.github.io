@@ -36,7 +36,10 @@
     color: white;
 }
 
-
+.fademain{
+    animation: fadeIn 0.5s;
+  }
+  
 .header {
     display: flex;
     justify-content: center;

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan">
-    <script src="myscript.js" type="module"></script>
     <style type="text/css">
       .content{
         font-size: 20px;
@@ -34,7 +33,7 @@
           <!--open and close toggle switch..............................-->
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
           <a href="javascript:void(0)"  onclick="closeNav()">click to<br>collapse</a><br><br>
-          <hr width="90%" size="1px"><br><br>
+            <hr width="90%" size="1px"><br><br>
           
           <!--side bar links............................................-->
           <a href="links.html">Links</a><br><br>
@@ -42,81 +41,94 @@
           <a href="Updating.html">Interview <br>prep</a><br><br>
           <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
           <a href="#">Credit</a><br>
-
-          
+          <script>
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+          </script>
         </div><!--sidebar close-->
 
 
 
         <!--decor-->
         <div class="animate__animated animate__fadeInDown">
+          <div class="decor">
+            <hr width="90%" size="4px">
+              <!--side bar toggle-->
+              <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
+              <script>
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "412px";
+                  document.getElementById("mySidenav").style.transition = "0"; // Disable transition temporarily
+                  setTimeout(function() {
+                    document.getElementById("mySidenav").style.transition = null; // Restore transition
+                  }, 100);
+                }
+              </script> 
+              <p class="displayusername">Welcome Genyuva</p><br>
+            <hr width="90%" size="4px"><br>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
+        <div class="card-container">  <!--encloses all the cards-->
         
-        <div class="decor">
-        <hr width="90%" size="4px">
-                <!--side bar toggle-->
-                <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
-             
-        <p class="displayusername">Welcome Genyuva</p><br>
-        <hr width="90%" size="4px"><br>
-        </div> </div></div>
-
-
-        <div class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
-      <div class="card-container">  <!--encloses all the cards-->
-        
-        <a href="semesterselection.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
+          <a href="semesterselection.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="CS.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF COMPUTER SCIENCE</h2>
+          <a href="CS.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF COMPUTER SCIENCE</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="bms.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF MANAGEMENT STUDIES</h2>
+          <a href="bms.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF MANAGEMENT STUDIES</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="department4.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF ACCOUNTING AND FINANCE</h2>
+          <a href="department4.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF ACCOUNTING AND FINANCE</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="department6.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF ARTS</h2>
+          <a href="department6.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF ARTS</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="department5.html">
-          <div class="card">
-            <div class="content">
-              <h2>DEPARTMENT OF COMMERCE</h2>
+          <a href="department5.html">
+            <div class="card">
+              <div class="content">
+                <h2>DEPARTMENT OF COMMERCE</h2>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-      </div><!--closing card-container-->
+        </div><!--closing card-container-->
 
-      <script>
+        <!-- <script>
         // Optional JavaScript code
-      </script>
+        </script> -->
+        <script src="myscript.js" type="module"></script>
       </div>
     </div>
   </body>

@@ -1,20 +1,34 @@
 
 
-function openNav(){              
-  document.getElementById("mySidenav").style.width = "412px";
-  //document.getElementById("table-wrapper").style.filter = "blur(8px)";                      
-  }
+// function openNav(){              
+//   document.getElementById("mySidenav").style.width = "412px";
+//   //document.getElementById("table-wrapper").style.filter = "blur(8px)";                      
+//   }
           
             
-function closeNav(){              
-  document.getElementById("mySidenav").style.width = "0";
-  //document.getElementById("table-wrapper").style.filter = "blur(0px)";
-   } 
+// function closeNav(){              
+//   document.getElementById("mySidenav").style.width = "0";
+//   //document.getElementById("table-wrapper").style.filter = "blur(0px)";
+//    } 
+
+// function openNav() {
+//   document.getElementById("mySidenav").style.width = "412px";
+//   document.getElementById("mySidenav").style.transition = "0"; // Disable transition temporarily
+//   setTimeout(function() {
+//     document.getElementById("mySidenav").style.transition = null; // Restore transition
+//   }, 100);
+// }
+
+// function closeNav() {
+//   document.getElementById("mySidenav").style.width = "0";
+// }
+
+
             
 
    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
    import { getDatabase, get, set, ref, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
-   import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+   import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
    
    const firebaseConfig = {
     apiKey: "AIzaSyCrGWnqUsdsFoDK2c9mLfYoCroIUYNWW5I",
@@ -75,9 +89,9 @@ function closeNav(){
          .then((credentials) => {
          // Signed in 
          //const user = credentials.user;
-         set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
-          account : signupEmail.value
-         })
+        //  set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+        //   account : signupEmail.value
+        //  })
          window.alert("Success! Account created.");
        })
        .catch((error) => {
@@ -100,15 +114,15 @@ function closeNav(){
          // Signed in
          //const user = credentials.user;
          console.log(" Welcome to Genyuva");
-         get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
-          if(snapshot.exists){
-            sessionStorage.setItem("user-info", JSON.stringify({
-              account: snapshot.val().account
-            }))
-            sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
-            //.......window.location
-          }
-         })
+        //  get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+        //   if(snapshot.exists){
+        //     sessionStorage.setItem("user-info", JSON.stringify({
+        //       account: snapshot.val().account
+        //     }))
+        //     sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
+        //     //.......window.location
+        //   }
+        //  })
          window.location.href = "departments.html"
        })
 
