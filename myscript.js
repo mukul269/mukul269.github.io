@@ -27,7 +27,8 @@
             
 
    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-   import { getDatabase, get, set, ref, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+  //  import { getDatabase, get, set, ref, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+   import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
    
    const firebaseConfig = {
@@ -42,8 +43,8 @@
    
    const app = initializeApp(firebaseConfig);
    const auth = getAuth(app);
-   const db = getDatabase();
-   const dbref = ref(db);
+   const db = getFirestore();
+  //  const dbref = ref(db);
    
    const submitButton = document.getElementById("submit");
    const signupButton = document.getElementById("sign-up");
@@ -86,8 +87,13 @@
      
      if(isVerified) {
        createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-         .then((credentials) => {
+         .then(async (credentials) => {
          // Signed in 
+         console.log(credentials);
+         var ref = doc(db, "userAuthList", credentials.user.uid);
+         await setDoc(ref, {
+          email:signupEmailIn.value
+         })
          //const user = credentials.user;
         //  set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
         //   account : signupEmail.value
@@ -97,8 +103,8 @@
        .catch((error) => {
          const errorCode = error.code;
          const errorMessage = error.message;
-         // ..
-         window.alert("Success! you may log in now.");
+        //  window.alert(errorCode);
+         window.alert("uh oh! try that again.");
        });
      }
    });
@@ -110,10 +116,19 @@
      console.log(password);
    
      signInWithEmailAndPassword(auth, email, password)
-       .then((credentials) => {
+       .then(async (credentials) => {
          // Signed in
          //const user = credentials.user;
-         console.log(" Welcome to Genyuva");
+         console.log(credentials);
+         var ref = doc(db, "userAuthList", credentials.user.uid);
+         const docSnap = await getDoc(ref);
+
+         if(docSnap.exists()){
+          sessionStorage.setItem("user-info", JSON.stringify({
+            email: docSnap.data().signupEmailIn,
+          }))
+          sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
+         }
         //  get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
         //   if(snapshot.exists){
         //     sessionStorage.setItem("user-info", JSON.stringify({
@@ -127,10 +142,9 @@
        })
 
        .catch((error) => {
-         const errorCode = error.code;
-         const errorMessage = error.message;
-         console.log("Error occurred. Try again.");
-         window.alert("Error occurred. Try again.");
+        console.log(error.message);
+        console.log(error.code);
+        window.alert("Error occurred. Try again.");
        });
    });
    
