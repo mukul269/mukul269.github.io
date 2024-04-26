@@ -1,0 +1,1366 @@
+
+
+p1 - hello world
+p2 - android resources - colour theme blah blah
+p3 - activities and fragments
+p4 - different Layouts Coordinate, Linear, Relative, Table, Absolute, Frame, List View, Grid View.
+p5 - UI elements AppBar, Fragments, UI Components
+p6 - Programming menus, dialog, dialog fragments
+p7 - Intents, Events, Listeners and Adapters The Android Intent Class, Using Events and Event Listeners
+p8 - Programs on Services, notification and broadcast receivers
+
+
+*******************************************************************************************************************************
+
+
+
+P1
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello World!"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" android:textSize="30sp"/>
+</android.support.constraint.ConstraintLayout>
+
+File - MainActivity.kt
+package com.example.practical1
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+lateinit var receiver: BroadcastReceiver
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//To launch BroadcastReceiver(),use IntentFilter()
+val filter=IntentFilter()
+//Adding Actions - POWER_CONNECTED and
+POWER_DISCONNECTED
+filter.addAction(Intent.ACTION_POWER_CONNECTED)
+filter.addAction(Intent.ACTION_POWER_DISCONNECTED)
+//BroadcastReceiver() object - receiver
+receiver=object:BroadcastReceiver()
+{
+override fun onReceive(context: Context?, intent: Intent?) {
+//Action received through - Toast
+Toast.makeText(context,"Charger Connection
+Chnaged",Toast.LENGTH_LONG).show()
+}
+}
+//Invoking registerReceiver()
+registerReceiver(receiver,filter)
+}
+//Invoking unregisterReceiver()
+override fun onDestroy() {
+unregisterReceiver(receiver)
+super.onDestroy()
+}
+}
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical1 - Sumeet Rathod</string>
+</resources>
+
+********************************************************************************************************************************
+
+P2
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/image4"
+tools:context=".MainActivity" android:hapticFeedbackEnabled="false">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/my_text"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintVertical_bias="0.036" android:textSize="30sp"
+android:textColor="@android:color/holo_purple"/>
+<EditText
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:ems="10"
+android:id="@+id/txtName"
+android:layout_marginTop="112dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+android:layout_marginStart="42dp" android:layout_marginEnd="42dp"
+android:hint="Enter your name" tools:textSize="24sp"
+android:textSize="30sp"
+android:textColor="@android:color/holo_orange_dark"/>
+<Button
+android:text="Click Me"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btnClickMe"
+app:layout_constraintStart_toStartOf="parent"
+android:layout_marginTop="132dp"
+app:layout_constraintTop_toBottomOf="@+id/txtName"
+app:layout_constraintEnd_toEndOf="parent"
+tools:textSize="24sp" android:textSize="30sp"
+app:layout_constraintHorizontal_bias="0.4"
+android:textColor="@android:color/holo_red_light"/>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="44dp"
+android:id="@+id/txtVMessage"
+app:layout_constraintBottom_toBottomOf="parent"
+android:layout_marginEnd="108dp"
+android:layout_marginBottom="136dp"
+app:layout_constraintEnd_toEndOf="parent" android:hint="Text
+Message" tools:textSize="24sp"
+android:textSize="30sp" android:textStyle="bold"
+android:textColor="@android:color/holo_blue_dark"/>
+</android.support.constraint.ConstraintLayout>
+
+
+File - MainActivity.kt
+package com.example.practical2
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
+//OnClickListener -Interface
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+//Abstract method of OnClickListener - Interface
+override fun onClick(view: View?) {
+val name= txtName.text
+txtVMessage.text = "Hello $name"
+}
+/*Variable names and Type of the variables
+lateinit-Initialize the objects later*/
+lateinit var Name : EditText
+lateinit var ClickMe : Button
+lateinit var Message :TextView
+
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//Initialize objects using findViewById() method
+Name =findViewById(R.id.txtName)
+ClickMe =findViewById(R.id.btnClickMe)
+Message =findViewById(R.id.txtVMessage)
+btnClickMe.setOnClickListener(this)
+}
+}
+
+
+File - colors.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+//Action Bar Color
+<color name="colorPrimary">#8A0D0D</color>
+//Status Bar Color
+<color name="colorPrimaryDark">#2B640C</color>
+<color name="colorAccent">#C80AF3</color>
+</resources>
+
+
+File - styles.xml
+<resources>
+<!-- Base application theme. -->
+//Theme
+<style name="AppTheme"
+parent="Theme.AppCompat.DayNight.DarkActionBar">
+<!-- Customize your theme here. -->
+<item name="colorPrimary">@color/colorPrimary</item>
+<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+<item name="colorAccent">@color/colorAccent</item>
+</style>
+</resources>
+
+
+File - strings.xml
+<resources>
+//String
+<string name="app_name">Practical2 - Sumeet Rathod</string>
+<string name="my_text">My App</string>
+</resources>
+
+
+
+********************************************************************************************************************************
+
+
+p3
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:text="Activity"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btnActivity"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="80dp" android:textSize="30sp"/>
+</RelativeLayout>
+
+
+File – MainActivity.kt
+package com.example.p3_1
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import java.nio.channels.InterruptedByTimeoutException
+class MainActivity : AppCompatActivity() {
+val TAG ="Main Activity"
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+Log.d(TAG,"onCreate()")
+//activity variable
+val activity= findViewById<Button>(R.id.btnActivity) //Button id
+activity.setOnClickListener{
+val i=Intent(this,Activity::class.java)
+//Start Activity
+startActivity(i)
+}
+}
+override fun onStart() {
+super.onStart()
+Log.d(TAG,"onStart()")
+}
+override fun onStop() {
+super.onStop()
+Log.d(TAG,"onStop()")
+}
+override fun onPause() {
+super.onPause()
+Log.d(TAG,"onPause()")
+}
+override fun onDestroy() {
+super.onDestroy()
+Log.d(TAG,"onDestroy()")
+}
+override fun onRestart() {
+super.onRestart()
+Log.d(TAG,"onRestart()")
+}
+override fun onResume() {
+super.onResume()
+Log.d(TAG,"onResume()")
+}
+}
+
+
+File – strings.xml
+<resources>
+<string name="app_name">Practical3 - Sumeet Rathod</string>
+</resources>
+
+
+
+File – Activity.kt
+package com.example.p3_1
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import android.widget.Toast
+class Activity : AppCompatActivity() {
+val TAG ="Activity"
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+// setContentView(R.layout.activity_main)
+Log.d(TAG,"Inside onCreate()")
+Toast.makeText(this, "You are under an
+activity",Toast.LENGTH_LONG).show()
+}
+override fun onStart() {
+super.onStart()
+Log.d(TAG,"onStart()")
+}
+override fun onStop() {
+super.onStop()
+Log.d(TAG,"onStop()")
+}
+override fun onPause() {
+super.onPause()
+Log.d(TAG,"onPause()")
+}
+override fun onDestroy() {
+super.onDestroy()
+Log.d(TAG,"onDestroy()")
+}
+override fun onRestart() {
+super.onRestart()
+Log.d(TAG,"onRestart()")
+}
+override fun onResume() {
+super.onResume()
+Log.d(TAG,"onResume()")
+}
+}
+
+
+File – AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.example.p3_1">
+<application
+android:allowBackup="true"
+android:icon="@mipmap/ic_launcher"
+android:label="@string/app_name"
+android:roundIcon="@mipmap/ic_launcher_round"
+android:supportsRtl="true"
+android:theme="@style/AppTheme">
+<activity android:name=".MainActivity">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+<activity android:name=".Activity"></activity>
+</application>
+</manifest>
+
+
+*****************************************************************************************************************************
+
+
+P4
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<!--By default layout is ConstraintLayout
+Parent LinearLayout-->
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:background="@color/colorAccent"
+tools:context=".MainActivity">
+<TextView android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:layout_marginTop="20dp"
+android:textSize="30sp"
+android:text="@string/my_text"/>
+//Child LinearLayout
+<LinearLayout android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="20dp">
+<EditText
+android:layout_width="300dp"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:hint="@string/search"
+android:ems="10"
+android:id="@+id/editText" android:layout_weight="1"/>
+<Button
+android:text="@string/search"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/button2"
+android:layout_marginLeft="10dp"
+android:layout_weight="1"/>
+//Child LinearLayout
+</LinearLayout>
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="bottom"
+app:srcCompat="@mipmap/ic_launcher"
+android:id="@+id/imageView2"/>
+//Parent LinearLayout
+</LinearLayout>
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+<string name="search">Search</string>
+<string name="my_text">Linear Layout</string>
+</resources>
+
+*****************************************************************
+relative layout
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<!--RelativeLayout -->
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:text=" @string/my_text"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="20dp"
+android:textSize="30sp"
+android:id="@+id/textView"/>
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:hint="Username"
+android:ems="10"
+android:id="@+id/txtUsername"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="100dp"/>
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPassword"
+android:layout_below="@id/txtUsername"
+android:hint="Password"
+android:layout_centerHorizontal="true"
+android:text=""
+android:layout_marginTop="10dp"
+android:ems="10"
+android:id="@+id/txtPassword"/>
+<Button
+android:text="Login"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/txtPassword"
+android:layout_alignParentLeft="true"
+android:layout_marginLeft="100dp"
+android:layout_marginTop="20dp"
+android:id="@+id/btnLogin"/>
+<Button
+android:text="Cancel"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/txtPassword"
+android:layout_alignParentRight="true"
+android:layout_marginRight="100dp"
+android:layout_marginTop="20dp"
+android:id="@+id/btnCancel"/>
+</RelativeLayout>
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+<string name="my_text">Relative Layout</string>
+</resources>
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<!--TableLayout-->
+<TableLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:layout_margin="20dp">
+<TextView
+android:text="@string/my_text"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="30sp"
+android:layout_marginTop="20dp"
+android:layout_marginLeft="80dp"
+android:id="@+id/textView"/>
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="100dp"
+android:layout_marginLeft="70dp">
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:hint="Usaername"
+android:ems="10"
+android:id="@+id/txtUsername"/>
+</TableRow>
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="50dp"
+android:layout_marginLeft="70dp">
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPassword"
+android:hint="Password"
+android:ems="10"
+android:id="@+id/txtPassword"/>
+</TableRow>
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="50dp"
+android:layout_marginLeft="70dp">
+<Button
+android:text="Login"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btnLogin"/>
+</TableRow>
+</TableLayout>
+
+
+File - MainActivity.kt
+package com.example.practical4table
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//Variables
+var username=findViewById<EditText>(R.id.txtUsername)
+var login=findViewById<Button>(R.id.btnLogin)
+//Creating a OnClickListener
+login.setOnClickListener(){
+//Variable for Toast message
+var msg:String
+//Passing msg to username, which binds txtUsername value
+msg=username.getText().toString()
+//Passing msg in Toast
+Toast.makeText(this, "Hello $msg",Toast.LENGTH_LONG).show()
+}
+}
+}
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+<string name="my_text">Table Layout</string>
+</resources>
+
+***************************************************************
+absolute latout
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<!--AbsoluteLayout - Deprecated-->
+<AbsoluteLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:text="@string/my_text"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_x="260px"
+android:layout_y="100px"
+android:textSize="30sp"
+android:id="@+id/textView"/>
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:hint="Username"
+android:layout_x="250px"
+android:layout_y="400px"
+android:ems="10"
+android:id="@+id/txtUsername"/>
+<EditText
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:inputType="textPassword"
+android:hint="Password"
+android:layout_x="250px"
+android:layout_y="600px"
+android:ems="10"
+android:id="@+id/txtPassword"/>
+<Button
+android:text="Login"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btnLogin"
+android:layout_x="250px"
+android:layout_y="800px"
+/>
+<Button
+android:text="Cancel"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_x="550px"
+android:layout_y="800px"
+android:id="@+id/btnCancel"/>
+</AbsoluteLayout>
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+<string name="my_text">Absolute Layout</string>
+</resources>
+
+*****************************************************************************
+frame layout
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:layout_margin="20dp">
+<ImageView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:srcCompat="@drawable/image"
+android:id="@+id/imageView"/>
+<TextView
+android:text="@string/my_text"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center|top"
+android:layout_marginTop="10dp"
+android:textColor="#000000"
+android:textSize="50sp"
+android:id="@+id/textView2"/>
+<Button
+android:text="Click Me"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center|bottom"
+android:layout_marginBottom="30dp"
+android:textSize="30dp"
+android:id="@+id/button"/>
+</FrameLayout>
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+<string name="my_text">Frame Layout</string>
+</resources>
+
+
+
+*****************************************
+listview layout
+
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<ListView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/lstVMyList"
+/>
+</LinearLayout>
+
+
+File - MainActivity.kt
+package com.example.practical4listview
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Gravity
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//Variables
+val countries= arrayOf<String>("India", "Japan","New
+Zealand","Australia")
+val listview=findViewById<ListView>(R.id.lstVMyList)
+//Creating a ListView adapter for listview variable to bundle data
+//simple_list_item_1 (Its a raw layout by ListView) - By default, xml
+document which binds data (ie countries) to ListView
+listview.adapter=
+ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries)
+//Setting setOnItemClickListener to Toast a message on click of item
+listview.setOnItemClickListener { parent, view, position, id ->
+val toast= Toast.makeText(this,"You have clicked on - \n" +
+countries[position],Toast.LENGTH_LONG)
+toast.setGravity(Gravity.CENTER,0,0)
+toast.show()
+}
+}
+}
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+</resources>
+
+
+*****************************************
+gridview layout
+
+
+File - activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:columnCount="2"
+android:rowCount="2"
+tools:context=".MainActivity"
+android:layout_margin="20dp">
+//ImageView1
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/image"
+android:layout_column="0"
+android:layout_row="0"
+android:id="@+id/imageView1"
+android:padding="10dp"/>
+//ImageView2
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/image"
+android:layout_column="1"
+android:layout_row="0"
+android:id="@+id/imageView2"
+android:padding="10dp"/>
+//ImageView3
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/image"
+android:layout_column="0"
+android:layout_row="1"
+android:id="@+id/imageView3"
+android:padding="10dp"/>
+//ImageView4
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/image"
+android:layout_column="1"
+android:layout_row="1"
+android:id="@+id/imageView4"
+android:padding="10dp"/>
+</GridLayout>
+
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical4 - Sumeet Rathod</string>
+</resources>
+
+
+
+********************************************************************************************************************************P5
+
+
+File - MainActivity.kt
+package com.example.practical5
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+}
+override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//Binds menu.xml file to menu bar of your app bar
+menuInflater.inflate(R.menu.menu,menu)
+return super.onCreateOptionsMenu(menu)
+}
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//Binds data to menu.xml file
+val id = item.itemId
+if(id==R.id.search)
+{
+Toast.makeText(this, "Search", Toast.LENGTH_LONG).show()
+}
+if(id==R.id.aboutus)
+{
+Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show()
+}
+if(id==R.id.contactus)
+{
+Toast.makeText(this, "Contact Us", Toast.LENGTH_LONG).show()
+}
+return super.onOptionsItemSelected(item)
+}
+}
+
+
+File - strings.xml
+<resources>
+<string name="app_name">Practical5 - Sumeet Rathod</string>
+</resources>
+
+
+
+File - menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/search"
+android:icon="@drawable/search"
+android:title="Search"
+app:showAsAction="always">
+</item>
+<item android:id="@+id/aboutus"
+android:title="About Us">
+</item>
+<item android:id="@+id/contactus"
+android:title="Contactt Us">
+</item>
+</menu>
+
+
+
+********************************************************************************************************************************
+
+P6
+
+File – activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<android.support.design.widget.BottomNavigationView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/navigation"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintLeft_toRightOf="parent"
+app:menu="@menu/navigation_menu">
+</android.support.design.widget.BottomNavigationView>
+</android.support.constraint.ConstraintLayout>
+
+
+File – MainActivity.kt
+package com.example.practical6
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+navigation.setOnNavigationItemSelectedListener
+(mOnNavigationItemSelectedListener)
+}
+private val mOnNavigationItemSelectedListener =
+BottomNavigationView.OnNavigationItemSelectedListener {
+item->
+when(item.itemId)
+{
+R.id.videos->
+{
+val videosFragment=VideosFragment()
+openFragment(videosFragment)
+return@OnNavigationItemSelectedListener true
+}
+R.id.notes->
+{
+val notesFragment=NotesFragement()
+openFragment(notesFragment)
+return@OnNavigationItemSelectedListener true
+}
+R.id.quiz->
+{
+val quizFragment=QuizFragement()
+openFragment(quizFragment)
+return@OnNavigationItemSelectedListener true
+}
+}//when
+false
+}//mOnNavigationItemSelectedListener
+private fun openFragment(fragment: Fragment)
+{
+val transaction=supportFragmentManager.beginTransaction()
+transaction.replace(R.id.container,fragment)
+transaction.addToBackStack(null)
+transaction.commit()
+}//openFragment
+}//class MainActivity
+
+
+File – strings.xml
+<resources>
+<string name="app_name">Practical6 - Sumeet Rathod</string>
+</resources>
+
+
+File – app
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+compileSdkVersion 28
+defaultConfig {
+applicationId "com.example.practical6"
+minSdkVersion 19
+targetSdkVersion 28
+versionCode 1
+versionName "1.0"
+testInstrumentationRunner
+"android.support.test.runner.AndroidJUnitRunner"
+}
+buildTypes {
+release {
+minifyEnabled false
+proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+'proguard-rules.pro'
+}
+}
+}
+dependencies {
+implementation fileTree(dir: 'libs', include: ['*.jar'])
+implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+implementation 'com.android.support:appcompat-v7:28.0.0'
+//Dependenies Added
+implementation 'com.android.support:support-v13:28.0.0'
+implementation 'com.android.support:design:28.0.0'
+implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+testImplementation 'junit:junit:4.12'
+androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
+androidTestImplementation 'com.android.support.test.espresso:espresso-
+core:3.0.2'
+
+}
+
+
+
+
+File – navigation_menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+android:title="Videos"
+android:icon="@drawable/videos"
+android:id="@+id/videos">
+</item>
+<item
+android:title="Notes"
+android:icon="@drawable/notes"
+android:id="@+id/notes">
+</item>
+<item
+android:title="Quiz"
+android:icon="@drawable/quiz"
+android:id="@+id/quiz">
+</item>
+</menu>
+
+
+File – VideosFragment.kt
+package com.example.practical6
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+class VideosFragment : Fragment() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+}
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+savedInstanceState: Bundle?): View? {
+return inflater!!.inflate(R.layout.videos_fragment,container,false)
+}
+}
+
+
+File – NotesFragment.kt
+package com.example.practical6
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+class NotesFragement : Fragment() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+}
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+savedInstanceState: Bundle?): View? {
+return inflater!!.inflate(R.layout.notes_fragment,container,false)
+}
+}
+
+
+File – QuizFragment.kt
+package com.example.practical6
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+class QuizFragement : Fragment() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+}
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+savedInstanceState: Bundle?): View? {
+return inflater!!.inflate(R.layout.quiz_fragment,container,false)
+}
+}
+
+
+File – videos_fragment.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/videos" android:id="@+id/imageView"
+android:layout_weight="1"/>
+</LinearLayout>
+
+
+
+
+File – notes_fragment.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/notes" android:id="@+id/imageView2"
+android:layout_weight="1"/>
+</LinearLayout>
+
+
+
+
+File – quiz_fragment.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:srcCompat="@drawable/quiz" android:id="@+id/imageView3"
+android:layout_weight="1"/>
+</LinearLayout>
+
+********************************************************************************************************************************
+
+
+P7
+
+
+File – activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:layout_marginTop="20dp"
+tools:context=".MainActivity">
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textPersonName"
+android:layout_marginTop="20dp"
+android:hint="Enter your message"
+android:ems="10"
+android:id="@+id/txtMessage" android:textSize="30sp"/>
+<Button
+android:text="Send"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="20dp"
+android:layout_gravity="center_horizontal"
+android:id="@+id/btnSend" android:textSize="30sp"/>
+</LinearLayout>
+
+
+File - MainActivity.kt
+package com.example.practical7
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//Binding the GUI components to MainActivity.kt
+val msg=findViewById<EditText>(R.id.txtMessage)
+val button=findViewById<Button>(R.id.btnSend)
+//Event Listener
+button.setOnClickListener(object : View.OnClickListener{
+override fun onClick(p0: View?) {
+//Intent
+intent=Intent(applicationContext, SecondActivity::class.java)
+//Key - message, Value - msg
+intent.putExtra("message",msg.text.toString())
+//Start Intent
+startActivity(intent)
+}//onClick
+})//setOnClickListener
+}//onCreate
+}
+
+
+File – strings.xml
+<resources>
+<string name="app_name">Practical7 - Sumeet Rathod</string>
+</resources>
+
+
+File – activity_second.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginTop="20dp"
+tools:context=".SecondActivity">
+
+<TextView
+android:text="TextView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/txtVDisplay"
+android:layout_marginTop="40dp"
+android:layout_weight="1" android:textSize="30sp"/>
+</LinearLayout>
+
+
+
+File – SecondActivity.kt
+package com.example.practical7
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+class SecondActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_second)
+//Bind the TextView
+val display=findViewById<TextView>(R.id.txtVDisplay)
+//Get the text message from user and set it to TextView
+display.setText(intent.extras.getString("message")) //Key - message
+}
+}
+
+
+
+
+********************************************************************************************************************************
+P8
+
+
+File – activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:text="Show Notification"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="250dp"
+android:layout_centerHorizontal="true"
+android:textSize="30sp"
+android:id="@+id/btnShowNotification"/>
+</RelativeLayout>
+
+
+
+File – MainActivity.kt
+package com.example.practical8
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
+import android.os.Build
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+class MainActivity : AppCompatActivity() {
+//Variables
+lateinit var notificationManager : NotificationManager
+lateinit var notificationChannel: NotificationChannel
+lateinit var builder:Notification.Builder
+//Declare channel id
+val channelId="package com.example.practical8"
+val description="My Notification"
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+//Binding Notification to the button
+val show=findViewById<Button>(R.id.btnShowNotification)
+//Create a NotificationManager and use Service
+notificationManager=getSystemService(Context.NOTIFICATION_SERVICE)
+as NotificationManager
+show.setOnClickListener{
+val intent=Intent(applicationContext,MainActivity::class.java)
+//Create PendingIntent() - gives tokens to other applications to execute
+this program
+val
+pendingIntent=PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UP
+DATE_CURRENT)
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+notificationChannel=
+NotificationChannel(channelId,description,NotificationManager.IMPORTANCE
+_HIGH)
+//Configure the lights of the device
+notificationChannel.enableLights(true)
+//Configure light color
+notificationChannel.lightColor=Color.RED
+//Configure vibration mode
+notificationChannel.enableVibration(true)
+//Create notification
+notificationManager.createNotificationChannel(notificationChannel)
+//Build notification
+builder=Notification.Builder(this, channelId)
+//Set the contents of notification
+.setContentTitle("Android")
+.setContentText("New Message")
+.setSmallIcon(R.mipmap.ic_launcher)
+.setContentIntent(pendingIntent)
+}//if
+else
+{
+builder=Notification.Builder(this)
+//Set the contents of notification
+.setContentTitle("Android")
+.setContentText("New Message")
+.setSmallIcon(R.mipmap.ic_launcher)
+.setContentIntent(pendingIntent)
+}//else
+notificationManager.notify(0,builder.build())
+}//setOnClickListener
+}//onCreate
+}
+
+
+File – strings.xml
+<resources>
+<string name="app_name">Practical8 - Sumeet Rathod</string>
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
