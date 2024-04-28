@@ -54,45 +54,49 @@
    const createacct = document.getElementById("create-acct")
    
    const signupEmailIn = document.getElementById("email-signup");
-   const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
+   const usernameIN = document.getElementById("username");
+  //  const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
    const signupPasswordIn = document.getElementById("password-signup");
    const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
    const createacctbtn = document.getElementById("create-acct-btn");
    
    const returnBtn = document.getElementById("return-btn");
    
-   var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
+   var email, username, password, signupEmail, signupPassword, confirmSignUpPassword; //confirmSignupEmail,
    
    createacctbtn.addEventListener("click", function() {
      var isVerified = true;
    
+    //  signupEmail = signupEmailIn.value;
+    //   confirmSignupEmail = confirmSignupEmailIn.value;
+    //  if(signupEmail != confirmSignupEmail) {
+    //      window.alert("Email fields do not match. Try again.")
+    //      isVerified = false;
+    //  }
      signupEmail = signupEmailIn.value;
-     confirmSignupEmail = confirmSignupEmailIn.value;
-     if(signupEmail != confirmSignupEmail) {
-         window.alert("Email fields do not match. Try again.")
-         isVerified = false;
-     }
-   
+     username = usernameIN.value;
      signupPassword = signupPasswordIn.value;
      confirmSignUpPassword = confirmSignUpPasswordIn.value;
      if(signupPassword != confirmSignUpPassword) {
-         window.alert("Password fields do not match. Try again.")
+         window.alert("Password fields do not match. Try again.");
          isVerified = false;
      }
      
-     if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignUpPassword == null) {
+     if(signupEmail == null || username == null|| signupPassword == null || confirmSignUpPassword == null) {
        window.alert("Please fill out all required fields.");
        isVerified = false;
      }
      
      if(isVerified) {
-       createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+       createUserWithEmailAndPassword(auth, username, signupEmail, signupPassword)
          .then(async (credentials) => {
          // Signed in 
          console.log(credentials);
          var ref = doc(db, "userAuthList", credentials.user.uid);
          await setDoc(ref, {
-          email:signupEmailIn.value
+          username: usernameIN.value,
+          email: signupEmailIn.value
+
          })
          //const user = credentials.user;
         //  set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
@@ -101,10 +105,10 @@
          window.alert("Success! Account created.");
        })
        .catch((error) => {
-         const errorCode = error.code;
-         const errorMessage = error.message;
+        console.log(error.message);
+        console.log(error.code);
+        window.alert(error.message);
         //  window.alert(errorCode);
-         window.alert("uh oh! try that again.");
        });
      }
    });
@@ -114,6 +118,8 @@
      console.log(email);
      password = passwordInput.value;
      console.log(password);
+     username = usernameIN.value;
+     console.log(username);
    
      signInWithEmailAndPassword(auth, email, password)
        .then(async (credentials) => {
@@ -126,6 +132,7 @@
          if(docSnap.exists()){
           sessionStorage.setItem("user-info", JSON.stringify({
             email: docSnap.data().signupEmailIn,
+            username: docSnap.data().usernameIN
           }))
           sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
          }
