@@ -1,0 +1,73 @@
+Classification algo:
+
+rainfall <-  c(799, 1174.8, 865.1, 1334.6, 635.4, 918.5, 685.5, 998.6, 784.2, 985, 882.8, 1071)
+
+rainfall.timeseries<-ts(rainfall, start = c(2012,1), frequency = 12)
+
+
+print(rainfall.timeseries)
+
+png(file = "rainfall.png")
+plot(rainfall.timeseries)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Linear regression:
+
+# Load the dataset
+data(mtcars)
+
+# Print the first few rows of the dataset
+print(head(mtcars))
+
+# Fit a linear regression model
+model <- lm(mpg ~ wt, data = mtcars)
+
+# Summary of the model
+summary(model)
+
+# Make predictions
+new_data <- data.frame(wt = c(2.5, 3.0, 3.5))  # New data with weight values
+predictions <- predict(model, newdata = new_data)
+
+# Print predictions
+print(predictions)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+decision tree:
+
+# Load the required package
+library(party)
+
+
+input.dat <- readingSkills[c(1:105),]
+
+# Build the conditional inference tree model
+output.tree <- ctree(nativeSpeaker ~ age + shoeSize + score, data = input.dat)
+
+# Plot the decision tree and save it as a PNG file named "decision_tree.png"
+png(file = "decision_tree.png")
+print(output.tree)
+plot(output.tree)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+k means:
+
+# Generate some sample data
+set.seed(123)
+data <- matrix(rnorm(100*2), ncol=2)
+
+# Perform k-means clustering with k=3
+k <- 3
+kmeans_result <- kmeans(data, centers=k)
+
+# Print cluster centers
+print(kmeans_result$centers)
+
+# Plot the data points with cluster assignments
+plot(data, col=kmeans_result$cluster)
+points(kmeans_result$centers, col=1:k, pch=8, cex=2)
+
+

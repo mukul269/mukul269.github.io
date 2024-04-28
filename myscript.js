@@ -46,6 +46,9 @@
    const db = getFirestore();
   //  const dbref = ref(db);
    
+  document.addEventListener("DOMContentLoaded", function() {
+
+
    const submitButton = document.getElementById("submit");
    const signupButton = document.getElementById("sign-up");
    const emailInput = document.getElementById("email");
@@ -113,6 +116,10 @@
      }
    });
    
+
+
+
+
    submitButton.addEventListener("click", function() {
      email = emailInput.value;
      console.log(email);
@@ -166,3 +173,5 @@
        createacct.style.display = "none";
    });
    
+/////////
+  });
