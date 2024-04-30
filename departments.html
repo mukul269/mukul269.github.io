@@ -1,164 +1,166 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan">
-    <style type="text/css">
-      .content{
-        font-size: 20px;
-      }
 
-      .header hr{
-        border: 2px solid white;
-        border-radius: 10px;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan">
+  <style type="text/css">
+    .content {
+      font-size: 20px;
+    }
 
-      }
+    .header hr {
+      border: 2px solid white;
+      border-radius: 10px;
 
-      span{
-        color: white;
-      }
-    </style>
-  </head>
-  
-  <body manifest="demo.appcache"> <!---->
-    <div class="fademain"><!--encloses all elements to apply fade in effect-->
-      <div class="header"><!--for title and nav bar toggle switch-->
-        
-        <!--side bar -->
-        <div id="mySidenav" class="sidenav">
-          <!--open and close toggle switch..............................-->
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
-          <a href="javascript:void(0)"  onclick="closeNav()">click to<br>collapse</a><br><br>
-            <hr width="90%" size="1px"><br><br>
-          
-          <!--side bar links............................................-->
-          <a href="links.html">Links</a><br><br>
-          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank" rel="noopener noreferrer">Syllabus</a><br><br>
-          <a href="Updating.html">Interview <br>prep</a><br><br>
-          <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
-          <a href="#">Credit</a><br>
-          <button class="logout" type="button" id="signoutbutton">Sign Out</button>
+    }
+
+    span {
+      color: white;
+    }
+  </style>
+</head>
+
+<body manifest="demo.appcache"> <!---->
+  <div class="fademain"><!--encloses all elements to apply fade in effect-->
+    <div class="header"><!--for title and nav bar toggle switch-->
+
+      <!--side bar -->
+      <div id="mySidenav" class="sidenav">
+        <!--open and close toggle switch..............................-->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
+        <a href="javascript:void(0)" onclick="closeNav()">click to<br>collapse</a><br><br>
+        <hr width="90%" size="1px"><br><br>
+
+        <!--side bar links............................................-->
+        <a href="links.html">Links</a><br><br>
+        <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer">Syllabus</a><br><br>
+        <a href="Updating.html">Interview <br>prep</a><br><br>
+        <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
+        <a href="#">Credit</a><br>
+        <button class="logout" type="button" id="signoutbutton">Sign Out</button>
+        <script>
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+      </div><!--sidebar close-->
+
+
+
+      <!--decor-->
+      <div class="animate__animated animate__fadeInDown">
+        <div class="decor">
+          <hr width="90%" size="4px">
+          <!--side bar toggle-->
+          <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
           <script>
-            function closeNav() {
-              document.getElementById("mySidenav").style.width = "0";
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "412px";
+              document.getElementById("mySidenav").style.transition = "0"; // Disable transition temporarily
+              setTimeout(function () {
+                document.getElementById("mySidenav").style.transition = null; // Restore transition
+              }, 100);
             }
           </script>
-        </div><!--sidebar close-->
-
-
-
-        <!--decor-->
-        <div class="animate__animated animate__fadeInDown">
-          <div class="decor">
-            <hr width="90%" size="4px">
-              <!--side bar toggle-->
-              <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
-              <script>
-                function openNav() {
-                  document.getElementById("mySidenav").style.width = "412px";
-                  document.getElementById("mySidenav").style.transition = "0"; // Disable transition temporarily
-                  setTimeout(function() {
-                    document.getElementById("mySidenav").style.transition = null; // Restore transition
-                  }, 100);
-                }
-              </script> 
-              <p class="displayusername" id="msg">Welcome Genyuva</p><br>
-            <hr width="90%" size="4px"><br>
-          </div>
+          <p class="displayusername" id="msg">Welcome Genyuva</p><br>
+          <hr width="90%" size="4px"><br>
         </div>
       </div>
+    </div>
 
 
-      <div class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
-        <div class="card-container">  <!--encloses all the cards-->
-        
-          <a href="departments/IT/semesterselection.html">
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
-              </div>
+    <div class="animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
+      <div class="card-container"> <!--encloses all the cards-->
+
+        <a href="departments/IT/semesterselection.html">
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="departments/CS/semesterselection.html">
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF COMPUTER SCIENCE</h2>
-              </div>
+        <a href="departments/CS/semesterselection.html">
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF COMPUTER SCIENCE</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="departments/BMS/semesterselection.html">
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF MANAGEMENT STUDIES</h2>
-              </div>
+        <a href="departments/BMS/semesterselection.html">
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF MANAGEMENT STUDIES</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="departments/BAF/semesterselection.html">
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF ACCOUNTING AND FINANCE</h2>
-              </div>
+        <a href="departments/BAF/semesterselection.html">
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF ACCOUNTING AND FINANCE</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="BI Manual (E-next.in).pdf">
-            <!--departments/BA/semesterselection.html-->
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF ARTS</h2>
-              </div>
+        <a href="departments\BA\semesterselection.html">
+          <!--departments/BA/semesterselection.html-->
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF ARTS</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="BIB.txt">
-            <!--departments/BCOM/semesterselection.html-->
-            <div class="card">
-              <div class="content">
-                <h2>DEPARTMENT OF COMMERCE</h2>
-              </div>
+        <a href="departments\BCOM\semesterselection.html">
+          <!--departments/BCOM/semesterselection.html-->
+          <div class="card">
+            <div class="content">
+              <h2>DEPARTMENT OF COMMERCE</h2>
             </div>
-          </a>
+          </div>
+        </a>
 
-        </div><!--closing card-container-->
+      </div><!--closing card-container-->
 
-        <script>
-        let UserCreds =JSON.parse(sessionStorage.getItem("user-creds"));
-        let UserInfo =JSON.parse(sessionStorage.getItem("user-info"));
+      <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
 
         let MsgHead = document.getElementById('msg');
         let Signoutbtn = document.getElementById('signoutbutton');
 
 
 
-        let Signout = ()=>{
+        let Signout = () => {
           sessionStorage.removeItem("user-creds");
           sessionStorage.removeItem("user-info");
           window.location.href = 'index.html'
         }
 
-        let CheckCred = ()=>{
-          if(!sessionStorage.getItem("user-creds"))
+        let CheckCred = () => {
+          if (!sessionStorage.getItem("user-creds"))
             window.location.href = 'index.html'
 
-            else{
-              MsgHead.innerHTML = `Welcome ${UserCreds.email} to Genyuva`;
-            }
+          else {
+            MsgHead.innerHTML = `Welcome ${UserCreds.email} to Genyuva`;
+          }
         }
 
         window.addEventListener('load', CheckCred);
         Signoutbtn.addEventListener('click', Signout);
 
-        </script>
-        <script src="myscript.js" type="module"></script>
-      </div>
+      </script>
+      <script src="myscript.js" type="module"></script>
     </div>
-  </body>
-</html>
+  </div>
+</body>
 
+</html>
