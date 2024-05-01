@@ -27,7 +27,7 @@
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getDatabase, get, set, ref, child, update, remove } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+//import { getDatabase, get, set, ref, child, update, remove } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
@@ -44,134 +44,132 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
-const gdb = getDatabase();
-
-document.addEventListener("DOMContentLoaded", function () {
-
-
-  const submitButton = document.getElementById("submit");
-  const signupButton = document.getElementById("sign-up");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-  const main = document.getElementById("main");
-  const createacct = document.getElementById("create-acct")
-
-  const signupEmailIn = document.getElementById("email-signup");
-  const usernameIN = document.getElementById("username");
-  //  const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
-  const signupPasswordIn = document.getElementById("password-signup");
-  const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
-  const createacctbtn = document.getElementById("create-acct-btn");
-
-  const returnBtn = document.getElementById("return-btn");
-
-  var email, username, password, signupEmail, signupPassword, confirmSignUpPassword; //confirmSignupEmail,
-
-  createacctbtn.addEventListener("click", function () {
-    var isVerified = true;
-
-    //  signupEmail = signupEmailIn.value;
-    //   confirmSignupEmail = confirmSignupEmailIn.value;
-    //  if(signupEmail != confirmSignupEmail) {
-    //      window.alert("Email fields do not match. Try again.")
-    //      isVerified = false;
-    //  }
-    signupEmail = signupEmailIn.value;
-    username = usernameIN.value;
-    signupPassword = signupPasswordIn.value;
-    confirmSignUpPassword = confirmSignUpPasswordIn.value;
-    if (signupPassword != confirmSignUpPassword) {
-      window.alert("Password fields do not match. Try again.");
-      isVerified = false;
-    }
-
-    if (signupEmail == null || username == null || signupPassword == null || confirmSignUpPassword == null) {
-      window.alert("Please fill out all required fields.");
-      isVerified = false;
-    }
-
-    if (isVerified) {
-      createUserWithEmailAndPassword(auth, username, signupEmail, signupPassword)
-        .then(async (credentials) => {
-          // Signed in 
-          console.log(credentials);
-          var ref = doc(db, "userAuthList", credentials.user.uid);
-          await setDoc(ref, {
-            username: usernameIN.value,
-            email: signupEmailIn.value
-
-          })
-          //const user = credentials.user;
-          //  set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
-          //   account : signupEmail.value
-          //  })
-          window.alert("Success! Account created.");
-        })
-        .catch((error) => {
-          console.log(error.message);
-          console.log(error.code);
-          window.alert(error.message);
-          //  window.alert(errorCode);
-        });
-    }
-  });
+//const gdb = getDatabase();
 
 
 
+let submitButton = document.getElementById("submit");
+let signupButton = document.getElementById("sign-up");
+let emailInput = document.getElementById("email");
+let passwordInput = document.getElementById("password");
+let main = document.getElementById("main");
+let createacct = document.getElementById("create-acct")
 
+let signupEmailIn = document.getElementById("email-signup");
+// let usernameIN = document.getElementById("username");
+//  const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
+let signupPasswordIn = document.getElementById("password-signup");
+let confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
+let createacctbtn = document.getElementById("create-acct-btn");
 
-  submitButton.addEventListener("click", function () {
-    email = emailInput.value;
-    console.log(email);
-    password = passwordInput.value;
-    console.log(password);
-    username = usernameIN.value;
-    console.log(username);
+let returnBtn = document.getElementById("return-btn");
 
-    signInWithEmailAndPassword(auth, email, password)
+var email, password, signupEmail, signupPassword, confirmSignUpPassword; //confirmSignupEmail,
+
+createacctbtn.addEventListener("click", function () {
+  var isVerified = true;
+
+  //  signupEmail = signupEmailIn.value;
+  //   confirmSignupEmail = confirmSignupEmailIn.value;
+  //  if(signupEmail != confirmSignupEmail) {
+  //      window.alert("Email fields do not match. Try again.")
+  //      isVerified = false;
+  //  }
+  signupEmail = signupEmailIn.value;
+  // username = usernameIN.value;
+  signupPassword = signupPasswordIn.value;
+  confirmSignUpPassword = confirmSignUpPasswordIn.value;
+
+  if (signupPassword != confirmSignUpPassword) {
+    window.alert("Password fields do not match. Try again.");
+    isVerified = false;
+  }
+
+  if (signupEmail == null || signupPassword == null || confirmSignUpPassword == null) {
+    window.alert("Please fill out all required fields.");
+    isVerified = false;
+  }
+
+  if (isVerified) {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       .then(async (credentials) => {
-        // Signed in
-        //const user = credentials.user;
+        // Signed in 
         console.log(credentials);
         var ref = doc(db, "userAuthList", credentials.user.uid);
-        const docSnap = await getDoc(ref);
+        await setDoc(ref, {
+          email: signupEmailIn.value,
 
-        if (docSnap.exists()) {
-          sessionStorage.setItem("user-info", JSON.stringify({
-            email: docSnap.data().signupEmailIn,
-            username: docSnap.data().usernameIN
-          }))
-          sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
-        }
-        //  get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
-        //   if(snapshot.exists){
-        //     sessionStorage.setItem("user-info", JSON.stringify({
-        //       account: snapshot.val().account
-        //     }))
-        //     sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
-        //     //.......window.location
-        //   }
+        })
+        //const user = credentials.user;
+        //  set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+        //   account : signupEmail.value
         //  })
-        window.location.href = "departments.html"
-      })
+        window.alert("Success! Account created.");
 
+      })
       .catch((error) => {
         console.log(error.message);
         console.log(error.code);
-        window.alert("Error occurred. Try again.");
+        window.alert(error.message);
+        //  window.alert(errorCode);
       });
-  });
-
-
-  signupButton.addEventListener("click", function () {
-    main.style.display = "none";
-    createacct.style.display = "block";
-  });
-
-  returnBtn.addEventListener("click", function () {
-    main.style.display = "block";
-    createacct.style.display = "none";
-  });
-
-  /////////
+  }
 });
+
+
+
+
+
+submitButton.addEventListener("click", function () {
+  email = emailInput.value;
+  console.log(email);
+  password = passwordInput.value;
+  console.log(password);
+
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(async (credentials) => {
+      // Signed in
+      //const user = credentials.user;
+      console.log(credentials);
+      var ref = doc(db, "userAuthList", credentials.user.uid);
+      const docSnap = await getDoc(ref);
+
+      if (docSnap.exists()) {
+        sessionStorage.setItem("user-info", JSON.stringify({
+          email: docSnap.data().signupEmailIn,
+          //username: docSnap.data().usernameIN
+        }))
+        sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
+        window.location.href = "departments.html"
+      }
+      //  get(child(dbref,'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+      //   if(snapshot.exists){
+      //     sessionStorage.setItem("user-info", JSON.stringify({
+      //       account: snapshot.val().account
+      //     }))
+      //     sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
+      //     //.......window.location
+      //   }
+      //  })
+    })
+
+    .catch((error) => {
+      console.log(error.message);
+      console.log(error.code);
+      window.alert("Error occurred. Try again.");
+    });
+});
+
+
+signupButton.addEventListener("click", function () {
+  main.style.display = "none";
+  createacct.style.display = "block";
+});
+
+returnBtn.addEventListener("click", function () {
+  main.style.display = "block";
+  createacct.style.display = "none";
+});
+
+/////////
