@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <script src="myscript.js" type="text/javascript"></script>
+    <style type="text/css">
+      .content{
+        font-size: 20px;
+      }
+
+      .header hr{
+        border: 2px solid white;
+        border-radius: 10px;
+
+      }
+
+      span{
+        color: white;
+      }
+    </style>
+  </head>
+  <body manifest="demo.appcache"> <!---->
+    <div class="fademain"><!--encloses all elements to apply fade in effect-->
+      <div class="header"><!--for title and nav bar toggle switch-->
+        
+        <!--side bar -->
+        <div id="mySidenav" class="sidenav">
+          <!--open and close toggle switch..............................-->
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
+          <a href="javascript:void(0)"  onclick="closeNav()">click to<br>collapse</a><br><br>
+          <hr width="90%" size="1px"><br><br>
+          
+          <!--side bar links............................................-->
+          <a href="links.html">Links</a><br><br>
+          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank">Syllabus</a><br><br>
+          <a href="Updating.html">Interview <br>prep</a><br><br>
+          <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
+          <a href="#">Credit</a><br>
+
+          
+        </div><!--sidebar close-->
+
+        <!--title-->
+        <hr width="90%" size="4px">
+        <p>TY BSc IT<br>
+          <sub>. INNOVATE.IMPROVISE.EVOLVE .</sub>
+        </p>
+        <hr width="90%" size="4px"><br>
+
+        <!--side bar toggle-->
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776;</span>
+      </div>
+
+
+      <div class="card-container">  <!--encloses all the cards-->
+
+        <a href="subject1/content.html">
+          <div class="card">
+            <div class="content">
+              <h2>OOP</h2>
+              <p>Object oriented programming</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="subject2/content.html">
+          <div class="card">
+            <div class="content">
+              <h2>MA</h2>
+              <p>microprocessor architecture</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="subject3/content.html">
+          <div class="card">
+            <div class="content">
+              <h2>WE</h2>
+              <p>Web Programming</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="subject4/content.html">
+          <div class="card">
+            <div class="content">
+              <h2>NSM</h2>
+              <p>numerical and statistical methods</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="subject6/content.html">
+          <div class="card">
+            <div class="content">
+              <h2>GC</h2>
+              <p>green computing</p>
+            </div>
+          </div>
+        </a>
+
+
+      </div><!--closing card-container-->
+
+      <script>
+        // Optional JavaScript code
+      </script>
+
+    </div>
+  </body>
+</html>

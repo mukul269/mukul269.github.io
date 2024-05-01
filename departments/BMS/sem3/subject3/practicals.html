@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>notes</title>
+    <link rel="stylesheet" href="../../../../style.css">
+    <script src="..\myscript.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+ <div class="fademain">
+      <div class="header">
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592;</a>
+          <a href="javascript:void(0)"  onclick="closeNav()">click to<br>collapse</a><br><br>
+
+          <hr width="90%" size="1px"><br><br>
+
+          <a href="..\links.html">Links</a><br><br>
+          <a href="https://drive.google.com/file/d/1VHqB26oScxda2q6m5_4l6I7qC1neYyxf/view?usp=sharing" target="_blank">Syllabus</a><br><br>
+          <a href="#">Papers</a><br><br>
+          <a href="https://api.whatsapp.com/send?phone=918850930554">Support</a><br><br>
+          <a href="#">Credit</a><br>
+        </div>
+
+        <hr width="90%" size="4px">
+        <p>notes</p>
+        <hr width="90%" size="4px"><a href="..\index.html"><img src="..\graphics\home.png"></a><br>
+
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()" class="span">&#9776;</span>
+      </div>
+
+
+        <div class="table-wrapper">
+        <table class="fl-table" id="myTable">
+                <thead>
+                <tr>
+                    <th>FILE</th>
+                    <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                <tbody>
+            </table>
+            <button id="addButton">add a new file</button>
+            <script>
+                const tableBody = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+                    const addButton = document.getElementById('addButton'); 
+        
+                    function addRow() {
+                    const row = document.createElement('tr');
+                    const valueCell = document.createElement('td');
+                    const inputField = document.createElement('input');
+                    const deleteButton = document.createElement('button');
+        
+                    inputField.type = 'file';
+                    inputField.placeholder = 'Enter value';
+        
+                    valueCell.appendChild(inputField);
+        
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delete-button');
+        
+        
+                    row.appendChild(valueCell);
+                    row.appendChild(deleteButton);
+        
+                    tableBody.appendChild(row);
+        
+                    // Add event listener for delete button
+                    deleteButton.addEventListener('click', function() {
+                        row.parentNode.removeChild(row);
+                        rowCount--;
+                    });
+                    }
+        
+                    addButton.addEventListener('click', addRow);
+        
+            </script>
+            </div>
+        </div>
+</body>
+</html>
+
+<!--<tr>
+                    <td>1.</td>
+                    <td><a href="https://drive.google.com/file/d/1gXz5gcLirQu9D_PBKYPkr3TP8aJ6zpHL/view?usp=sharing" target="_blank" id="notelink">Introduction</a></td>
+                     </tr>
+                <tr>
+                    <td>2.</td>
+                    <td><a href="https://drive.google.com/file/d/1P-8Poi7uYftzLJr9id0FYKcSXkqm9txP/view?usp=sharing" target="_blank" id="notelink">Intelligent Agents</a></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td><a href="https://drive.google.com/file/d/1Sqe_JSWXXzNtLck3QZ2HecezHtxBPVsH/view?usp=sharing" target="_blank" id="notelink">Solving Problems by Searching</a></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td><a href="https://drive.google.com/file/d/1k8oP9Rm801H-WtJyRvzcnRVEiKLJIffR/view?usp=sharing" target="_blank" id="notelink">Beyond Classical Search</a></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td><a href="https://drive.google.com/file/d/1MW0FLBqw3NpS9f5LAXsZwPpRl8iEkzDO/view?usp=sharing" target="_blank" id="notelink">Adversarial Search</a></td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td><a href="https://drive.google.com/file/d/1hoBzqkDuJ4sIX9IYFQAusTkPFT9IEyJu/view?usp=sharing" target="_blank" id="notelink">Logical Agents</a></td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td><a href="https://drive.google.com/file/d/19UhPk2FnVqgeG-QEWyYFHByZsYjm_OdN/view?usp=sharing" target="_blank" id="notelink">First Order Logic</a></td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td><a href="https://drive.google.com/file/d/1DhuFE8yZSuBkk45ccdSh3VFMYzRz7jGR/view?usp=sharing" target="_blank" id="notelink">Inference in First Order Logic</a></td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td><a href="https://drive.google.com/file/d/1X4PPYmKarh0nWAcr8ZkXgjR9ySWxWX_3/view?usp=sharing" target="_blank" id="notelink">Planning</a></td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td><a href="https://drive.google.com/file/d/1puW2hAaWuzQm3zAH67eXR_z5AtNqKaE2/view?usp=sharing" target="_blank" id="notelink">Knowledge Representation</a></td>
+                </tr>-->
