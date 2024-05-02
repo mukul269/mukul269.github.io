@@ -27,9 +27,10 @@
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-//import { getDatabase, get, set, ref, child, update, remove } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+import { getDatabase, get, set, ref, child, update, remove } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCrGWnqUsdsFoDK2c9mLfYoCroIUYNWW5I",
@@ -44,7 +45,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
-//const gdb = getDatabase();
+
+
+
 
 
 
@@ -64,7 +67,7 @@ let createacctbtn = document.getElementById("create-acct-btn");
 
 let returnBtn = document.getElementById("return-btn");
 
-var email, password, signupEmail, signupPassword, confirmSignUpPassword; //confirmSignupEmail,
+var email, password, signupEmail, signupPassword, confirmSignUpPassword;
 
 createacctbtn.addEventListener("click", function () {
   var isVerified = true;
@@ -171,5 +174,7 @@ returnBtn.addEventListener("click", function () {
   main.style.display = "block";
   createacct.style.display = "none";
 });
+
+
 
 /////////

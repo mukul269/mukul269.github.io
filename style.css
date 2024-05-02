@@ -1,20 +1,25 @@
-
 /*body amd title--------------------------------------------------*/
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 
 
-.fademain{
+.fademain {
   animation: fadeIn 0.5s;
 }
 
 body {
   user-select: none;
-  background: radial-gradient(ellipse at bottom, #2d8afb 0%, #101428 100%);/*rgb(155, 196, 241);*/
+  background: radial-gradient(ellipse at bottom, #2d8afb 0%, #101428 100%);
+  /*rgb(155, 196, 241);*/
   /* animation: backgroundAnimation 6s ease infinite; background: linear-gradient(45deg, #009900, #00FF00, #33FF33, #00FF00, #009900);linear-gradient(45deg, #8E2DE2, #4A00E0, #00BFFF, #4A00E0, #8E2DE2)*/
   background-size: 400% 400%;
   overflow: auto;
@@ -31,88 +36,91 @@ body {
 }*/
 
 
-.decor p{
+.decor p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 90px;
+  font-size: 70px;
   font-family: "League Spartan", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
   padding: 30px;
   margin: 8px;
-  text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
-.decor{
+.decor {
   height: 500px;
   display: flex;
   flex-direction: column;
 }
 
 
-.span{
+.span {
   position: relative;
   margin-top: 2px;
 }
 
-.header a{
+.header a {
   text-decoration: none;
 }
 
-.header sub{
+.header sub {
   font-size: 10px;
   font-family: 'Courier New', monospace;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
   padding: 0px;
-  text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
-.header img{
+.header img {
   width: 30px;
   margin-left: 3px;
   margin-top: 5px;
   position: relative;
 }
 
-.header img:hover{
+.header img:hover {
   transform: scale(1.05);
   transition: 0.2s ease;
-  text-shadow: 0px 2px 2px rgba(0,0,0,0.7);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
   background-color: white;
   border-radius: 2rem;
 
 }
 
-   
+
 /*cards-----------------------------------------------------------------*/
-    
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center cards horizontally */
-  align-items: center; /* Center cards vertically */
-  height: 100%; /* Set container height to full viewport height */
+  justify-content: center;
+  /* Center cards horizontally */
+  align-items: center;
+  /* Center cards vertically */
+  height: 100%;
+  /* Set container height to full viewport height */
   box-sizing: border-box;
   padding: 20px;
   margin: 20px;
   background-color: rgb(38, 97, 159);
-    border-radius: 35px;
-    box-shadow: -8px -8px 8px #0000002f, 8px 8px 8px #8ddefe2f;
+  border-radius: 35px;
+  box-shadow: -8px -8px 8px #0000002f, 8px 8px 8px #8ddefe2f;
 }
 
-.card-container a{
+.card-container a {
   text-decoration: none;
 }
 
 .card {
-  width:30cap;
+  width: 30cap;
   min-width: 20cap;
-  height:200px;
+  height: 200px;
   background-color: #ffffff;
   margin: 20px;
   border-radius: 20px;
@@ -133,13 +141,13 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
-   
+
 /* Card animations on hover and selection */
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
 }
-    
+
 .card:active {
   transform: scale(0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -149,12 +157,14 @@ body {
 @media screen and (max-width: 482px) {
   .card-container {
     flex-direction: column;
-    align-items: center; /* Center cards horizontally in mobile view */
-    height: auto; /* Reset container height for vertical stacking */
+    align-items: center;
+    /* Center cards horizontally in mobile view */
+    height: auto;
+    /* Reset container height for vertical stacking */
   }
 
-  .header p{
-    font-size: 50px;
+  .header p {
+    font-size: 20px;
   }
 }
 
@@ -162,7 +172,7 @@ body {
 
 /*side-nav---------------------------------------------------------------*/
 
-.sidenav{
+.sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -178,7 +188,7 @@ body {
   padding-top: 60px;
 }
 
-.sidenav a{
+.sidenav a {
   padding: 8px 8px 8px 8px;
   text-align: center;
   text-decoration: none;
@@ -189,14 +199,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.sidenav a:hover{
+.sidenav a:hover {
   transition: 0.2s ease-in-out;
   color: #ffffff;
-  text-shadow: 0px 0px 6px rgba(255,255,255,2);
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 2);
 }
 
-.sidenav .closebtn 
-{
+.sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 50px;
@@ -205,84 +214,79 @@ body {
 }
 
 .logout {
-  background:#484B4F;
-   width: 200px;
-   cursor:pointer;
-   border-radius:50px;
-   padding:10px 20px 10px 0;
-   color:White;
-   font-size:14px;
-   text-align:center;
-   display:block;
-   margin:0 auto;
-   float: bottom;
-  
- }
- 
- .logout:hover {
-   background-position: 65px 5px;
-   transform: scale(1.05);
- }
+  background: #484B4F;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px 20px 10px 0;
+  color: White;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  float: bottom;
+
+}
+
+.logout:hover {
+  background-position: 65px 5px;
+  transform: scale(1.05);
+}
+
 /*table--------------------------------------------------------------------*/
 
-.table-wrapper
-{
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    margin: 10px 50px 50px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.5 );
-    font-family: Arial, Helvetica, sans-serif;
+.table-wrapper {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  margin: 10px 50px 50px;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.fl-table 
-{
-    font-size: 20px;
-    font-weight: bold;
-    border: 10px solid black;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: pre-line;
-    background-color: white;
+.fl-table {
+  font-size: 20px;
+  font-weight: bold;
+  border: 10px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: pre-line;
+  background-color: white;
 }
 
-.fl-table td, .fl-table th 
-{
-    text-align: center;
-    padding: 8px;
-    word-wrap: break-word;
+.fl-table td,
+.fl-table th {
+  text-align: center;
+  padding: 8px;
+  word-wrap: break-word;
 }
 
-.fl-table td 
-{
-    border-right: 0px solid #f8f8f8;
-    font-size: 20px;
-    word-wrap: break-word;
+.fl-table td {
+  border-right: 0px solid #f8f8f8;
+  font-size: 20px;
+  word-wrap: break-word;
 }
 
-.fl-table thead th
-{
-    color: #ffffff;
-    background: #000000;
+.fl-table thead th {
+  color: #ffffff;
+  background: #000000;
 }
 
 
-.fl-table tr{
+.fl-table tr {
   background: #333333;
   color: white;
   text-decoration: none;
 }
 
-#notelink
-{
-    text-decoration: none;
-    color: white;
+#notelink {
+  text-decoration: none;
+  color: white;
 }
 
 
-.fl-table tr:nth-child(even) 
-{
-    background: #222222;
+.fl-table tr:nth-child(even) {
+  background: #222222;
 }
 
 #addButton {
@@ -307,8 +311,7 @@ body {
 
 
 
-.books
-{
+.books {
   height: auto;
   width: 100%;
   display: flex;
@@ -317,8 +320,7 @@ body {
   font-size: 30px;
 }
 
-.books img
-{
+.books img {
   width: 250px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 2rem;
